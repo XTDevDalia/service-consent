@@ -71,6 +71,10 @@ final class pluginconfig {
                 `customer_service_date` datetime NOT NULL,
                 `customer_form_id` int(11) NOT NULL,
                 `customer_form_value_json` text NOT NULL,
+                `customer_signature` varchar(255) NOT NULL,
+                `customer_signature_date` datetime NOT NULL,
+                `therapist_signature` varchar(255) NOT NULL,
+                `therapist_signature_date` datetime NOT NULL,
                 PRIMARY KEY  (consent_id)
               ) $charset_collate;";
             dbDelta($sql);

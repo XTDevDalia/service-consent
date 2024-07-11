@@ -1,44 +1,21 @@
 <?php
-//require_once('./service-consent.php');
+define('SC_PLUGIN_DIR_PATH', dirname(__FILE__));
 
 if (isset($_POST['imgData'])) {
     $imgData = $_POST['imgData'];
     $imgData = str_replace('data:image/png;base64,', '', $imgData);
     $imgData = str_replace(' ', '+', $imgData);
     $data = base64_decode($imgData);
-    $directory = SC_PLUGIN_DIR_PATH . 'upload/signature';
-    
-    if (!file_exists($directory)) {
-        mkdir($directory, 0777, true); 
-    }
-    
-    $fileName = $directory . '/signature_' . uniqid() . '.png';
+    $directory = SC_PLUGIN_DIR_PATH . '/upload/signature';
 
-    
-    file_put_contents($fileName, $data);
-    
-    echo $fileName;
-    // $servername = "localhost";
-    // $username = "root";
-    // $password = "";
-    // $dbname = "browart";
-    
-    // $conn = new mysqli($servername, $username, $password, $dbname);
-    
-    // if ($conn->connect_error) {
-    //     die("Connection failed: " . $conn->connect_error);
-    // }
-    
-    // $sql = "INSERT INTO signatures (file_path) VALUES ('$fileName')";
-    
-    // if ($conn->query($sql) === TRUE) {
-    //     echo "New record created successfully";
-    // } else {
-    //     echo "Error: " . $sql . "<br>" . $conn->error;
-    // }
-    
-    // $conn->close();
+    if (!file_exists($directory)) {
+        mkdir($directory, 0777, true);
+    }
+    $fileName = 'signature_' . uniqid() . '.png';
+    $filepath =  $directory . '/'.$fileName;
+    file_put_contents($filepath, $data);
+    echo json_encode(array('success' => true, 'signature_name' => $fileName));
 } else {
-    echo "No image data received.";
+    json_encode(array('success' => false));
 }
 ?>
