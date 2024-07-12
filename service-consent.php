@@ -69,4 +69,4 @@ function end_session() {
 register_activation_hook(__FILE__, 'pluginconfig::activate');
 register_deactivation_hook(__FILE__, 'pluginconfig::deactivate');
 
-
+require_once SC_PLUGIN_DIR_PATH . '/apply-custom-css.php';
