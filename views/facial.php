@@ -31,14 +31,14 @@
                 cursor: crosshair;
             }
             input[type=radio]:checked::before {
-    content: "";
-    border-radius: 50%;
-    width: .8rem !important;
-    height: .8rem !important;
-    margin: .1875rem;
-    background-color: #3582c4;
-    line-height: 1.14285714;
-}
+                content: "";
+                border-radius: 50%;
+                width: .8rem !important;
+                height: .8rem !important;
+                margin: .1875rem;
+                background-color: #3582c4;
+                line-height: 1.14285714;
+            }
         </style>
     </head>
     <body>
