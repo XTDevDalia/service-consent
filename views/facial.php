@@ -539,6 +539,7 @@
                         </div>
                         <div class="col-sm-4">
                             <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
+                            <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?=SC_PLUGIN_DIR_URL?>">
                             <canvas id="customer_signature" name= "customer_signature" width="320" height="160"></canvas>
                         </div>
                         <div class="col-sm-1">
