@@ -180,7 +180,7 @@
                 </div>
                 <div class="col-sm-4 col-lg-2 col-md-3">
                     <input type="checkbox" id="chk_manual" class="chk_height_width" value="Manual" name="range_1[]">
-                    <label for="chk_visual">Manual</label>
+                    <label for="chk_manual">Manual</label>
                 </div>
                 <div class="col-sm-4 col-lg-2 col-md-3">
                     <input type="checkbox" id="chk_ref_client_record" class="chk_height_width" value="Ref. Client Record" name="range_1[]">

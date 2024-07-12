@@ -53,11 +53,13 @@ class ListConsent extends WP_List_Table {
      */
     function get_columns() {
         $columns = array(
-            'cb' => '<input type="checkbox" />', //Render a checkbox instead of text
-            'customer_branch_id' => '', //Render a checkbox instead of text
+            'cb' => '<input type="checkbox"/>', //Render a checkbox instead of text
+            'customer_no'=>__('Customer Number','cltd_example'),
+            'customer_service_date'=> __('Service Date', 'cltd_example'),
+            'customer_branch_id'=> __('Branch', 'cltd_example'),
             'customer_name' => __('Name', 'cltd_example'),
-            'customer_email' => __('E-Mail', 'cltd_example'),
-            'customer_phone' => __('Phone', 'cltd_example'),
+            'contact_details' => __('Contact Details', 'cltd_example'),
+            'site_list' => __('Selected Service', 'cltd_example'),
         );
         return $columns;
     }
@@ -77,10 +79,24 @@ class ListConsent extends WP_List_Table {
         global $wpdb;
         $table_name_cust = $wpdb->prefix . 'customer_master'; // do not forget about tables prefix
         $table_name_ser = $wpdb->prefix . 'service_consent'; // do not forget about tables prefix
+        $table_name_service_master = $wpdb->prefix . 'service_master';
         
+        // return $wpdb->get_results(
+        //                 "SELECT * from {$table_name_cust}",
+        //                 ARRAY_A
+        // );
+
         return $wpdb->get_results(
-                        "SELECT * from {$table_name_cust}",
-                        ARRAY_A
+            "SELECT c.customer_no ,
+                    DATE_FORMAT(s.customer_service_date, '%d-%b-%Y') AS customer_service_date, 
+                    c.customer_branch_id,c.customer_name , 
+                    CONCAT(c.customer_phone, ' - ', c.customer_email) AS contact_details, 
+                    GROUP_CONCAT(sm.service_form_display_title) AS site_list 
+                        FROM $table_name_ser as s 
+                            left JOIN $table_name_cust as c ON s.consent_customer_id = c.customer_id 
+                            left join $table_name_service_master as sm on s.customer_form_id = sm.service_form_id
+                            group by DATE(s.customer_service_date),c.customer_no order by s.customer_service_date DESC",
+                            ARRAY_A
         );
     }
 
@@ -135,9 +151,12 @@ class ListConsent extends WP_List_Table {
      */
     function get_sortable_columns() {
         $sortable_columns = array(
-            'name' => array('name', true),
-            'email' => array('email', false),
-            'phone' => array('phone', false),
+            'customer_no'=>__('Customer Number','cltd_example'),
+            'customer_service_date'=> __('Service Date', 'cltd_example'),
+            'customer_branch_id'=> __('Branch', 'cltd_example'),
+            'customer_name' => __('Name', 'cltd_example'),
+            'contact_details' => __('Contact Details', 'cltd_example'),
+            'site_list' => __('Selected Service', 'cltd_example'),
         );
         return $sortable_columns;
     }

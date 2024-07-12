@@ -4,6 +4,15 @@
             border-radius: 15px;
             cursor: crosshair;
         }
+        input[type=radio]:checked::before {
+    content: "";
+    border-radius: 50%;
+    width: .8rem !important;
+    height: .8rem !important;
+    margin: .1875rem;
+    background-color: #3582c4;
+    line-height: 1.14285714;
+}
     </style>        
         <div class="row" style="margin-top:30px;">
             <div class="col-sm-12">
@@ -38,57 +47,57 @@
             <div class="col-sm-12">
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>Scar Tissue:</label> &nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="scar_tissue_yes" name="scar_tissue" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="scar_tissue_no" name="scar_tissue" value="no"> 
+                    Yes&nbsp; <input type="radio" id="scar_tissue_yes" class="chk_height_width"  name="scar_tissue" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="scar_tissue_no" class="chk_height_width" name="scar_tissue" value="no"> 
                 </div>
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>Eye Infection:</label> &nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="eye_infection_yes" name="eye_infection" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="eye_infection_no" name="eye_infection" value="no">
+                    Yes&nbsp; <input type="radio" id="eye_infection_yes" class="chk_height_width" name="eye_infection" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="eye_infection_no" class="chk_height_width" name="eye_infection" value="no">
                 </div>
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>Skin Disorders:</label> &nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="skin_disorders_yes" name="skin_disorders" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="skin_disorders_no" name="skin_disorders" value="no">
+                    Yes&nbsp; <input type="radio" id="skin_disorders_yes" class="chk_height_width" name="skin_disorders" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="skin_disorders_no" class="chk_height_width" name="skin_disorders" value="no">
                 </div>
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>Contact Lenses:</label> &nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="contatc_lenses_yes" name="contact_lenses" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="contact_lenses_no" name="contact_lenses" value="no">
+                    Yes&nbsp; <input type="radio" id="contatc_lenses_yes" class="chk_height_width" name="contact_lenses" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="contact_lenses_no" class="chk_height_width" name="contact_lenses" value="no">
                 </div>
             </div>
             <div class="col-sm-12" style="padding-top: 10px;">
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>Hyper Skin:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="hyper_skin_yes" name="hyper_skin" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="hyper_skin_no" name="hyper_skin" value="no"> 
+                    Yes&nbsp; <input type="radio" id="hyper_skin_yes" class="chk_height_width" name="hyper_skin" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="hyper_skin_no" class="chk_height_width" name="hyper_skin" value="no"> 
                 </div>
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>Nervous Disorder:</label> &nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="nervous_disorders_yes" name="nervous_disorders" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="nervous_disorders_no" name="nervous_disorders" value="no">
+                    Yes&nbsp; <input type="radio" id="nervous_disorders_yes" class="chk_height_width" name="nervous_disorders" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="nervous_disorders_no" class="chk_height_width" name="nervous_disorders" value="no">
                 </div>
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>allergies:</label> &nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="allergies_yes" name="allergies" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="allergies_no" name="allergies" value="no">
+                    Yes&nbsp; <input type="radio" id="allergies_yes" class="chk_height_width" name="allergies" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="allergies_no" class="chk_height_width" name="allergies" value="no">
                 </div>
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>Cuts / Bruising:</label> &nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="cuts_yes" name="cuts" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="cuts_no" name="cuts" value="no">
+                    Yes&nbsp; <input type="radio" id="cuts_yes" class="chk_height_width" name="cuts" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="cuts_no" class="chk_height_width" name="cuts" value="no">
                 </div>
             </div>
             <div class="col-sm-12" style="padding-top: 10px;">
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>Skin Infection:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="skin_infection_yes" name="skin_infection" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="skin_infection_no" name="skin_infection" value="no"> 
+                    Yes&nbsp; <input type="radio" id="skin_infection_yes" class="chk_height_width" name="skin_infection" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="skin_infection_no" class="chk_height_width" name="skin_infection" value="no"> 
                 </div>
                 <div class="col-sm-4 col-lg-3 col-md-3">
                     <label>Swelling:</label> &nbsp;&nbsp;
-                    Yes&nbsp; <input type="radio" id="swelling_yes" name="nervous_disorders" value="yes">&nbsp;&nbsp;
-                    No&nbsp; <input type="radio" id="swelling_no" name="nervous_disorders" value="no">
+                    Yes&nbsp; <input type="radio" id="swelling_yes" class="chk_height_width" name="swelling" value="yes">&nbsp;&nbsp;
+                    No&nbsp; <input type="radio" id="swelling_no" class="chk_height_width" name="swelling" value="no">
                 </div>
             </div>
         </div>
@@ -106,40 +115,40 @@
                 <div class="col-sm-4 col-lg-5 col-md-3">
                     <label>Client Characteristics : </label> &nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_fair" class="chk_height_width" value="Fair">
-                    <label class="not-bold">Fair</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Fair</label>&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_red" class="chk_height_width" value="Red / aubum">
-                    <label class="not-bold">Red / aubum</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Red / aubum</label>&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_dark" class="chk_height_width" value="Dark">
-                    <label class="not-bold">Dark</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Dark</label>&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_greay" class="chk_height_width" value="Greay">
-                    <label class="not-bold">Greay</label>
+                    <label class="remove-bold">Greay</label>
                     <br>
                     <br>
                     <label>Tint Colour : </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_brown" class="chk_height_width" value="Brown">
-                    <label class="not-bold">Brown</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Brown</label>&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_black" class="chk_height_width" value="Black">
-                    <label class="not-bold">Black</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Black</label>&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_blue" class="chk_height_width" value="Blue">
-                    <label class="not-bold">Blue</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Blue</label>&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_blue_black" class="chk_height_width" value="Blue / Black">
-                    <label class="not-bold">Blue / Black</label>
+                    <label class="remove-bold">Blue / Black</label>
                     <br>
                     <br>
                     <label>Perming : </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_low" class="chk_height_width" value="Low">
-                    <label class="not-bold">Low</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Low</label>&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_medium" class="chk_height_width" value="Medium">
-                    <label class="not-bold">Medium</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Medium</label>&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_high" class="chk_height_width" value="High">
-                    <label class="not-bold">High</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">High</label>&nbsp;&nbsp;&nbsp;
                     <br>
                     <br>
                     <label>Lash type : </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_strip" class="chk_height_width" value="Strip">
-                    <label class="not-bold">Strip</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Strip</label>&nbsp;&nbsp;&nbsp;
                     <input type = "checkbox" id="chk_individual" class="chk_height_width" value="Individual">
-                    <label class="not-bold">Individual</label>&nbsp;&nbsp;&nbsp;
+                    <label class="remove-bold">Individual</label>&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
         </div>

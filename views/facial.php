@@ -29,6 +29,15 @@
         border-radius: 15px;
         cursor: crosshair;
     }
+    input[type=radio]:checked::before {
+    content: "";
+    border-radius: 50%;
+    width: .8rem !important;
+    height: .8rem !important;
+    margin: .1875rem;
+    background-color: #3582c4;
+    line-height: 1.14285714;
+}
 </style>
 </head>
 <body>
@@ -294,18 +303,18 @@
         <div class="row last-div-padding">
             <div class="col-sm-10">
                 <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "checkbox" id="chk_skin_textrure_poor" class="chk_height_width" value="Poor" name="skin_texture[]">
-                    <label class="form-check-label" for="chk_skin_textrure_poor">Poor</label>
+                    <input type = "radio" id="skin_texture_poor" class="chk_height_width" value="Poor" name="skin_teture_type[]">
+                    <label class="form-check-label" for="skin_textrure_poor">Poor</label>
                 </div>
 
                 <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "checkbox" id="chk_skin_textrure_average" class="chk_height_width" value="Average" name="skin_texture[]">
-                    <label class="form-check-label" for="chk_skin_textrure_average">Average</label>
+                    <input type = "radio" id="skin_texture_average" class="chk_height_width" value="Average" name="skin_teture_type[]">
+                    <label class="form-check-label" for="skin_textrure_average">Average</label>
                 </div>
 
                 <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "checkbox" id="chk_skin_textrure_good" class="chk_height_width" value="Good" name="skin_texture[]">
-                    <label class="form-check-label" for="chk_skin_textrure_good">Good</label>
+                    <input type = "radio" id="skin_textrure_good" class="chk_height_width" value="Good" name="skin_teture_type[]">
+                    <label class="form-check-label" for="skin_textrure_good">Good</label>
                 </div>
             </div>
         </div>
@@ -322,23 +331,24 @@
         <div class="row last-div-padding">
             <div class="col-sm-10">
                 <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "checkbox" id="chk_si_elasticity_poor" class="chk_height_width" value="Poor" name="si_elasticity[]">
-                    <label class="form-check-label" for="chk_si_elasticity_poor">Poor</label>
+                    <input type = "radio" id="si_elasticity_poor" class="chk_height_width" value="Poor" name="si_elasticity[]">
+                    <label class="form-check-label" for="si_elasticity_poor">Poor</label>
                 </div>
 
                 <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "checkbox" id="chk_si_elasticity_average" class="chk_height_width" value="Average" name="si_elasticity[]">
-                    <label class="form-check-label" for="chk_si_elasticity_average">Average</label>
+                    <input type = "radio" id="si_elasticity_average" class="chk_height_width" value="Average" name="si_elasticity[]">
+                    <label class="form-check-label" for="si_elasticity_average">Average</label>
                 </div>
 
                 <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "checkbox" id="chk_si_elasticity_good" class="chk_height_width" value="Good" name="si_elasticity[]">
-                    <label class="form-check-label" for="chk_si_elasticity_good">Good</label>
+                    <input type = "radio" id="si_elasticity_good" class="chk_height_width" value="Good" name="si_elasticity[]">
+                    <label class="form-check-label" for="si_elasticity_good">Good</label>
                 </div>
             </div>
         </div>
     </div>
-    <div class="section last-div-padding">
+    <div class=
+    "section last-div-padding">
         <div class="row section-title">
             <div class="col-sm-12">
                 <div class="col-sm-3">
@@ -349,18 +359,18 @@
         <div class="row last-div-padding">
             <div class="col-sm-10">
                 <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "checkbox" id="chk_muscle_tone_poor" class="chk_height_width" value="Poor" name="muscle_tone[]">
-                    <label class="form-check-label" for="chk_muscle_tone_poor">Poor</label>
+                    <input type = "radio" id="muscle_tone_poor" class="chk_height_width" value="Poor" name="muscle_tone[]">
+                    <label class="form-check-label" for="muscle_tone_poor">Poor</label>
                 </div>
 
                 <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "checkbox" id="chk_muscle_tone_average" class="chk_height_width" value="Average" name="muscle_tone[]">
-                    <label class="form-check-label" for="chk_muscle_tone_average">Average</label>
+                    <input type = "radio" id="muscle_tone_average" class="chk_height_width" value="Average" name="muscle_tone[]">
+                    <label class="form-check-label" for="muscle_tone_average">Average</label>
                 </div>
 
                 <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "checkbox" id="chk_muscle_tone_good" class="chk_height_width" value="Good" name="muscle_tone[]">
-                    <label class="form-check-label" for="chk_muscle_tone_good">Good</label>
+                    <input type = "radio" id="muscle_tone_good" class="chk_height_width" value="Good" name="muscle_tone[]">
+                    <label class="form-check-label" for="muscle_tone_good">Good</label>
                 </div>
             </div>
         </div>
