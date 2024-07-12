@@ -65,6 +65,7 @@
             </div>
         </div>
         <form action="" method="post" name="consent_forms" id="consent_forms" >
+            <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
             <div class="section">
                 <div class="row section-title">
                     <div class="col-sm-12" style="margin-top:20px !important">
@@ -301,89 +302,89 @@
                     </div>
                 </div>
 
-        <div class="row last-div-padding">
-            <div class="col-sm-10">
-                <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "radio" id="skin_texture_poor" class="chk_height_width" value="Poor" name="skin_teture_type[]">
-                    <label class="form-check-label" for="skin_textrure_poor">Poor</label>
+                <div class="row last-div-padding">
+                    <div class="col-sm-10">
+                        <div class="col-sm-4 col-lg-2 col-md-3">
+                            <input type = "radio" id="skin_texture_poor" class="chk_height_width" value="Poor" name="skin_teture_type[]">
+                            <label class="form-check-label" for="skin_textrure_poor">Poor</label>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-2 col-md-3">
+                            <input type = "radio" id="skin_texture_average" class="chk_height_width" value="Average" name="skin_teture_type[]">
+                            <label class="form-check-label" for="skin_textrure_average">Average</label>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-2 col-md-3">
+                            <input type = "radio" id="skin_textrure_good" class="chk_height_width" value="Good" name="skin_teture_type[]">
+                            <label class="form-check-label" for="skin_textrure_good">Good</label>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "radio" id="skin_texture_average" class="chk_height_width" value="Average" name="skin_teture_type[]">
-                    <label class="form-check-label" for="skin_textrure_average">Average</label>
+            </div>
+            <div class="section last-div-padding">
+                <div class="row section-title">
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            <p>Si Elasticity :</p>
+                        </div>
+                    </div>
                 </div>
+                <div class="row last-div-padding">
+                    <div class="col-sm-10">
+                        <div class="col-sm-4 col-lg-2 col-md-3">
+                            <input type = "radio" id="si_elasticity_poor" class="chk_height_width" value="Poor" name="si_elasticity[]">
+                            <label class="form-check-label" for="si_elasticity_poor">Poor</label>
+                        </div>
 
-                <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "radio" id="skin_textrure_good" class="chk_height_width" value="Good" name="skin_teture_type[]">
-                    <label class="form-check-label" for="skin_textrure_good">Good</label>
+                        <div class="col-sm-4 col-lg-2 col-md-3">
+                            <input type = "radio" id="si_elasticity_average" class="chk_height_width" value="Average" name="si_elasticity[]">
+                            <label class="form-check-label" for="si_elasticity_average">Average</label>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-2 col-md-3">
+                            <input type = "radio" id="si_elasticity_good" class="chk_height_width" value="Good" name="si_elasticity[]">
+                            <label class="form-check-label" for="si_elasticity_good">Good</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class=
+                 "section last-div-padding">
+                <div class="row section-title">
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            <p>Muscle Tone :</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row last-div-padding">
+                    <div class="col-sm-10">
+                        <div class="col-sm-4 col-lg-2 col-md-3">
+                            <input type = "radio" id="muscle_tone_poor" class="chk_height_width" value="Poor" name="muscle_tone[]">
+                            <label class="form-check-label" for="muscle_tone_poor">Poor</label>
+                        </div>
 
-    </div>
-    <div class="section last-div-padding">
-        <div class="row section-title">
-            <div class="col-sm-12">
-                <div class="col-sm-3">
-                    <p>Si Elasticity :</p>
+                        <div class="col-sm-4 col-lg-2 col-md-3">
+                            <input type = "radio" id="muscle_tone_average" class="chk_height_width" value="Average" name="muscle_tone[]">
+                            <label class="form-check-label" for="muscle_tone_average">Average</label>
+                        </div>
+
+                        <div class="col-sm-4 col-lg-2 col-md-3">
+                            <input type = "radio" id="muscle_tone_good" class="chk_height_width" value="Good" name="muscle_tone[]">
+                            <label class="form-check-label" for="muscle_tone_good">Good</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row last-div-padding">
-            <div class="col-sm-10">
-                <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "radio" id="si_elasticity_poor" class="chk_height_width" value="Poor" name="si_elasticity[]">
-                    <label class="form-check-label" for="si_elasticity_poor">Poor</label>
+            <div class="section">
+                <div class="row section-title">
+                    <div class="col-sm-12">
+                        <div class="col-sm-3">
+                            <!-- <p>Skin & Nail Analysis:</p> -->
+                        </div>
+                    </div>
                 </div>
-
-                <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "radio" id="si_elasticity_average" class="chk_height_width" value="Average" name="si_elasticity[]">
-                    <label class="form-check-label" for="si_elasticity_average">Average</label>
-                </div>
-
-                <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "radio" id="si_elasticity_good" class="chk_height_width" value="Good" name="si_elasticity[]">
-                    <label class="form-check-label" for="si_elasticity_good">Good</label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class=
-    "section last-div-padding">
-        <div class="row section-title">
-            <div class="col-sm-12">
-                <div class="col-sm-3">
-                    <p>Muscle Tone :</p>
-                </div>
-            </div>
-        </div>
-        <div class="row last-div-padding">
-            <div class="col-sm-10">
-                <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "radio" id="muscle_tone_poor" class="chk_height_width" value="Poor" name="muscle_tone[]">
-                    <label class="form-check-label" for="muscle_tone_poor">Poor</label>
-                </div>
-
-                <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "radio" id="muscle_tone_average" class="chk_height_width" value="Average" name="muscle_tone[]">
-                    <label class="form-check-label" for="muscle_tone_average">Average</label>
-                </div>
-
-                <div class="col-sm-4 col-lg-2 col-md-3">
-                    <input type = "radio" id="muscle_tone_good" class="chk_height_width" value="Good" name="muscle_tone[]">
-                    <label class="form-check-label" for="muscle_tone_good">Good</label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="row section-title">
-            <div class="col-sm-12">
-                <div class="col-sm-3">
-                    <!-- <p>Skin & Nail Analysis:</p> -->
-                </div>
-            </div>
-        </div>
 
                 <div class="row">
                     <div class="col-sm-10">
@@ -539,7 +540,6 @@
                         </div>
                         <div class="col-sm-4">
                             <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                            <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?=SC_PLUGIN_DIR_URL?>">
                             <canvas id="customer_signature" name= "customer_signature" width="320" height="160"></canvas>
                         </div>
                         <div class="col-sm-1">
@@ -552,25 +552,25 @@
                         </div>
                     </div> 
                 </div>
-<!--                <div class="row" style="margin-top:30px;">
-                    <div class="col-sm-10">
-                        <div class="col-sm-2">
-                            <label>Therapist Signature</label>
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                            <canvas id="therapist_signature" name= "therapist_signature" width="320" height="160"></canvas>
-                        </div>
-                        <div class="col-sm-1">
-                            <label style="text-align: right;">Date</label>
-                        </div>
-                        <div class="col-sm-2">
-                            <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date">
-                        </div>
-                        <div class="col-sm-1">
-                        </div>
-                    </div> 
-                </div>-->
+                <!--                <div class="row" style="margin-top:30px;">
+                                    <div class="col-sm-10">
+                                        <div class="col-sm-2">
+                                            <label>Therapist Signature</label>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
+                                            <canvas id="therapist_signature" name= "therapist_signature" width="320" height="160"></canvas>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <label style="text-align: right;">Date</label>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date">
+                                        </div>
+                                        <div class="col-sm-1">
+                                        </div>
+                                    </div> 
+                                </div>-->
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-sm-10">
                         <div class="col-sm-7">
