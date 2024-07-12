@@ -72,9 +72,6 @@ function addMainform() {
 }
 
 function otherform() {
-    //print_r($_POST);
-    //exit;
-    // header('Content-Type: application/x-www-form-urlencoded');
     if (isset($_SESSION)) {
         require_once(SC_PLUGIN_DIR_PATH . 'constants.php');
         global $serviceconfig;
@@ -86,46 +83,18 @@ function otherform() {
             require_once('../../../wp-includes/wp-db.php');
         }
         if (isset($_POST['other_btn_save']) && $_POST['other_btn_save'] == "submit") {
-
-            if (isset($_POST['imgData'])) {
-                $imgData = $_POST['imgData'];
-                $imgData = str_replace('data:image/png;base64,', '', $imgData);
-                $imgData = str_replace(' ', '+', $imgData);
-                $data = base64_decode($imgData);
-    
-                $directory = SC_PLUGIN_DIR_PATH . 'upload/signature';
-                
-                if (!file_exists($directory)) {
-                    if (!mkdir($directory, 0777, true)) {
-                        die('Failed to create folders...');
-                    }
-                }
-                
-                $fileName = $directory . '/signature_' . uniqid() . '.png';
-                
-                if (file_put_contents($fileName, $data) === false) {
-                    die('Failed to write file...');
-                } else {
-                    echo 'File saved successfully to ' . $fileName;
-                }
-            } else {
-                //die('No image data received...');
-            }
-
-
-
-
             $table_name = $table_prefix . "service_consent";
             $arrData = array(
                 'consent_customer_id' => $_SESSION['customer_id'],
                 'customer_service_date' => date('Y-m-d H:i:s'),
                 'customer_form_id' => $_SESSION['selected_forms'][$_SESSION['form_index']],
                 'customer_form_value_json' => json_encode($_POST),
-                'customer_signature' => $filename,
+                'customer_signature' => $_POST['hdn_customer_signature'],
                 'customer_signature_date' => date('Y-m-d H:i:s')
             );
 
             $wpdb->insert($table_name, $arrData);
+           
             //$filepath = SC_PLUGIN_DIR_PATH . 'views/' . $serviceconfig['templates'][$_POST['chk_service'][0]];
             $filepath = admin_url() . "?page=" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']]][0];
             //echo $filepath;exit;
@@ -165,51 +134,13 @@ function render_service_forms() {
 }
 function service_list()
 {
-      // Creating an instance
-      $table = new ListConsent();
-
-      echo '<div class="wrap"><h2>Customer Consents</h2>';
-      // Prepare table
-      $table->prepare_items();
-      // Display table
-      $table->display();
-      echo '</div>';
-}
-/**
- * List page handler
- *
- * This function renders our custom table
- * Notice how we display message about successfull deletion
- * Actualy this is very easy, and you can add as many features
- * as you want.
- *
- * Look into /wp-admin/includes/class-wp-*-list-table.php for examples
- */
-function service_list1() {
-    global $wpdb;
-
+    // Creating an instance
     $table = new ListConsent();
+
+    echo '<div class="wrap"><h2>Customer Consents</h2>';
+    // Prepare table
     $table->prepare_items();
-
-    $message = '';
-    if ('delete' === $table->current_action()) {
-        $message = '<div class="updated below-h2" id="message"><p>' . sprintf(__('Items deleted: %d', 'cltd_example'), count($_REQUEST['id'])) . '</p></div>';
-    }
-    ?>
-    <div class="wrap">
-
-        <div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
-        <h2><?php _e('Persons', 'cltd_example') ?> <a class="add-new-h2"
-                                                     href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=persons_form'); ?>"><?php _e('Add new', 'cltd_example') ?></a>
-        </h2>
-        <?php echo $message; ?>
-
-        <form id="persons-table" method="GET">
-            <input type="hidden" name="page" value="<?php //echo $_REQUEST['page'] ?>"/>
-            <?php $table->display() ?>
-        </form>
-
-    </div>
-    <?php
+    // Display table
+    $table->display();
+    echo '</div>';
 }
-?>
