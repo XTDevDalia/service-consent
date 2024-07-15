@@ -49,7 +49,7 @@
                             <div class="col-sm-6"><h4 style="font-weight: 600;">Hair Colour Services Customer Consent Form:</h4></div>
                             <div class="col-sm-3"></div>
                             <div class="col-sm-3">
-                                <p class="textalign">No.: 1647</p>
+                                <p class="textalign">No.: <?= (isset($_SESSION['customer_no'])) ? $_SESSION['customer_no'] : ''; ?></p>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                                 <label>Date : </label>
                             </div>
                             <div class="col-sm-3">
-                                <input type="date" id="main_date" name="main_date" class="form-control">
+                                <input type="date" id="main_date" name="main_date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
                             </div>
                         </div>
                         <div class="col-sm-10" style="margin-top: 10px;">
@@ -80,7 +80,7 @@
                                 <label>Name : </label>
                             </div>
                             <div class="col-sm-3">
-                                <input type="text" id="txt_name" name="txt_name" class="form-control">
+                            <?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?>
                             </div>
                         </div>
                     </div>
@@ -182,9 +182,6 @@
                         </div>
                         <div class="col-sm-1">
                             <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
-                        </div>
-                        <div class="col-sm-1">
-                            <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Cancel</button>
                         </div>
                     </div>      
                 </div>

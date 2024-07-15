@@ -52,7 +52,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3">
-                        <p class="textalign">No.: 0398</p>
+                        <p class="textalign">No.: <?= (isset($_SESSION['customer_no'])) ? $_SESSION['customer_no'] : ''; ?></p>
                     </div>
                 </div>
             </div>
@@ -100,10 +100,10 @@
             <div class="row bgcolor last-div-padding" style="margin-top: 30px;">
                 <div class="col-sm-12">
                     <div class="col-sm-2" >
-                        <label>Name</label>
+                        <label>Name:</label>
                     </div>
                     <div class="col-sm-3">
-                        <input type="text" id="txt_client_name" class="form-control" name="txt_client_name">
+                    <?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?>
                     </div>
                     <div class="col-sm-2">
                         <label>Client Signature</label>
@@ -123,7 +123,7 @@
                         <label>Date</label>
                     </div>
                     <div class="col-sm-2">
-                        <input type="date" id="client_date" class="form-control" name="client_date">
+                        <input type="date" id="client_date" class="form-control" name="client_date" value="<?php echo date('Y-m-d'); ?>">
                     </div>
                 </div>
             </div>
@@ -154,19 +154,17 @@
                         <label>Date</label>
                     </div>
                     <div class="col-sm-2">
-                        <input type="date" id="therapist_date" class="form-control" name="therapist_date">
+                        <input type="date" id="therapist_date" class="form-control" name="therapist_date" value="<?php echo date('Y-m-d'); ?>">
                     </div>
                 </div>
             </div>
 
             <div class="row" style="margin-top: 10px;">
-                <div class="col-sm-10">
-                    <div class="col-sm-8">
+                <div class="col-sm-12">
+                    <div class="col-sm-10">
                     </div>
                     <div class="col-sm-1">
                         <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
-                    </div>
-                    <div class="col-sm-1">
                     </div>
                 </div>    
             </div>

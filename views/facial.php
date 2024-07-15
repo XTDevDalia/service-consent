@@ -549,7 +549,7 @@
                             <label style="text-align: right;">Date</label>
                         </div>
                         <div class="col-sm-2">
-                            <input type="date" id="customer_signature_date" class="form-control" name="customer_signature_date">
+                            <input type="date" id="customer_signature_date" class="form-control" name="customer_signature_date" value="<?php echo date('Y-m-d'); ?>">
                         </div>
                     </div> 
                 </div>
@@ -569,20 +569,19 @@
                             <label style="text-align: right;">Date</label>
                         </div>
                         <div class="col-sm-2">
-                            <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date">
+                            <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date" value="<?php echo date('Y-m-d'); ?>">
                         </div>
                         
                     </div> 
                 </div>
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-sm-10">
-                        <div class="col-sm-7">
+                        <div class="col-sm-9">
                         </div>
                         <div class="col-sm-1">
                             <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
                         </div>
-                        <div class="col-sm-1">
-                        </div>
+                        
                         <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
                         <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button> -->
                     </div>    
