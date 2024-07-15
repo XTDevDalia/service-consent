@@ -48,8 +48,6 @@ function add_service_consent_js() {
     wp_enqueue_script('jqueryjs');
     wp_register_script('mainjs', '/wp-content/plugins/service-consent/js/main.js');
     wp_enqueue_script('mainjs');
-    wp_register_script('signaturejs', '/wp-content/plugins/service-consent/js/signature.js');
-    wp_enqueue_script('signaturejs');
     wp_register_style('consentpluginstylesheet', '/wp-content/plugins/service-consent/css/style.css');
     wp_register_style('prefix_bootstrap', '/wp-content/plugins/service-consent/css/bootstrap.min.css');
     wp_enqueue_style('consentpluginstylesheet');

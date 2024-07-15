@@ -1,4 +1,5 @@
 <?php
+
 function service_menu() {
     add_menu_page(
             'ServiceConsent',
@@ -96,7 +97,7 @@ function otherform() {
             );
 
             $wpdb->insert($table_name, $arrData);
-           
+
             //$filepath = SC_PLUGIN_DIR_PATH . 'views/' . $serviceconfig['templates'][$_POST['chk_service'][0]];
             $filepath = admin_url() . "?page=" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']]][0];
             //echo $filepath;exit;
@@ -132,10 +133,12 @@ function render_service_forms() {
     if ($_SESSION) {
         // Load your form(s) here
         include(SC_PLUGIN_DIR_PATH . "views/" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index'] - 1]][1]);
+        wp_register_script('signaturejs', '/wp-content/plugins/service-consent/js/signature.js');
+        wp_enqueue_script('signaturejs');
     }
 }
-function service_list()
-{
+
+function service_list() {
     // Creating an instance
     $table = new ListConsent();
 
