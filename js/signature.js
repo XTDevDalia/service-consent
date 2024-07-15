@@ -11,12 +11,12 @@ $(function () {
     })();
 
     var customer_canvas = document.getElementById("customer_signature");
-   // var therapist_canvas = document.getElementById("therapist_signature");
+    var therapist_canvas = document.getElementById("therapist_signature");
     var customer_clearBtn = document.getElementById("btn_customer_cancel");
-    //var therapist_clearBtn = document.getElementById("btn_customer_cancel");
+    var therapist_clearBtn = document.getElementById("btn_customer_cancel");
 
     canvasOperations(customer_canvas, customer_clearBtn);
-    //canvasOperations(therapist_canvas,therapist_clearBtn);
+    canvasOperations(therapist_canvas,therapist_clearBtn);
 
     function canvasOperations(canvas, clearBtn) {
         // var canvas = $(".signatureclass");
@@ -135,6 +135,23 @@ $(function () {
             }
         };
         xhr.send("imgData=" + encodeURIComponent(dataUrl));
+
+
+
+        var dataUrl1 = therapist_canvas.toDataURL();
+        var xhr = new XMLHttpRequest();
+        var sign_file_path = $('#hdn_plugin_url').val();
+        xhr.open("POST", sign_file_path + "save_signature.php", false);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var sig_details = JSON.parse(xhr.response);
+                $('#hdn_therapist_signature').val(sig_details.signature_name);
+                $("#consent_forms").submit();
+            }
+        };
+        xhr.send("imgData=" + encodeURIComponent(dataUrl1));
+
     }, false);
     return true;
 });
