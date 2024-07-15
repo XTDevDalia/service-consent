@@ -11,12 +11,12 @@ $(function () {
     })();
 
     var customer_canvas = document.getElementById("customer_signature");
-    var therapist_canvas = document.getElementById("therapist_signature");
+   // var therapist_canvas = document.getElementById("therapist_signature");
     var customer_clearBtn = document.getElementById("btn_customer_cancel");
-    var therapist_clearBtn = document.getElementById("btn_customer_cancel");
+    //var therapist_clearBtn = document.getElementById("btn_customer_cancel");
 
     canvasOperations(customer_canvas, customer_clearBtn);
-    canvasOperations(therapist_canvas,therapist_clearBtn);
+    //canvasOperations(therapist_canvas,therapist_clearBtn);
 
     function canvasOperations(canvas, clearBtn) {
         // var canvas = $(".signatureclass");
@@ -137,4 +137,4 @@ $(function () {
         xhr.send("imgData=" + encodeURIComponent(dataUrl));
     }, false);
     return true;
-})();
+});

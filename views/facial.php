@@ -579,7 +579,7 @@
                             <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
                         </div>
                         <div class="col-sm-1">
-                            <button class="btn btn-default" id="btn_cancel" name="btn_cancel">Cancel</button>
+                            <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Cancel</button>
                         </div>
                         <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
                         <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button> -->
