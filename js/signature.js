@@ -131,26 +131,23 @@ $(function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var sig_details = JSON.parse(xhr.response);
                 $('#hdn_customer_signature').val(sig_details.signature_name);
-                $("#consent_forms").submit();
             }
         };
         xhr.send("imgData=" + encodeURIComponent(dataUrl));
 
-
-
         var dataUrl1 = therapist_canvas.toDataURL();
-        var xhr = new XMLHttpRequest();
-        var sign_file_path = $('#hdn_plugin_url').val();
-        xhr.open("POST", sign_file_path + "save_signature.php", false);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var sig_details = JSON.parse(xhr.response);
+        var xhr1 = new XMLHttpRequest();
+        var sign_file_path1 = $('#hdn_plugin_url').val();
+        xhr1.open("POST", sign_file_path1 + "save_signature.php", false);
+        xhr1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr1.onreadystatechange = function () {
+            if (xhr1.readyState == 4 && xhr1.status == 200) {
+                var sig_details = JSON.parse(xhr1.response);
                 $('#hdn_therapist_signature').val(sig_details.signature_name);
                 $("#consent_forms").submit();
             }
         };
-        xhr.send("imgData=" + encodeURIComponent(dataUrl1));
+        xhr1.send("imgData=" + encodeURIComponent(dataUrl1));
 
     }, false);
     return true;
