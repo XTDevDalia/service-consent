@@ -88,7 +88,7 @@ function otherform() {
             $arrData = array(
                 'consent_customer_id' => $_SESSION['customer_id'],
                 'customer_service_date' => date('Y-m-d H:i:s'),
-                'customer_form_id' => $_SESSION['selected_forms'][$_SESSION['form_index']],
+                'customer_form_id' => $_SESSION['selected_forms'][$_SESSION['form_index'] - 1],
                 'customer_form_value_json' => json_encode($_POST),
                 'customer_signature' => $_POST['hdn_customer_signature'],
                 'customer_signature_date' => date('Y-m-d H:i:s')
@@ -100,7 +100,11 @@ function otherform() {
             $filepath = admin_url() . "?page=" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']]][0];
             //echo $filepath;exit;
             $_SESSION['form_index'] = $_SESSION['form_index'] + 1;
-            wp_redirect($filepath);
+            if ($_SESSION['form_index'] == count($_SESSION['selected_forms'])) {
+                wp_redirect(admin_url() . "?page=list-consent");
+            } else {
+                wp_redirect($filepath);
+            }
             exit;
         }
     } else {
