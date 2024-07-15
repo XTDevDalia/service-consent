@@ -188,6 +188,7 @@
                 </div>
                 <div class="col-sm-3">
                     <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
+                    <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
                     <canvas id="customer_signature" name= "customer_signature" width="320" height="160"></canvas>
                 </div>
                 <div class="col-sm-1">
