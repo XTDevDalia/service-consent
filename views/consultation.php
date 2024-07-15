@@ -1,19 +1,25 @@
-<style>
-        #sig-canvas {
-            border: 2px dotted #CCCCCC;
-            border-radius: 15px;
-            cursor: crosshair;
-        }
-        input[type=radio]:checked::before {
-    content: "";
-    border-radius: 50%;
-    width: .8rem !important;
-    height: .8rem !important;
-    margin: .1875rem;
-    background-color: #3582c4;
-    line-height: 1.14285714;
-}
-    </style>        
+<html>
+    <head>
+        <style>
+                #customer_signature {
+                    border: 2px dotted #CCCCCC;
+                    border-radius: 15px;
+                    cursor: crosshair;
+                }
+                input[type=radio]:checked::before {
+            content: "";
+            border-radius: 50%;
+            width: .8rem !important;
+            height: .8rem !important;
+            margin: .1875rem;
+            background-color: #3582c4;
+            line-height: 1.14285714;
+            }
+         </style>
+    </head>
+    <body>
+    <form action="" method="post" name="consent_forms" id="consent_forms" >
+        <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">        
         <div class="row" style="margin-top:30px;">
             <div class="col-sm-12">
                 <!-- <div class="col-sm-4"></div> -->
@@ -173,7 +179,7 @@
             <div class="col-sm-11">
                 <p>I am familier with the treatments and I agree to use the equipments / products at my own risk, I understand that Brow Art Beauty salon makes no warranties or representation regarding medical, therapeutic or cosmetic benefits either expressed or implied, I hereby release Brow Art Beauty salon and it's employee from all claims now or in the future from any injury or damages in connection with the use of the equipment. I confirm inform Brow Art Beauty salon of any changes in circumstances relevant to the above questions.</p>
             </div>
-    </div>
+        </div>
         </div>
         <div class="row bgcolor last-div-padding" style="margin-top: 10px;">
             <div class="col-sm-10">
@@ -181,12 +187,12 @@
                     <label>Signature</label>
                 </div>
                 <div class="col-sm-3">
-                    <!-- <input type="text" id="txt_client_signature" name="txt_client_signature" class="form-control"> -->
-
-                    <canvas id="sig-canvas" width="160" height="160">
-		 			Get a better browser, bro.
-		 		</canvas>
+                    <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
+                    <canvas id="customer_signature" name= "customer_signature" width="320" height="160"></canvas>
                 </div>
+                <div class="col-sm-1">
+                                    <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+                                </div>
                 <div class="col-sm-1">
                     <label>Date</label>
                 </div>
@@ -201,147 +207,11 @@
                 <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1">
-                    <button type="submit" id="btn_submit" name="btn_submit" class="btn btn-primary" style="margin-left: -25px;">Save Data</button>
+                    <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
                 </div>
                 <div class="col-sm-1">
-                <button class="btn btn-default" id="btn_cancel" name="btn_cancel">Cancel</button>
                 </div>
-            </div>    
+            </div>
         </div>
-        <script>
-    (function() {
-  window.requestAnimFrame = (function(callback) {
-    return window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.oRequestAnimationFrame ||
-      window.msRequestAnimaitonFrame ||
-      function(callback) {
-        window.setTimeout(callback, 1000 / 60);
-      };
-  })();
-
-  var canvas = document.getElementById("sig-canvas");
-  var ctx = canvas.getContext("2d");
-  ctx.strokeStyle = "#222222";
-  ctx.lineWidth = 4;
-
-  var drawing = false;
-  var mousePos = {
-    x: 0,
-    y: 0
-  };
-  var lastPos = mousePos;
-
-  canvas.addEventListener("mousedown", function(e) {
-    drawing = true;
-    lastPos = getMousePos(canvas, e);
-  }, false);
-
-  canvas.addEventListener("mouseup", function(e) {
-    drawing = false;
-  }, false);
-
-  canvas.addEventListener("mousemove", function(e) {
-    mousePos = getMousePos(canvas, e);
-  }, false);
-
-  // Add touch event support for mobile
-  canvas.addEventListener("touchstart", function(e) {
-
-  }, false);
-
-  canvas.addEventListener("touchmove", function(e) {
-    var touch = e.touches[0];
-    var me = new MouseEvent("mousemove", {
-      clientX: touch.clientX,
-      clientY: touch.clientY
-    });
-    canvas.dispatchEvent(me);
-  }, false);
-
-  canvas.addEventListener("touchstart", function(e) {
-    mousePos = getTouchPos(canvas, e);
-    var touch = e.touches[0];
-    var me = new MouseEvent("mousedown", {
-      clientX: touch.clientX,
-      clientY: touch.clientY
-    });
-    canvas.dispatchEvent(me);
-  }, false);
-
-  canvas.addEventListener("touchend", function(e) {
-    var me = new MouseEvent("mouseup", {});
-    canvas.dispatchEvent(me);
-  }, false);
-
-  function getMousePos(canvasDom, mouseEvent) {
-    var rect = canvasDom.getBoundingClientRect();
-    return {
-      x: mouseEvent.clientX - rect.left,
-      y: mouseEvent.clientY - rect.top
-    }
-  }
-
-  function getTouchPos(canvasDom, touchEvent) {
-    var rect = canvasDom.getBoundingClientRect();
-    return {
-      x: touchEvent.touches[0].clientX - rect.left,
-      y: touchEvent.touches[0].clientY - rect.top
-    }
-  }
-
-  function renderCanvas() {
-    if (drawing) {
-      ctx.moveTo(lastPos.x, lastPos.y);
-      ctx.lineTo(mousePos.x, mousePos.y);
-      ctx.stroke();
-      lastPos = mousePos;
-    }
-  }
-
-  // Prevent scrolling when touching the canvas
-  document.body.addEventListener("touchstart", function(e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, false);
-  document.body.addEventListener("touchend", function(e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, false);
-  document.body.addEventListener("touchmove", function(e) {
-    if (e.target == canvas) {
-      e.preventDefault();
-    }
-  }, false);
-
-  (function drawLoop() {
-    requestAnimFrame(drawLoop);
-    renderCanvas();
-  })();
-
-  function clearCanvas() {
-    canvas.width = canvas.width;
-  }
-
-  // Set up the UI
-  var sigText = document.getElementById("sig-dataUrl");
-  var sigImage = document.getElementById("sig-image");
-  var clearBtn = document.getElementById("btn_cancel");
-  var submitBtn = document.getElementById("btn_submit");
-  clearBtn.addEventListener("click", function(e) {
-    clearCanvas();
-    sigText.innerHTML = "Data URL for your signature will go here!";
-    sigImage.setAttribute("src", "");
-  }, false);
-  submitBtn.addEventListener("click", function(e) {
-    var dataUrl = canvas.toDataURL();
-    sigText.innerHTML = dataUrl;
-    sigImage.setAttribute("src", dataUrl);
-  }, false);
-
-})();
-
-</script>
+    </body>
+</html>

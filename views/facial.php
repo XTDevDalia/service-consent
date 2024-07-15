@@ -543,12 +543,13 @@
                             <canvas id="customer_signature" name= "customer_signature" width="320" height="160"></canvas>
                         </div>
                         <div class="col-sm-1">
+                            <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+                        </div>
+                        <div class="col-sm-1">
                             <label style="text-align: right;">Date</label>
                         </div>
                         <div class="col-sm-2">
                             <input type="date" id="customer_signature_date" class="form-control" name="customer_signature_date">
-                        </div>
-                        <div class="col-sm-1">
                         </div>
                     </div> 
                 </div>
@@ -562,13 +563,15 @@
                             <canvas id="therapist_signature" name= "therapist_signature" width="320" height="160"></canvas>
                         </div>
                         <div class="col-sm-1">
+                            <button class="btn btn-default" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
+                        </div>
+                        <div class="col-sm-1">
                             <label style="text-align: right;">Date</label>
                         </div>
                         <div class="col-sm-2">
                             <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date">
                         </div>
-                        <div class="col-sm-1">
-                        </div>
+                        
                     </div> 
                 </div>
                 <div class="row" style="margin-top: 10px;">
@@ -579,7 +582,6 @@
                             <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
                         </div>
                         <div class="col-sm-1">
-                            <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Cancel</button>
                         </div>
                         <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
                         <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button> -->

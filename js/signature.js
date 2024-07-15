@@ -13,7 +13,7 @@ $(function () {
     var customer_canvas = document.getElementById("customer_signature");
     var therapist_canvas = document.getElementById("therapist_signature");
     var customer_clearBtn = document.getElementById("btn_customer_cancel");
-    var therapist_clearBtn = document.getElementById("btn_customer_cancel");
+    var therapist_clearBtn = document.getElementById("btn_therapist_cancel");
 
     canvasOperations(customer_canvas, customer_clearBtn);
     canvasOperations(therapist_canvas,therapist_clearBtn);
@@ -111,14 +111,17 @@ $(function () {
             requestAnimFrame(drawLoop);
             renderCanvas();
         })();
-
-        function clearCanvas() {
-            canvas.width = canvas.width;
-        }
-        clearBtn.addEventListener("click", function (e) {
-            clearCanvas();
-        }, false);
     }
+    therapist_clearBtn.addEventListener("click", function (e) {
+        therapist_canvas.width = therapist_canvas.width;
+        e.preventDefault();
+    }, false);
+
+    customer_clearBtn.addEventListener("click", function (e) {
+        customer_canvas.width = customer_canvas.width;
+        e.preventDefault();
+    }, false);
+
 
     var submitBtn = document.getElementById("other_btn_save");
     submitBtn.addEventListener("click", function (e) {
