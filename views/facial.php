@@ -552,25 +552,25 @@
                         </div>
                     </div> 
                 </div>
-                <!--                <div class="row" style="margin-top:30px;">
-                                    <div class="col-sm-10">
-                                        <div class="col-sm-2">
-                                            <label>Therapist Signature</label>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                                            <canvas id="therapist_signature" name= "therapist_signature" width="320" height="160"></canvas>
-                                        </div>
-                                        <div class="col-sm-1">
-                                            <label style="text-align: right;">Date</label>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date">
-                                        </div>
-                                        <div class="col-sm-1">
-                                        </div>
-                                    </div> 
-                                </div>-->
+                <div class="row" style="margin-top:30px;">
+                    <div class="col-sm-10">
+                        <div class="col-sm-2">
+                            <label>Therapist Signature</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
+                            <canvas id="therapist_signature" name= "therapist_signature" width="320" height="160"></canvas>
+                        </div>
+                        <div class="col-sm-1">
+                            <label style="text-align: right;">Date</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date">
+                        </div>
+                        <div class="col-sm-1">
+                        </div>
+                    </div> 
+                </div>
                 <div class="row" style="margin-top: 10px;">
                     <div class="col-sm-10">
                         <div class="col-sm-7">

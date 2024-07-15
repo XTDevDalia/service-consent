@@ -90,7 +90,9 @@ function otherform() {
                 'customer_form_id' => $_SESSION['selected_forms'][$_SESSION['form_index']],
                 'customer_form_value_json' => json_encode($_POST),
                 'customer_signature' => $_POST['hdn_customer_signature'],
-                'customer_signature_date' => date('Y-m-d H:i:s')
+                'customer_signature_date' => date('Y-m-d H:i:s'),
+                'therapist_signature' => $_POST['hdn_therapist_signature'],
+                'therapist_signature_date' => date('Y-m-d H:i:s')
             );
 
             $wpdb->insert($table_name, $arrData);
