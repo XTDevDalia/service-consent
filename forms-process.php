@@ -102,7 +102,7 @@ function otherform() {
             $filepath = admin_url() . "?page=" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']]][0];
             //echo $filepath;exit;
             $_SESSION['form_index'] = $_SESSION['form_index'] + 1;
-            if ($_SESSION['form_index'] == count($_SESSION['selected_forms'])) {
+            if (($_SESSION['form_index']-1) == count($_SESSION['selected_forms'])) {
                 wp_redirect(admin_url() . "admin.php?page=list-consent");
             } else {
                 wp_redirect($filepath);
