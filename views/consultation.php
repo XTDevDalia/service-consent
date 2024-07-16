@@ -122,7 +122,7 @@
                 <div class="row last-div-padding bgcolor">
                     <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-5 col-md-3">
-                            <label>Client Characteristics : </label> &nbsp;&nbsp;&nbsp;
+                            <label style="padding-right:20px;">Client Characteristics : </label> 
                             <input type = "checkbox" id="chk_fair" class="chk_height_width" value="Fair">
                             <label class="remove-bold">Fair</label>&nbsp;&nbsp;&nbsp;
                             <input type = "checkbox" id="chk_red" class="chk_height_width" value="Red / aubum">
@@ -133,7 +133,7 @@
                             <label class="remove-bold">Greay</label>
                             <br>
                             <br>
-                            <label>Tint Colour : </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label style="padding-right:20px;">Tint Colour : </label> 
                             <input type = "checkbox" id="chk_brown" class="chk_height_width" value="Brown">
                             <label class="remove-bold">Brown</label>&nbsp;&nbsp;&nbsp;
                             <input type = "checkbox" id="chk_black" class="chk_height_width" value="Black">
@@ -144,7 +144,7 @@
                             <label class="remove-bold">Blue / Black</label>
                             <br>
                             <br>
-                            <label>Perming : </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label style="padding-right:20px;">Perming : </label> 
                             <input type = "checkbox" id="chk_low" class="chk_height_width" value="Low">
                             <label class="remove-bold">Low</label>&nbsp;&nbsp;&nbsp;
                             <input type = "checkbox" id="chk_medium" class="chk_height_width" value="Medium">
@@ -153,7 +153,7 @@
                             <label class="remove-bold">High</label>&nbsp;&nbsp;&nbsp;
                             <br>
                             <br>
-                            <label>Lash type : </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label style="padding-right:20px;">Lash type : </label> 
                             <input type = "checkbox" id="chk_strip" class="chk_height_width" value="Strip">
                             <label class="remove-bold">Strip</label>&nbsp;&nbsp;&nbsp;
                             <input type = "checkbox" id="chk_individual" class="chk_height_width" value="Individual">
