@@ -54,57 +54,57 @@
                 <div class="row last-div-padding bgcolor">
                     <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Scar Tissue:</label> &nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="scar_tissue_yes" class="chk_height_width"  name="scar_tissue" value="yes">&nbsp;&nbsp;
+                            <label>Scar Tissue:</label> 
+                            Yes&nbsp; <input type="radio" id="scar_tissue_yes" class="chk_height_width"  name="scar_tissue" value="yes">
                             No&nbsp; <input type="radio" id="scar_tissue_no" class="chk_height_width" name="scar_tissue" value="no"> 
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Eye Infection:</label> &nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="eye_infection_yes" class="chk_height_width" name="eye_infection" value="yes">&nbsp;&nbsp;
+                            <label>Eye Infection:</label> 
+                            Yes&nbsp; <input type="radio" id="eye_infection_yes" class="chk_height_width" name="eye_infection" value="yes">
                             No&nbsp; <input type="radio" id="eye_infection_no" class="chk_height_width" name="eye_infection" value="no">
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Skin Disorders:</label> &nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="skin_disorders_yes" class="chk_height_width" name="skin_disorders" value="yes">&nbsp;&nbsp;
+                            <label>Skin Disorders:</label> 
+                            Yes&nbsp; <input type="radio" id="skin_disorders_yes" class="chk_height_width" name="skin_disorders" value="yes">
                             No&nbsp; <input type="radio" id="skin_disorders_no" class="chk_height_width" name="skin_disorders" value="no">
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Contact Lenses:</label> &nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="contatc_lenses_yes" class="chk_height_width" name="contact_lenses" value="yes">&nbsp;&nbsp;
+                            <label>Contact Lenses:</label> 
+                            Yes&nbsp; <input type="radio" id="contatc_lenses_yes" class="chk_height_width" name="contact_lenses" value="yes">
                             No&nbsp; <input type="radio" id="contact_lenses_no" class="chk_height_width" name="contact_lenses" value="no">
                         </div>
                     </div>
                     <div class="col-sm-12" style="padding-top: 10px;">
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Hyper Skin:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="hyper_skin_yes" class="chk_height_width" name="hyper_skin" value="yes">&nbsp;&nbsp;
+                            <label>Hyper Skin:</label> 
+                            Yes&nbsp; <input type="radio" id="hyper_skin_yes" class="chk_height_width" name="hyper_skin" value="yes">
                             No&nbsp; <input type="radio" id="hyper_skin_no" class="chk_height_width" name="hyper_skin" value="no"> 
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Nervous Disorder:</label> &nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="nervous_disorders_yes" class="chk_height_width" name="nervous_disorders" value="yes">&nbsp;&nbsp;
+                            <label>Nervous Disorder:</label> 
+                            Yes&nbsp; <input type="radio" id="nervous_disorders_yes" class="chk_height_width" name="nervous_disorders" value="yes">
                             No&nbsp; <input type="radio" id="nervous_disorders_no" class="chk_height_width" name="nervous_disorders" value="no">
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Allergies:</label> &nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="allergies_yes" class="chk_height_width" name="allergies" value="yes">&nbsp;&nbsp;
+                            <label>Allergies:</label> 
+                            Yes&nbsp; <input type="radio" id="allergies_yes" class="chk_height_width" name="allergies" value="yes">
                             No&nbsp; <input type="radio" id="allergies_no" class="chk_height_width" name="allergies" value="no">
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Cuts / Bruising:</label> &nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="cuts_yes" class="chk_height_width" name="cuts" value="yes">&nbsp;&nbsp;
+                            <label>Cuts / Bruising:</label> 
+                            Yes&nbsp; <input type="radio" id="cuts_yes" class="chk_height_width" name="cuts" value="yes">
                             No&nbsp; <input type="radio" id="cuts_no" class="chk_height_width" name="cuts" value="no">
                         </div>
                     </div>
                     <div class="col-sm-12" style="padding-top: 10px;">
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Skin Infection:</label> &nbsp;&nbsp;&nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="skin_infection_yes" class="chk_height_width" name="skin_infection" value="yes">&nbsp;&nbsp;
+                            <label>Skin Infection:</label> 
+                            Yes&nbsp; <input type="radio" id="skin_infection_yes" class="chk_height_width" name="skin_infection" value="yes">
                             No&nbsp; <input type="radio" id="skin_infection_no" class="chk_height_width" name="skin_infection" value="no"> 
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Swelling:</label> &nbsp;&nbsp;
-                            Yes&nbsp; <input type="radio" id="swelling_yes" class="chk_height_width" name="swelling" value="yes">&nbsp;&nbsp;
+                            <label>Swelling:</label> 
+                            Yes&nbsp; <input type="radio" id="swelling_yes" class="chk_height_width" name="swelling" value="yes">
                             No&nbsp; <input type="radio" id="swelling_no" class="chk_height_width" name="swelling" value="no">
                         </div>
                     </div>
