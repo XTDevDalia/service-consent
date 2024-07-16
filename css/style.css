@@ -25,7 +25,7 @@ input[type=checkbox], input[type=radio] {
 #wpbody-content {
     padding-bottom: 65px;
     float: left;
-    width: 100% !important;
+    width: 98% !important;
     overflow: visible;
 }
 .chk_height_width{
