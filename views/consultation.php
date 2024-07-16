@@ -86,7 +86,7 @@
                             No&nbsp; <input type="radio" id="nervous_disorders_no" class="chk_height_width" name="nervous_disorders" value="no">
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>allergies:</label> &nbsp;&nbsp;
+                            <label>Allergies:</label> &nbsp;&nbsp;
                             Yes&nbsp; <input type="radio" id="allergies_yes" class="chk_height_width" name="allergies" value="yes">&nbsp;&nbsp;
                             No&nbsp; <input type="radio" id="allergies_no" class="chk_height_width" name="allergies" value="no">
                         </div>
