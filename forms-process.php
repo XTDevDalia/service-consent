@@ -103,7 +103,7 @@ function otherform() {
             //echo $filepath;exit;
             $_SESSION['form_index'] = $_SESSION['form_index'] + 1;
             if ($_SESSION['form_index'] == count($_SESSION['selected_forms'])) {
-                wp_redirect(admin_url() . "?page=list-consent");
+                wp_redirect(admin_url() . "admin.php?page=list-consent");
             } else {
                 wp_redirect($filepath);
             }
