@@ -57,9 +57,23 @@ class ListConsent extends WP_List_Table {
         $this->items = $this->get_table_data();
     }
 
+    function extra_tablenav($which) {
+        if ($which == 'top') {
+            ?>
+            <div class="alignleft actions">
+                <form method="get">
+                    <input type="hidden" name="page" value="<?php echo $_REQUEST['page']; ?>" />
+                    <input type="text" name="s" value="<?php echo isset($_GET['s']) ? esc_attr($_GET['s']) : ''; ?>" />
+                    <?php submit_button(__('Search', 'cltd_example'), '', '', false); ?>
+                </form>
+            </div>
+            <?php
+        }
+    }
+
     private function get_table_data() {
         global $wpdb;
-        $per_page = 10;
+        $per_page = 1;
         $current_page = $this->get_pagenum();
         $search_term = !empty($_GET['s']) ? esc_sql($_GET['s']) : '';
 
@@ -70,20 +84,25 @@ class ListConsent extends WP_List_Table {
         $query = "
             SELECT c.customer_no,
                    DATE_FORMAT(s.customer_service_date, '%d-%b-%Y') AS customer_service_date,
-                   c.customer_branch_id, c.customer_name,
+                   c.customer_branch_id,c.customer_name,
                    CONCAT(c.customer_phone, ' - ', c.customer_email) AS contact_details,
                    GROUP_CONCAT(sm.service_form_display_title) AS site_list
             FROM $table_name_ser AS s
             LEFT JOIN $table_name_cust AS c ON s.consent_customer_id = c.customer_id
-            LEFT JOIN $table_name_service_master AS sm ON s.customer_form_id = sm.service_form_id ";
-        
+            LEFT JOIN $table_name_service_master AS sm ON s.customer_form_id = sm.service_form_id";
+
+        // Adding search term condition
+        if (!empty($search_term)) {
+            $query .= $wpdb->prepare(" WHERE (c.customer_no LIKE %s OR c.customer_name LIKE %s OR c.customer_phone LIKE %s OR c.customer_email LIKE %s OR c.customer_no LIKE %s)", '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%' , '%' . $search_term . '%');
+        }
+
         $query .= " GROUP BY DATE(s.customer_service_date), c.customer_no";
 
         $orderby = !empty($_GET['orderby']) ? esc_sql($_GET['orderby']) : 'customer_no';
         $order = !empty($_GET['order']) ? esc_sql($_GET['order']) : 'asc';
         $query .= " ORDER BY $orderby $order";
 
-        $total_items = $wpdb->get_var("SELECT COUNT(DISTINCT DATE(s.customer_service_date), c.customer_no) FROM $table_name_ser AS s LEFT JOIN $table_name_cust AS c ON s.consent_customer_id = c.customer_id WHERE 1=1" . (!empty($search_term) ? $wpdb->prepare(" AND (c.customer_no LIKE %s OR c.customer_name LIKE %s)", '%' . $search_term . '%', '%' . $search_term . '%') : ""));
+        $total_items = $wpdb->get_var("SELECT COUNT(DISTINCT DATE(s.customer_service_date), c.customer_no) FROM $table_name_ser AS s LEFT JOIN $table_name_cust AS c ON s.consent_customer_id = c.customer_id WHERE 1=1" . (!empty($search_term) ? $wpdb->prepare(" AND (c.customer_no LIKE %s OR c.customer_name LIKE %s OR c.customer_phone LIKE %s OR c.customer_email LIKE %s)", '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%') : ""));
 
         $this->set_pagination_args(array(
             'total_items' => $total_items,
@@ -94,8 +113,6 @@ class ListConsent extends WP_List_Table {
         $offset = ($current_page - 1) * $per_page;
 
         $query .= " LIMIT $offset, $per_page";
-        //echo $query;
-        //exit;
 
         return $wpdb->get_results($query, ARRAY_A);
     }

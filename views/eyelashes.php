@@ -17,7 +17,7 @@
                 padding:0px 0px !important;
             }
             .section{
-                /*     background: #f7f7f7; */
+                background: #f7f7f7;
                 margin-top: 20px !important;
             }
             #customer_signature {
@@ -52,7 +52,7 @@
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3">
-                        <p class="textalign">No.: 0398</p>
+                        <p class="textalign">No.: <?= (isset($_SESSION['customer_no'])) ? $_SESSION['customer_no'] : ''; ?></p>
                     </div>
                 </div>
             </div>
@@ -96,77 +96,87 @@
                     <p>I have the right to enter this agreement, or if | am under 18 years of age, | have had my parent or legal guardian consent to this agreement, and his or her relationship to me is as follows: <input type="text" id="txt_follow" name="txt_follow"> by his or her signature below, he or she consents to this procedure under these terms.</p>
                 </div>
             </div>
-
-            <div class="row bgcolor last-div-padding" style="margin-top: 30px;">
-                <div class="col-sm-12">
-                    <div class="col-sm-2" >
-                        <label>Name</label>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" id="txt_client_name" class="form-control" name="txt_client_name">
-                    </div>
-                    <div class="col-sm-2">
-                        <label>Client Signature</label>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                        <canvas id="customer_signature" name= "customer_signature" width="320" height="160"></canvas>
-                    </div>
-                    <div class="col-sm-1">
-                                    <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
-                                </div>
-                </div>
-            </div>
-            <div class="row bgcolor last-div-padding">
-                <div class="col-sm-10">
-                    <div class="col-sm-2">
-                        <label>Date</label>
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="date" id="client_date" class="form-control" name="client_date">
+            <div class="section" style="padding:20px 0px;">
+                <div class="row bgcolor last-div-padding">
+                    <div class="col-sm-12">
+                        <div class="col-sm-2" >
+                            <label>Client Name:</label>
+                        </div>
+                        <div class="col-sm-3">
+                        <input type="text" value="<?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?>">
+                        </div>
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-1">
+                            <label>Date</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="date" id="client_date" class="form-control" name="client_date" value="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                        
                     </div>
                 </div>
-            </div>
-
-            <div class="row bgcolor last-div-padding" style="margin-top: 10px;">
-                <div class="col-sm-12">
-                    <div class="col-sm-2">
-                        <label>Therapist Name</label>
-                    </div>
-                    <div class="col-sm-3">
-                        <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
-                    </div>
-                    <div class="col-sm-2">
-                        <label>Therapist Signature</label>
-                    </div>
-                    <div class="col-sm-3">
-                    <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                    <canvas id="therapist_signature" name= "therapist_signature" width="320" height="160"></canvas>
-                    </div>
-                    <div class="col-sm-1">
-                                    <button class="btn btn-default" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
-                                </div>
-                </div>
-            </div>
-            <div class="row bgcolor last-div-padding">
-                <div class="col-sm-10">
-                    <div class="col-sm-2">
-                        <label>Date</label>
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="date" id="therapist_date" class="form-control" name="therapist_date">
+                <div class="row bgcolor last-div-padding">
+                    <div class="col-sm-10">
+                        <div class="col-sm-2">
+                            <label>Client Signature</label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
+                            <canvas id="customer_signature" name= "customer_signature" width="500" height="160"></canvas>
+                        </div>
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-1" style="margin-left:40px;">
+                            <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+                        </div>
                     </div>
                 </div>
             </div>
-
+            <div class="section" style="padding:20px 0px;">
+                <div class="row bgcolor last-div-padding" style="margin-top: 10px;">
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                            <label>Therapist Name</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
+                        </div>
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-1">
+                            <label>Date</label>
+                        </div>
+                        <div class="col-sm-2">
+                            <input type="date" id="therapist_date" class="form-control" name="therapist_date" value="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="row bgcolor last-div-padding">
+                    <div class="col-sm-10">
+                        <div class="col-sm-2">
+                            <label>Therapist Signature</label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
+                            <canvas id="therapist_signature" name= "therapist_signature" width="500" height="160"></canvas>
+                        </div>
+                        <div class="col-sm-1">
+                        </div>
+                        <div class="col-sm-1" style="margin-left:40px;">
+                            <button class="btn btn-default" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row" style="margin-top: 10px;">
-                <div class="col-sm-10">
-                    <div class="col-sm-8">
+                <div class="col-sm-12">
+                    <div class="col-sm-7">
+                    </div>
+                    <div class="col-sm-1">
                     </div>
                     <div class="col-sm-1">
                         <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
-                    </div>
-                    <div class="col-sm-1">
                     </div>
                 </div>    
             </div>

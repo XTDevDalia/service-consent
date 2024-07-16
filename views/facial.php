@@ -17,7 +17,7 @@
                 padding:0px 0px !important;
             }
             .section{
-                /*     background: #f7f7f7; */
+                    background: #f7f7f7;
                 margin-top: 20px !important;
             }
             #customer_signature {
@@ -68,7 +68,7 @@
             <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
             <div class="section">
                 <div class="row section-title">
-                    <div class="col-sm-12" style="margin-top:20px !important">
+                    <div class="col-sm-10" style="margin-top:20px !important">
                         <div class="col-sm-3">
                             <p>Contra - Indications:</p>
                         </div>
@@ -192,7 +192,7 @@
             <div class="section">
                 <div class="row section-title">
                     <div class="col-sm-12">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="margin-top:20px !important">
                             <p>Skin Type :</p>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
             <div class="section">
                 <div class="row section-title">
                     <div class="col-sm-12">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="margin-top:20px !important">
                             <p>Massage :</p>
                         </div>
                     </div>
@@ -273,7 +273,7 @@
             <div class="section">
                 <div class="row section-title">
                     <div class="col-sm-12">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="margin-top:20px !important">
                             <p>Massage Medium :</p>
                         </div>
                     </div>
@@ -296,7 +296,7 @@
             <div class="section last-div-padding">
                 <div class="row section-title">
                     <div class="col-sm-12">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="margin-top:20px !important">
                             <p>Skin Texture :</p>
                         </div>
                     </div>
@@ -325,7 +325,7 @@
             <div class="section last-div-padding">
                 <div class="row section-title">
                     <div class="col-sm-12">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="margin-top:20px !important">
                             <p>Si Elasticity :</p>
                         </div>
                     </div>
@@ -353,7 +353,7 @@
                  "section last-div-padding">
                 <div class="row section-title">
                     <div class="col-sm-12">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="margin-top:20px !important">
                             <p>Muscle Tone :</p>
                         </div>
                     </div>
@@ -380,7 +380,7 @@
             <div class="section">
                 <div class="row section-title">
                     <div class="col-sm-12">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="margin-top:20px !important">
                             <!-- <p>Skin & Nail Analysis:</p> -->
                         </div>
                     </div>
@@ -438,7 +438,7 @@
             <div class="section">
                 <div class="row section-title">
                     <div class="col-sm-12">
-                        <div class="col-sm-3">
+                        <div class="col-sm-3" style="margin-top:20px !important">
                             <p>Aftercare:</p>
                         </div>
                     </div>
@@ -522,7 +522,7 @@
                 </div>
             </div>
 
-            <div class="section" style="margin-top:50px !important;">
+            <div style="margin-top:50px !important;">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="col-sm-11">
@@ -532,15 +532,16 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row" style="margin-top:30px;">
-                    <div class="col-sm-10">
+            </div>
+            <div class="section">
+                <div class="row" style="margin-top:30px !important;padding:20px 0px !important;">
+                    <div class="col-sm-11">
                         <div class="col-sm-2">
                             <label>Client Signature</label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                             <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                            <canvas id="customer_signature" name= "customer_signature" width="320" height="160"></canvas>
+                            <canvas id="customer_signature" name= "customer_signature" width="500" height="160"></canvas>
                         </div>
                         <div class="col-sm-1">
                             <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
@@ -549,18 +550,20 @@
                             <label style="text-align: right;">Date</label>
                         </div>
                         <div class="col-sm-2">
-                            <input type="date" id="customer_signature_date" class="form-control" name="customer_signature_date">
+                            <input type="date" id="customer_signature_date" class="form-control" name="customer_signature_date" value="<?php echo date('Y-m-d'); ?>">
                         </div>
                     </div> 
                 </div>
-                <div class="row" style="margin-top:30px;">
-                    <div class="col-sm-10">
+            </div>
+            <div class="section">
+                <div class="row" style="margin-top:30px;padding:20px 0px !important;">
+                    <div class="col-sm-11">
                         <div class="col-sm-2">
                             <label>Therapist Signature</label>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                             <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                            <canvas id="therapist_signature" name= "therapist_signature" width="320" height="160"></canvas>
+                            <canvas id="therapist_signature" name= "therapist_signature" width="500" height="160"></canvas>
                         </div>
                         <div class="col-sm-1">
                             <button class="btn btn-default" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
@@ -569,26 +572,25 @@
                             <label style="text-align: right;">Date</label>
                         </div>
                         <div class="col-sm-2">
-                            <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date">
+                            <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date" value="<?php echo date('Y-m-d'); ?>">
                         </div>
                         
                     </div> 
                 </div>
+            </div>
                 <div class="row" style="margin-top: 10px;">
-                    <div class="col-sm-10">
-                        <div class="col-sm-7">
+                    <div class="col-sm-11">
+                        <div class="col-sm-10">
                         </div>
                         <div class="col-sm-1">
                             <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
                         </div>
-                        <div class="col-sm-1">
-                        </div>
+                        
                         <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
                         <button class="btn btn-default" id="sig-clearBtn">Clear Signature</button> -->
                     </div>    
                 </div>
 
-            </div>
         </form>
     </body>
 </html>

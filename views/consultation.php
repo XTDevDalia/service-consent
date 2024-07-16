@@ -7,18 +7,18 @@
                     cursor: crosshair;
                 }
                 input[type=radio]:checked::before {
-            content: "";
-            border-radius: 50%;
-            width: .8rem !important;
-            height: .8rem !important;
-            margin: .1875rem;
-            background-color: #3582c4;
-            line-height: 1.14285714;
-            }
+                    content: "";
+                    border-radius: 50%;
+                    width: .8rem !important;
+                    height: .8rem !important;
+                    margin: .1875rem;
+                    background-color: #3582c4;
+                    line-height: 1.14285714;
+                }
          </style>
     </head>
     <body>
-    <form action="" method="post" name="consent_forms" id="consent_forms" >
+        <form action="" method="post" name="consent_forms" id="consent_forms" >
         <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">        
         <div class="row" style="margin-top:30px;">
             <div class="col-sm-12">
@@ -36,7 +36,7 @@
                     <label>Name : </label>
                 </div>
                 <div class="col-sm-3">
-                    <input type="text" id="txt_name" name="txt_name" class="form-control">
+                <?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?>
                 </div>
                 <div class="col-sm-1">
                 </div>
@@ -182,34 +182,33 @@
         </div>
         </div>
         <div class="row bgcolor last-div-padding" style="margin-top: 10px;">
-            <div class="col-sm-10">
+            <div class="col-sm-12">
                 <div class="col-sm-2">
                     <label>Signature</label>
                 </div>
                 <div class="col-sm-3">
                     <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
+                    <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
                     <canvas id="customer_signature" name= "customer_signature" width="320" height="160"></canvas>
                 </div>
                 <div class="col-sm-1">
-                                    <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
-                                </div>
+                    <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+                </div>
                 <div class="col-sm-1">
                     <label>Date</label>
                 </div>
-                <div class="col-sm-3">
-                    <input type="date" id="client_date" name="client_date" class="form-control">
+                <div class="col-sm-2">
+                    <input type="date" id="client_date" name="client_date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
                 </div>
             </div>
         </div>
 
         <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-10">
+            <div class="col-sm-12">
                 <div class="col-sm-8">
                 </div>
                 <div class="col-sm-1">
                     <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
-                </div>
-                <div class="col-sm-1">
                 </div>
             </div>
         </div>
