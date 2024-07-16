@@ -5,6 +5,7 @@
                 border: 2px dotted #CCCCCC;
                 border-radius: 15px;
                 cursor: crosshair;
+                background:white;
             }
             input[type=radio]:checked::before {
                 content: "";
