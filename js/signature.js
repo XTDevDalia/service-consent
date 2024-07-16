@@ -22,7 +22,7 @@ $(function () {
         // var canvas = $(".signatureclass");
         var ctx = canvas.getContext("2d");
         ctx.strokeStyle = "#222222";
-        ctx.lineWidth = 4;
+        ctx.lineWidth = 2;
 
         var drawing = false;
         var mousePos = {x: 0, y: 0};

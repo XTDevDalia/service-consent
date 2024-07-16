@@ -24,11 +24,13 @@
                 border: 2px dotted #CCCCCC;
                 border-radius: 15px;
                 cursor: crosshair;
+                background:white;
             }
             #therapist_signature{
                 border: 2px dotted #CCCCCC;
                 border-radius: 15px;
                 cursor: crosshair;
+                background:white;
             }
             input[type=radio]:checked::before {
                 content: "";
@@ -76,11 +78,8 @@
                             </div>
                         </div>
                         <div class="col-sm-10" style="margin-top: 10px;">
-                            <div class="col-sm-2">
-                                <label>Client Name : </label>
-                            </div>
                             <div class="col-sm-3">
-                            <?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?>
+                            <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
                             </div>
                         </div>
                     </div>
@@ -150,7 +149,7 @@
                                 <div class="col-sm-1">
                                 </div>
                                 <div class="col-sm-1">
-                                    <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+                                    <button class="btn btn-primary" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
                                 </div>
                             </div>
                         </div>
@@ -176,18 +175,18 @@
                                 <div class="col-sm-1">
                                 </div>
                                 <div class="col-sm-1">
-                                    <button class="btn btn-default" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
+                                    <button class="btn btn-primary" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="row" style="margin-top: 10px;">
-                    <div class="col-sm-10">
-                        <div class="col-sm-8">
+                    <div class="col-sm-12">
+                        <div class="col-sm-11">
                         </div>
                         <div class="col-sm-1">
-                            <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
+                            <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -40px;" value="submit" >Save & Continue</button>
                         </div>
                     </div>      
                 </div>

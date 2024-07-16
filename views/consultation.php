@@ -16,6 +16,28 @@
                 line-height: 1.14285714;
             }
         </style>
+=======
+                #customer_signature {
+                    border: 2px dotted #CCCCCC;
+                    border-radius: 15px;
+                    cursor: crosshair;
+                    background:white;
+                }
+                input[type=radio]:checked::before {
+                    content: "";
+                    border-radius: 50%;
+                    width: .8rem !important;
+                    height: .8rem !important;
+                    margin: .1875rem;
+                    background-color: #3582c4;
+                    line-height: 1.14285714;
+                }
+                .section{
+                background: #f7f7f7;
+                margin-top: 20px !important;
+            }
+         </style>
+>>>>>>> 610279afde0714b7197e898b5561ac6ca0ebe078
     </head>
     <body>
         <form action="" method="post" name="consent_forms" id="consent_forms" >
@@ -30,6 +52,7 @@
                 </div>
             </div>
 
+<<<<<<< HEAD
             <div class="row last-div-padding bgcolor">
                 <div class="col-sm-10" style="margin-top: 10px;">
                     <div class="col-sm-1">
@@ -50,6 +73,25 @@
             </div>
 
             <div class="row last-div-padding bgcolor" style="margin-top: 10px;">
+=======
+        <div class="row last-div-padding bgcolor">
+            <div class="col-sm-10" style="margin-top: 10px;">
+                <div class="col-sm-3">
+                <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
+                </div>
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-2">
+                    <label>Tel No. Work</label>
+                </div>
+                <div class="col-sm-3">
+                    <input type="text" id="txt_tel_no_work" name="txt_tel_no_work" class="form-control">
+                </div>  
+            </div> 
+        </div>
+        <div class="section" style="padding:20px 0px;">
+            <div class="row last-div-padding bgcolor">
+>>>>>>> 610279afde0714b7197e898b5561ac6ca0ebe078
                 <div class="col-sm-12">
                     <div class="col-sm-4 col-lg-3 col-md-3">
                         <label>Scar Tissue:</label> &nbsp;&nbsp;
@@ -115,7 +157,12 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
 
+=======
+        </div>
+        <div class="section" style="padding:20px 0px;">
+>>>>>>> 610279afde0714b7197e898b5561ac6ca0ebe078
             <div class="row last-div-padding bgcolor">
                 <div class="col-sm-12">
                     <div class="col-sm-4 col-lg-5 col-md-3">
@@ -158,6 +205,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
 
             <div class="row" style="margin-top: 10px;">
                 <div class="col-sm-12">
@@ -165,6 +213,14 @@
                         <h5>Indemnity</h5>
                     </div>
                 </div>
+=======
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+            <div class="col-sm-4">
+                <h5>Indemnity</h5>
+            </div>
+>>>>>>> 610279afde0714b7197e898b5561ac6ca0ebe078
             </div>
 
             <div class="row" style="margin-top: 10px;">
@@ -174,6 +230,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="row" style="margin-top: 10px;">
                 <div class="col-sm-12">
                     <div class="col-sm-11">
@@ -181,11 +238,17 @@
                     </div>
                 </div>
             </div>
+=======
+        </div>
+        </div>
+        <div class="section" style="padding:20px 0px;">
+>>>>>>> 610279afde0714b7197e898b5561ac6ca0ebe078
             <div class="row bgcolor last-div-padding" style="margin-top: 10px;">
                 <div class="col-sm-12">
                     <div class="col-sm-2">
                         <label>Signature</label>
                     </div>
+<<<<<<< HEAD
                     <div class="col-sm-3">
                         <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
                         <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
@@ -193,6 +256,15 @@
                     </div>
                     <div class="col-sm-1">
                         <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+=======
+                    <div class="col-sm-5">
+                        <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
+                        <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
+                        <canvas id="customer_signature" name= "customer_signature" width="500" height="160"></canvas>
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="btn btn-primary" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+>>>>>>> 610279afde0714b7197e898b5561ac6ca0ebe078
                     </div>
                     <div class="col-sm-1">
                         <label>Date</label>
@@ -202,6 +274,7 @@
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             <!-- we have put this whole div as a patch for this page because we used generic logic to all forms .  -->
             <div class="section" style="display:none">
                 <div class="row" style="margin-top:30px;padding:20px 0px !important;">
@@ -226,6 +299,15 @@
                     <div class="col-sm-1">
                         <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -25px;" value="submit" >Save Data</button>
                     </div>
+=======
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+                <div class="col-sm-11">
+                </div>
+                <div class="col-sm-1">
+                    <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -40px;" value="submit" >Save & Continue</button>
+>>>>>>> 610279afde0714b7197e898b5561ac6ca0ebe078
                 </div>
             </div>
     </body>
