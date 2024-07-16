@@ -17,7 +17,7 @@
                 padding:0px 0px !important;
             }
             .section{
-                /*     background: #f7f7f7; */
+                background: #f7f7f7;
                 margin-top: 20px !important;
             }
             #customer_signature {
@@ -68,7 +68,7 @@
                     </div>
                     <div class="row last-div-padding bgcolor">
                         <div class="col-sm-10">
-                            <div class="col-sm-1">
+                            <div class="col-sm-2">
                                 <label>Date : </label>
                             </div>
                             <div class="col-sm-3">
@@ -76,8 +76,8 @@
                             </div>
                         </div>
                         <div class="col-sm-10" style="margin-top: 10px;">
-                            <div class="col-sm-1">
-                                <label>Name : </label>
+                            <div class="col-sm-2">
+                                <label>Client Name : </label>
                             </div>
                             <div class="col-sm-3">
                             <?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?>
@@ -137,41 +137,47 @@
                             <p>Further, I grant Brow-Art and it's employee and representatives, permission to colour my hair and not hold them responsible for any and all adverse health reaction from this service.</p>
                         </div>
                     </div>
-                    <div class="row bgcolor last-div-padding" style="margin-top: 30px;">
-                        <div class="col-sm-10">
-                            <div class="col-sm-2">
-                                <label>Client Signature</label>
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                                <canvas id="customer_signature" name= "customer_signature" width="320" height="160"></canvas>
-                            </div>
-                            <div class="col-sm-1">
-                            </div>
-                            <div class="col-sm-1">
-                                <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
-                            </div>
-                        </div>
-                        <div class="col-sm-10" style="margin-top: 10px;">
-                            <div class="col-sm-2">
-                                <label style="text-align: right;">Therapist Name</label>
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
+                    <div class="section" style="padding:20px 0px;">
+                        <div class="row bgcolor last-div-padding">
+                            <div class="col-sm-10">
+                                <div class="col-sm-2">
+                                    <label>Client Signature</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
+                                    <canvas id="customer_signature" name= "customer_signature" width="500" height="160"></canvas>
+                                </div>
+                                <div class="col-sm-1">
+                                </div>
+                                <div class="col-sm-1">
+                                    <button class="btn btn-default" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-10" style="margin-top: 10px;">
-                            <div class="col-sm-2">
-                                <label>Therapist Signature</label>
+                    </div>
+                    <div class="section" style="padding:20px 0px;">
+                        <div class="row bgcolor last-div-padding">
+                            <div class="col-sm-10" style="margin-top: 10px;">
+                                <div class="col-sm-2">
+                                    <label style="text-align: right;">Therapist Name</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
+                                </div>
                             </div>
-                            <div class="col-sm-3">
-                            <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                            <canvas id="therapist_signature" name= "therapist_signature" width="320" height="160"></canvas>
-                            </div>
-                            <div class="col-sm-1">
-                            </div>
-                            <div class="col-sm-1">
-                                <button class="btn btn-default" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
+                            <div class="col-sm-10" style="margin-top: 10px;">
+                                <div class="col-sm-2">
+                                    <label>Therapist Signature</label>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
+                                    <canvas id="therapist_signature" name= "therapist_signature" width="500" height="160"></canvas>
+                                </div>
+                                <div class="col-sm-1">
+                                </div>
+                                <div class="col-sm-1">
+                                    <button class="btn btn-default" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
+                                </div>
                             </div>
                         </div>
                     </div>
