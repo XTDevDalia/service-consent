@@ -26,6 +26,17 @@ class ListConsent extends WP_List_Table {
         );
     }
 
+    function column_customer_no($item) {
+        $actions = array(
+            'edit' => sprintf('<a href="?page=%s&action=%s&customer_no=%s">Edit</a>', $_REQUEST['page'], 'edit', $item['customer_no']),
+            'delete' => sprintf('<a href="?page=%s&action=%s&customer_no=%s" onclick="return confirmDelete()">Trash</a>', $_REQUEST['page'], 'delete', $item['customer_no']),
+            'view' => sprintf('<a href="?page=%s&action=%s&customer_no=%s">View</a>', $_REQUEST['page'], 'view', $item['customer_no']),
+            'pdf' => sprintf('<a href="?page=%s&action=%s&customer_no=%s">PDF</a>', $_REQUEST['page'], 'pdf', $item['customer_no']),
+        );
+
+        return sprintf('%1$s %2$s', $item['customer_no'], $this->row_actions($actions));
+    }
+
     function get_sortable_columns() {
         $sortable_columns = array(
             'customer_no' => array('customer_no', false),
@@ -130,3 +141,10 @@ class ListConsent extends WP_List_Table {
         return $results;
     }
 }
+
+?>
+<script>
+    function confirmDelete(){
+    return confirm("Are you sure you want to delete this record?");
+}
+ </script>

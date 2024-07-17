@@ -2,7 +2,7 @@
 add_action('admin_head', 'column_customer_no');
 function column_customer_no() {
     echo '<style type="text/css">';
-    echo '.column-customer_no { width: 10% !important; }'; // Adjust the width as needed
+    echo '.column-customer_no { width: 15% !important; }'; // Adjust the width as needed
     echo '</style>';
 }
 
