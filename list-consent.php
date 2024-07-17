@@ -3,6 +3,9 @@ if (!class_exists('WP_List_Table')) {
     require_once(ABSPATH . 'wp-admin/includes/class-wp-list-table.php');
 }
 
+// Include the constants file
+require_once(SC_PLUGIN_DIR_PATH . 'constants.php'); // Adjust the path as needed
+
 class ListConsent extends WP_List_Table {
 
     function __construct() {
@@ -46,7 +49,6 @@ class ListConsent extends WP_List_Table {
         return $columns;
     }
 
-
     function prepare_items() {
         $columns = $this->get_columns();
         $hidden = array();
@@ -73,6 +75,7 @@ class ListConsent extends WP_List_Table {
 
     private function get_table_data() {
         global $wpdb;
+        global $serviceconfig; // Access the global service configuration array
         $per_page = 1;
         $current_page = $this->get_pagenum();
         $search_term = !empty($_GET['s']) ? esc_sql($_GET['s']) : '';
@@ -93,7 +96,7 @@ class ListConsent extends WP_List_Table {
 
         // Adding search term condition
         if (!empty($search_term)) {
-            $query .= $wpdb->prepare(" WHERE (c.customer_no LIKE %s OR c.customer_name LIKE %s OR c.customer_phone LIKE %s OR c.customer_email LIKE %s OR c.customer_no LIKE %s)", '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%' , '%' . $search_term . '%');
+            $query .= $wpdb->prepare(" WHERE (c.customer_no LIKE %s OR c.customer_name LIKE %s OR c.customer_phone LIKE %s OR c.customer_email LIKE %s OR c.customer_no LIKE %s)", '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%');
         }
 
         $query .= " GROUP BY DATE(s.customer_service_date), c.customer_no";
@@ -114,6 +117,16 @@ class ListConsent extends WP_List_Table {
 
         $query .= " LIMIT $offset, $per_page";
 
-        return $wpdb->get_results($query, ARRAY_A);
+        $results = $wpdb->get_results($query, ARRAY_A);
+
+        // Map branch numbers to branch names
+        foreach ($results as &$result) {
+            $branch_id = $result['customer_branch_id'];
+            if (isset($serviceconfig['branch'][$branch_id])) {
+                $result['customer_branch_id'] = $serviceconfig['branch'][$branch_id];
+            }
+        }
+
+        return $results;
     }
 }
