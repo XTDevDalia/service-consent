@@ -76,7 +76,7 @@ class ListConsent extends WP_List_Table {
     private function get_table_data() {
         global $wpdb;
         global $serviceconfig; // Access the global service configuration array
-        $per_page = 1;
+        $per_page = 10;
         $current_page = $this->get_pagenum();
         $search_term = !empty($_GET['s']) ? esc_sql($_GET['s']) : '';
 
