@@ -142,6 +142,33 @@ class ListConsent extends WP_List_Table {
     }
 }
 
+//Delete Functionality
+add_action('admin_init', function() {
+    if (isset($_GET['action']) && isset($_GET['customer_no'])) {
+        $action = $_GET['action'];
+        $customer_no = $_GET['customer_no'];
+
+        switch ($action) {
+            case 'delete':
+                // Handle delete action
+                global $wpdb;
+                $table_name_customer = $wpdb->prefix . 'customer_master';
+                $table_name_ser = $wpdb->prefix . 'service_consent';
+
+                $wpdb->query(
+                    $wpdb->prepare(
+                        "DELETE s FROM $table_name_ser AS s
+                            LEFT JOIN $table_name_customer AS c ON s.consent_customer_id = c.customer_id
+                            WHERE c.customer_no = %s",$customer_no
+                    )
+                );
+
+                // Redirect to avoid resubmission
+                wp_redirect(admin_url('admin.php?page=' . $_GET['page']));
+                exit;
+        }
+    }
+});
 ?>
 <script>
     function confirmDelete(){

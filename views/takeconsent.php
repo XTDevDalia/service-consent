@@ -71,10 +71,24 @@ unset($_SESSION['form_index']);*/
                     <label>Client No.</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">
-                    <input type="text" name="txt_customer_no" id="txt_customer_no" class="form-control">
+                    <input type="text" name="txt_customer_no" id="txt_customer_no" class="form-control" readonly>
                 </div>
             </div>
         </div>
+        <script>
+            function generateClientNo() {
+                let lastNumber = localStorage.getItem('lastClientNumber');
+                if (!lastNumber) {
+                    lastNumber = 0; // Starting point
+                }
+                lastNumber++;
+                let clientNo = 'CL' + String(lastNumber).padStart(3, '0');
+                localStorage.setItem('lastClientNumber', lastNumber);
+                document.getElementById('txt_customer_no').value = clientNo;
+            }
+            generateClientNo();
+        </script>
+
         <?php
         global $wpdb;
         $table_name = $wpdb->prefix . "service_master";
