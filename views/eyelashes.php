@@ -49,7 +49,7 @@
             <div class="row" style="margin-top:30px;">
                 <div class="col-sm-12">
                     <div class="col-sm-3">
-                        <h4 style="font-weight: 600;">Lash Extension</h4>
+                        <h4 style="font-weight: 600;margin-left:-12px;">Lash Extension</h4>
                     </div>
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3"></div>
