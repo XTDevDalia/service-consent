@@ -28,10 +28,7 @@ class ListConsent extends WP_List_Table {
 
     function column_customer_no($item) {
         $actions = array(
-            'edit' => sprintf('<a href="?page=%s&action=%s&customer_no=%s">Edit</a>', $_REQUEST['page'], 'edit', $item['customer_no']),
             'delete' => sprintf('<a href="?page=%s&action=%s&customer_no=%s" onclick="return confirmDelete()">Trash</a>', $_REQUEST['page'], 'delete', $item['customer_no']),
-            'view' => sprintf('<a href="?page=%s&action=%s&customer_no=%s">View</a>', $_REQUEST['page'], 'view', $item['customer_no']),
-            'pdf' => sprintf('<a href="?page=%s&action=%s&customer_no=%s">PDF</a>', "download-pdf", 'pdf', $item['customer_no']),
         );
 
         return sprintf('%1$s %2$s', $item['customer_no'], $this->row_actions($actions));
