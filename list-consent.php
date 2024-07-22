@@ -167,8 +167,8 @@ add_action('admin_init', function() {
     }
 });
 ?>
-<script>
+<!-- <script type="text/javascript">
     function confirmDelete(){
     return confirm("Are you sure you want to delete this record?");
 }
- </script>
+ </script> -->

@@ -10,6 +10,7 @@ unset($_SESSION['form_index']);*/
 </div>
 <div class="container section">
     <form action="" method="post" onsubmit="return validateMainForm();">
+    <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
         <div class="row" style="margin-top:30px !important;">
             <div class="col-sm-12">
                 <h4 style="text-align: left;font-weight: 700;">Customer Consent</h4>
@@ -34,7 +35,16 @@ unset($_SESSION['form_index']);*/
                 </div>
             </div>
         </div>
-
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+                <div class="col-sm-2 textalign">
+                    <label>Phone No.</label><span style="color:red"> *</span>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" name="txt_phone" id="txt_phone" class="form-control">
+                </div>
+            </div>
+        </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
@@ -52,16 +62,6 @@ unset($_SESSION['form_index']);*/
                 </div>
                 <div class="col-sm-4">
                     <input type="email" name="txt_email" id="txt_email" class="form-control">
-                </div>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12">
-                <div class="col-sm-2 textalign">
-                    <label>Phone No.</label><span style="color:red"> *</span>
-                </div>
-                <div class="col-sm-4">
-                    <input type="text" name="txt_phone" id="txt_phone" class="form-control">
                 </div>
             </div>
         </div>
@@ -120,3 +120,37 @@ unset($_SESSION['form_index']);*/
         </div>
     </form>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#txt_phone').on('change', function() {
+        let phone = $(this).val();
+        var sign_file_path = $('#hdn_plugin_url').val();
+
+        if (phone) {
+            $.ajax({
+                    url: sign_file_path + 'fetch_customer.php',
+                    type: 'POST',
+                    data: { phone: phone },
+                    dataType: 'json',
+                    success: function(data) {
+                    console.log("Response data:", data);
+                    if (data.success) {
+                        $('#txt_name').val(data.name);
+                        $('#txt_email').val(data.email);
+                        $('#txt_customer_no').val(data.customer_no);
+                    } else {
+                        alert(data.message);
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error('AJAX Error:', textStatus, errorThrown);
+                    console.log('Response Text:', jqXHR.responseText); // Added for debugging
+                    alert('Error fetching data.');
+                }
+            });
+        }
+    });
+});
+
+</script>

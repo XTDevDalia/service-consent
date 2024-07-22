@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 function service_menu() {
     add_menu_page(
             'ServiceConsent',
@@ -64,6 +64,7 @@ function addMainform() {
         $filepath = admin_url() . "?page=" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']]][0];
         //print_r($_SESSION);
         $_SESSION['form_index'] = $_SESSION['form_index'] + 1;
+        session_write_close();
 
         // echo $filepath;
         wp_redirect($filepath);
@@ -102,11 +103,13 @@ function otherform() {
             $filepath = admin_url() . "?page=" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']]][0];
             //echo $filepath;exit;
             $_SESSION['form_index'] = $_SESSION['form_index'] + 1;
+           
             if (($_SESSION['form_index']-1) == count($_SESSION['selected_forms'])) {
                 wp_redirect(admin_url() . "admin.php?page=list-consent");
             } else {
                 wp_redirect($filepath);
             }
+            session_write_close();
             exit;
         }
     } else {
@@ -117,6 +120,7 @@ function otherform() {
 }
 
 function register_service_forms() {
+    session_start();
     if ($_SESSION) {
         global $serviceconfig;
         // echo $_SESSION['form_index'];
@@ -152,4 +156,5 @@ function service_list() {
     // Display table
     $table->display();
     echo '</div>';
+    session_write_close();
 }
