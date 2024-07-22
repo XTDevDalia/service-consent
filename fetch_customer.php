@@ -12,7 +12,7 @@ if (!isset($wpdb)) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['phone'])) {
     $phone = $_POST['phone'];
     //echo $phone;
-    $table_name = "wp_customer_master";
+    $table_name = $wpdb->prefix . "customer_master";
     $query = "SELECT * FROM $table_name where customer_phone = $phone";
     //echo $query;
     $result = $wpdb->get_row($query);
