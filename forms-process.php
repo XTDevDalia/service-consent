@@ -105,7 +105,14 @@ function otherform() {
             $_SESSION['form_index'] = $_SESSION['form_index'] + 1;
            
             if (($_SESSION['form_index']-1) == count($_SESSION['selected_forms'])) {
-                wp_redirect(admin_url() . "admin.php?page=list-consent");
+                unset($_SESSION['customer_id']);
+                unset($_SESSION['customer_name']);
+                unset($_SESSION['customer_phone']);
+                unset($_SESSION['customer_email']);
+                unset($_SESSION['customer_no']);
+                unset($_SESSION['selected_forms']);
+                unset($_SESSION['form_index']);
+                wp_redirect(admin_url() . "admin.php?page=add-consent");
             } else {
                 wp_redirect($filepath);
             }
