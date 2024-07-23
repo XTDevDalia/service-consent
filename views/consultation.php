@@ -29,7 +29,7 @@
                 <div class="col-sm-12">
                     <!-- <div class="col-sm-4"></div> -->
                     <div class="col-sm-4">
-                        <h4 style="font-weight: 700;text-decoration: underline;">Counsultation Card</h4>
+                        <p style="font-weight: 700;text-decoration: underline;font-size:20px !important;">Counsultation Card</p>
                     </div>
                     <!-- <div class="col-sm-4"></div> -->
                 </div>
@@ -50,66 +50,61 @@
                     </div>  
                 </div> 
             </div>
-            <div class="section" style="padding:20px 0px;">
-                <div class="row last-div-padding bgcolor">
-                    <div class="col-sm-12">
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Scar Tissue:</label> 
-                            Yes&nbsp; <input type="radio" id="scar_tissue_yes" class="chk_height_width"  name="scar_tissue" value="yes">
-                            No&nbsp; <input type="radio" id="scar_tissue_no" class="chk_height_width" name="scar_tissue" value="no"> 
-                        </div>
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Eye Infection:</label> 
-                            Yes&nbsp; <input type="radio" id="eye_infection_yes" class="chk_height_width" name="eye_infection" value="yes">
-                            No&nbsp; <input type="radio" id="eye_infection_no" class="chk_height_width" name="eye_infection" value="no">
-                        </div>
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Skin Disorders:</label> 
-                            Yes&nbsp; <input type="radio" id="skin_disorders_yes" class="chk_height_width" name="skin_disorders" value="yes">
-                            No&nbsp; <input type="radio" id="skin_disorders_no" class="chk_height_width" name="skin_disorders" value="no">
-                        </div>
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Contact Lenses:</label> 
-                            Yes&nbsp; <input type="radio" id="contatc_lenses_yes" class="chk_height_width" name="contact_lenses" value="yes">
-                            No&nbsp; <input type="radio" id="contact_lenses_no" class="chk_height_width" name="contact_lenses" value="no">
-                        </div>
-                    </div>
-                    <div class="col-sm-12" style="padding-top: 10px;">
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Hyper Skin:</label> 
-                            Yes&nbsp; <input type="radio" id="hyper_skin_yes" class="chk_height_width" name="hyper_skin" value="yes">
-                            No&nbsp; <input type="radio" id="hyper_skin_no" class="chk_height_width" name="hyper_skin" value="no"> 
-                        </div>
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Nervous Disorder:</label> 
-                            Yes&nbsp; <input type="radio" id="nervous_disorders_yes" class="chk_height_width" name="nervous_disorders" value="yes">
-                            No&nbsp; <input type="radio" id="nervous_disorders_no" class="chk_height_width" name="nervous_disorders" value="no">
-                        </div>
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Allergies:</label> 
-                            Yes&nbsp; <input type="radio" id="allergies_yes" class="chk_height_width" name="allergies" value="yes">
-                            No&nbsp; <input type="radio" id="allergies_no" class="chk_height_width" name="allergies" value="no">
-                        </div>
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Cuts / Bruising:</label> 
-                            Yes&nbsp; <input type="radio" id="cuts_yes" class="chk_height_width" name="cuts" value="yes">
-                            No&nbsp; <input type="radio" id="cuts_no" class="chk_height_width" name="cuts" value="no">
-                        </div>
-                    </div>
-                    <div class="col-sm-12" style="padding-top: 10px;">
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Skin Infection:</label> 
-                            Yes&nbsp; <input type="radio" id="skin_infection_yes" class="chk_height_width" name="skin_infection" value="yes">
-                            No&nbsp; <input type="radio" id="skin_infection_no" class="chk_height_width" name="skin_infection" value="no"> 
-                        </div>
-                        <div class="col-sm-4 col-lg-3 col-md-3">
-                            <label>Swelling:</label> 
-                            Yes&nbsp; <input type="radio" id="swelling_yes" class="chk_height_width" name="swelling" value="yes">
-                            No&nbsp; <input type="radio" id="swelling_no" class="chk_height_width" name="swelling" value="no">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="section" style="padding:20px 0;">
+    <div class="row last-div-padding bgcolor">
+        <div class="col-12 col-md-4 col-lg-3 mb-3">
+            <label>Scar Tissue:</label> 
+            Yes <input type="radio" id="scar_tissue_yes" class="chk_height_width" name="scar_tissue" value="yes">
+            No <input type="radio" id="scar_tissue_no" class="chk_height_width" name="scar_tissue" value="no">
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3">
+            <label>Eye Infection:</label> 
+            Yes <input type="radio" id="eye_infection_yes" class="chk_height_width" name="eye_infection" value="yes">
+            No <input type="radio" id="eye_infection_no" class="chk_height_width" name="eye_infection" value="no">
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3">
+            <label>Skin Disorders:</label> 
+            Yes <input type="radio" id="skin_disorders_yes" class="chk_height_width" name="skin_disorders" value="yes">
+            No <input type="radio" id="skin_disorders_no" class="chk_height_width" name="skin_disorders" value="no">
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label">
+            <label>Contact Lenses:</label> 
+            Yes <input type="radio" id="contact_lenses_yes" class="chk_height_width" name="contact_lenses" value="yes">
+            No <input type="radio" id="contact_lenses_no" class="chk_height_width" name="contact_lenses" value="no">
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label">
+            <label>Hyper Skin:</label> 
+            Yes <input type="radio" id="hyper_skin_yes" class="chk_height_width" name="hyper_skin" value="yes">
+            No <input type="radio" id="hyper_skin_no" class="chk_height_width" name="hyper_skin" value="no">
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label">
+            <label>Nervous Disorder:</label> 
+            Yes <input type="radio" id="nervous_disorders_yes" class="chk_height_width" name="nervous_disorders" value="yes">
+            No <input type="radio" id="nervous_disorders_no" class="chk_height_width" name="nervous_disorders" value="no">
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label">
+            <label>Allergies:</label> 
+            Yes <input type="radio" id="allergies_yes" class="chk_height_width" name="allergies" value="yes">
+            No <input type="radio" id="allergies_no" class="chk_height_width" name="allergies" value="no">
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label">
+            <label>Cuts / Bruising:</label> 
+            Yes <input type="radio" id="cuts_yes" class="chk_height_width" name="cuts" value="yes">
+            No <input type="radio" id="cuts_no" class="chk_height_width" name="cuts" value="no">
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label">
+            <label>Skin Infection:</label> 
+            Yes <input type="radio" id="skin_infection_yes" class="chk_height_width" name="skin_infection" value="yes">
+            No <input type="radio" id="skin_infection_no" class="chk_height_width" name="skin_infection" value="no">
+        </div>
+        <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label">
+            <label>Swelling:</label> 
+            Yes <input type="radio" id="swelling_yes" class="chk_height_width" name="swelling" value="yes">
+            No <input type="radio" id="swelling_no" class="chk_height_width" name="swelling" value="no">
+        </div>
+    </div>
+</div>
+
             <div class="row" style="margin-top: 10px;">
                 <div class="col-sm-10">
                     <div class="col-sm-4">
@@ -118,50 +113,51 @@
                     </div>
                 </div>
             </div>
-            <div class="section" style="padding:20px 0px;">
-                <div class="row last-div-padding bgcolor">
-                    <div class="col-sm-12">
-                        <div class="col-sm-4 col-lg-5 col-md-3">
-                            <label style="padding-right:20px;">Client Characteristics : </label> 
-                            <input type = "checkbox" id="chk_fair" class="chk_height_width" value="Fair">
-                            <label class="remove-bold">Fair</label>&nbsp;&nbsp;&nbsp;
-                            <input type = "checkbox" id="chk_red" class="chk_height_width" value="Red / aubum">
-                            <label class="remove-bold">Red / aubum</label>&nbsp;&nbsp;&nbsp;
-                            <input type = "checkbox" id="chk_dark" class="chk_height_width" value="Dark">
-                            <label class="remove-bold">Dark</label>&nbsp;&nbsp;&nbsp;
-                            <input type = "checkbox" id="chk_greay" class="chk_height_width" value="Greay">
-                            <label class="remove-bold">Greay</label>
-                            <br>
-                            <br>
-                            <label style="padding-right:20px;">Tint Colour : </label> 
-                            <input type = "checkbox" id="chk_brown" class="chk_height_width" value="Brown">
-                            <label class="remove-bold">Brown</label>&nbsp;&nbsp;&nbsp;
-                            <input type = "checkbox" id="chk_black" class="chk_height_width" value="Black">
-                            <label class="remove-bold">Black</label>&nbsp;&nbsp;&nbsp;
-                            <input type = "checkbox" id="chk_blue" class="chk_height_width" value="Blue">
-                            <label class="remove-bold">Blue</label>&nbsp;&nbsp;&nbsp;
-                            <input type = "checkbox" id="chk_blue_black" class="chk_height_width" value="Blue / Black">
-                            <label class="remove-bold">Blue / Black</label>
-                            <br>
-                            <br>
-                            <label style="padding-right:20px;">Perming : </label> 
-                            <input type = "checkbox" id="chk_low" class="chk_height_width" value="Low">
-                            <label class="remove-bold">Low</label>&nbsp;&nbsp;&nbsp;
-                            <input type = "checkbox" id="chk_medium" class="chk_height_width" value="Medium">
-                            <label class="remove-bold">Medium</label>&nbsp;&nbsp;&nbsp;
-                            <input type = "checkbox" id="chk_high" class="chk_height_width" value="High">
-                            <label class="remove-bold">High</label>&nbsp;&nbsp;&nbsp;
-                            <br>
-                            <br>
-                            <label style="padding-right:20px;">Lash type : </label> 
-                            <input type = "checkbox" id="chk_strip" class="chk_height_width" value="Strip">
-                            <label class="remove-bold">Strip</label>&nbsp;&nbsp;&nbsp;
-                            <input type = "checkbox" id="chk_individual" class="chk_height_width" value="Individual">
-                            <label class="remove-bold">Individual</label>&nbsp;&nbsp;&nbsp;
-                        </div>
-                    </div>
-                </div>
+            <div class="section" style="padding:20px 0;">
+    <div class="row last-div-padding bgcolor">
+        <div class="col-12 col-sm-12">
+            <div class="col-12 col-md-8 col-lg-6">
+                <label class="pr-3">Client Characteristics:</label>
+                <input type="checkbox" id="chk_fair" class="chk_height_width" value="Fair">
+                <label class="remove-bold">Fair</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chk_red" class="chk_height_width" value="Red / aubum">
+                <label class="remove-bold">Red / aubum</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chk_dark" class="chk_height_width" value="Dark">
+                <label class="remove-bold">Dark</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chk_greay" class="chk_height_width" value="Greay">
+                <label class="remove-bold">Greay</label>
+                <br><br>
+
+                <label class="pr-3">Tint Colour:</label>
+                <input type="checkbox" id="chk_brown" class="chk_height_width" value="Brown">
+                <label class="remove-bold">Brown</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chk_black" class="chk_height_width" value="Black">
+                <label class="remove-bold">Black</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chk_blue" class="chk_height_width" value="Blue">
+                <label class="remove-bold">Blue</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chk_blue_black" class="chk_height_width" value="Blue / Black">
+                <label class="remove-bold">Blue / Black</label>
+                <br><br>
+
+                <label class="pr-3">Perming:</label>
+                <input type="checkbox" id="chk_low" class="chk_height_width" value="Low">
+                <label class="remove-bold">Low</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chk_medium" class="chk_height_width" value="Medium">
+                <label class="remove-bold">Medium</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chk_high" class="chk_height_width" value="High">
+                <label class="remove-bold">High</label>
+                <br><br>
+
+                <label class="pr-3">Lash type:</label>
+                <input type="checkbox" id="chk_strip" class="chk_height_width" value="Strip">
+                <label class="remove-bold">Strip</label>&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="chk_individual" class="chk_height_width" value="Individual">
+                <label class="remove-bold">Individual</label>
             </div>
+        </div>
+    </div>
+</div>
+
             <div class="row" style="margin-top: 10px;">
                 <div class="col-sm-12">
                     <div class="col-sm-4">
@@ -184,24 +180,22 @@
                     </div>
                 </div>
             </div>
-            <div class="section" style="padding:20px 0px;">
-                <div class="row bgcolor last-div-padding" style="margin-top: 10px;">
-                    <div class="col-sm-12">
-                        <div class="col-sm-2">
-                            <label>Signature</label>
+            <div class="section">
+                <div class="row" style="padding:20px 0px !important;">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <label>Client Signature</label>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 col-md-5 col-lg-5 position-relative">
                             <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                            <canvas id="customer_signature" name= "customer_signature" width="500" height="160"></canvas>
+                            <canvas id="customer_signature" class="therapist_signature" name="customer_signature" width="500" height="160"></canvas>
+                            <button class="btn btn-primary clear-btn" id="btn_customer_cancel" name="btn_customer_cancel">Clear Signature</button>
                         </div>
-                        <div class="col-sm-1">
-                            <button class="btn btn-primary" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+                        <div class="col-sm-1 col-md-1 col-lg-1">
+                            <label style="text-align: right;">Date</label>
                         </div>
-                        <div class="col-sm-1">
-                            <label>Date</label>
-                        </div>
-                        <div class="col-sm-2">
-                            <input type="date" id="client_date" name="client_date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <input type="date" id="customer_signature_date" class="form-control date_class" name="customer_signature_date" value="<?php echo date('Y-m-d'); ?>">
                         </div>
                     </div>
                 </div>
@@ -228,7 +222,7 @@
                     <div class="col-sm-11">
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: 0px;" value="submit" >Save Data</button>
+                        <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" style="margin-left: 0px;" value="submit" >Save Data</button>
                     </div>
                 </div>
             </div>
