@@ -29,17 +29,48 @@ require_once SC_PLUGIN_DIR_PATH . '/constants.php';
 //add_action('plugins_loaded', 'Codebunch\zcqApi\Bootstrap::instance', 99);
 add_action('init', 'register_session');
 add_action('wp_logout', 'end_session');
-add_action('wp_print_scripts', 'add_service_consent_js');
-add_action('admin_menu', 'service_menu');
-add_action('admin_menu', 'service_submenu_addconsent');
-add_action('init', 'addMainform');
-//add_action('wp_ajax_load_recent_posts', 'otherform');
-//add_action('admin_menu', 'addMainform');
-add_action('admin_menu', 'register_service_forms');
-add_action('admin_menu', 'otherform');
-//add_action('admin_menu', 'service_list');
-require_once SC_PLUGIN_DIR_PATH . '/forms-process.php';
-require_once SC_PLUGIN_DIR_PATH . '/list-consent.php';
+add_action('init', 'check_access');
+add_action('admin_menu', 'editor_remove_menu_pages');
+add_action('admin_init', 'remove_admin_icons');
+
+
+function remove_admin_icons() {
+    remove_action('admin_bar_menu', 'wp_admin_bar_updates_menu', 10);
+    remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+    remove_action('admin_bar_menu', 'wp_admin_bar_new_content_menu', 20);
+    remove_action('admin_bar_menu', 'wp_admin_bar_render', 100);
+    remove_action('admin_notices', 'wp_dashboard_setup');
+    remove_action('admin_head', 'wp_icon_dashboard');
+    remove_action('admin_head', 'wp_favicon_dashboard');
+}
+
+function check_access() {
+    if (current_user_can('editor')) {
+        add_action('wp_print_scripts', 'add_service_consent_js');
+        add_action('admin_menu', 'service_menu');
+        add_action('init', 'addMainform');
+        add_action('admin_menu', 'register_service_forms');
+        add_action('admin_menu', 'otherform');
+        require_once SC_PLUGIN_DIR_PATH . '/forms-process.php';
+        require_once SC_PLUGIN_DIR_PATH . '/list-consent.php';
+    }
+}
+
+function editor_remove_menu_pages() {
+    remove_menu_page('link-manager.php');
+    remove_menu_page('index.php');
+    remove_menu_page('users.php');
+    remove_menu_page('upload.php');
+    remove_menu_page('tools.php');
+    remove_menu_page('edit.php');
+    remove_menu_page('edit-comments.php');
+    remove_menu_page('post-new.php');
+    remove_submenu_page('themes.php', 'themes.php');
+    remove_submenu_page('themes.php', 'theme-editor.php');
+    remove_submenu_page('themes.php', 'widgets.php');
+    // Hide the Pages menu
+    remove_menu_page('edit.php?post_type=page');
+}
 
 function add_service_consent_js() {
     wp_register_script('prefix_bootstrap', '/wp-content/plugins/service-consent/js/bootstrap.min.js');
