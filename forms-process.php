@@ -7,7 +7,8 @@ function service_menu() {
             'edit_posts',
             'service-menu',
             '',
-            ''
+            '',
+            4
     );
 }
 
@@ -147,7 +148,7 @@ function render_service_forms() {
     global $serviceconfig;
     if ($_SESSION) {
         // Load your form(s) here
-        include(SC_PLUGIN_DIR_PATH . "views/" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index'] - 1]][1]);
+        echo include(SC_PLUGIN_DIR_PATH . "views/" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index'] - 1]][1]);
         wp_register_script('signaturejs', '/wp-content/plugins/service-consent/js/signature.js');
         wp_enqueue_script('signaturejs');
     }
