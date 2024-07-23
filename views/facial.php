@@ -41,6 +41,23 @@
                 background-color: #3582c4;
                 line-height: 1.14285714;
             }
+            @media only screen and (min-width: 768px) and (max-width: 1000px) {
+                .difference-two-label{
+                    margin-top:10px !important;
+                }
+				
+				.therapist_signature{
+					height:160px !important;
+					width:300px !important;
+				}
+				.date_class{
+					width:auto !important;
+				}
+				.btn_class{
+					margin-left:-78px !important;
+				}
+            }
+            
         </style>
     </head>
     <body>
@@ -68,7 +85,7 @@
             <div class="section">
                 <div class="row section-title">
                     <div class="col-sm-10" style="margin-top:20px !important">
-                        <div class="col-sm-3">
+                        <div class="col-sm-6 col-md-6 col-lg-6">
                             <p>Contra - Indications:</p>
                         </div>
                     </div>
@@ -88,15 +105,15 @@
                             <input type="checkbox" id="chk_conjuctivitis" class="chk_height_width" value="Conjuctivitis" name="contra_indications[]">
                             <label class="form-check-label" for="chk_conjuctivitis">Conjuctivitis</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type="checkbox" id="chk_bacterial_infections" class="chk_height_width" value="Bacterial Infection" name="contra_indications[]">
                             <label class="form-check-label" for="chk_bacterial_infections">Bacterial Infection</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_inflammation" class="chk_height_width" value="Inflammation" name="contra_indications[]">
                             <label class="form-check-label" for="chk_inflammation">Inflammation</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_Swelling" class="chk_height_width" value="Swelling" name="contra_indications[]"> 
                             <label class="form-check-label" for="chk_Swelling">Swelling</label>
                         </div>
@@ -105,31 +122,31 @@
 
                 <div class="row">
                     <div class="col-sm-10">
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_eye_diseases" class="chk_height_width" value="Eye Diseases" name="contra_indications[]">
                             <label class="form-check-label" for="chk_eye_diseases">Eye Diseases</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_eye_disorders" class="chk_height_width" value="Eye Disorders" name="contra_indications[]">
                             <label class="form-check-label" for="chk_eye_disorders">Eye Disorders</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_positive_patch_test" class="chk_height_width" value="Positive Patch Test" name="contra_indications[]">
                             <label class="form-check-label" for="chk_positive_patch_test">Positive Patch Test</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_styes" class="chk_height_width" value="Styes" name="contra_indications[]">
                             <label class="form-check-label" for="chk_styes">Styes</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_blepharitis" class="chk_height_width" value="Blepharitis" name="contra_indications[]">
                             <label class="form-check-label" for="chk_blepharitis">Blepharitis</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_watey_eye" class="chk_height_width" value="Watey Eye" name="contra_indications[]">
                             <label class="form-check-label" for="chk_watey_eye">Watey Eye</label>
                         </div> 
@@ -138,31 +155,31 @@
 
                 <div class="row">
                     <div class="col-sm-10">
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_hyper_sensitive_skin" class="chk_height_width" value="Hyper Sensitive Skin" name="contra_indications[]">
                             <label class="form-check-label" for="chk_hyper_sensitive_skin">Hyper Sensitive Skin</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_bruising" class="chk_height_width" value="Bruising" name="contra_indications[]">
                             <label class="form-check-label" for="chk_bruising">Bruising</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_cuts" class="chk_height_width" value="Cuts" name="contra_indications[]">
                             <label class="form-check-label" for="chk_cuts">Cuts</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_abrasions" class="chk_height_width" value="Abrasions" name="contra_indications[]">
                             <label class="form-check-label" for="chk_abrasions">Abrasions</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_recent_scar_tissue" class="chk_height_width" value="Recent Scar Tissue" name="contra_indications[]">
                             <label class="form-check-label" for="chk_recent_scar_tissue">Recent Scar Tissue</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_nervous_clients" class="chk_height_width" value="Nervous Clients" name="contra_indications[]">
                             <label class="form-check-label" for="chk_nervous_clients">Nervous Clients</label>
                         </div>
@@ -173,12 +190,12 @@
                     <div class="col-sm-10">
 
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_facial_plercing" class="chk_height_width" value="Facial Plercing" name="contra_indications[]">
                             <label class="form-check-label" for="chk_facial_plercing">Facial Plercing</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_eczema_psoriasis" class="chk_height_width" value="Eczema / Psoriasis" name="contra_indications[]">
                             <label class="form-check-label" for="chk_eczema_psoriasis">Eczema / Psoriasis</label>
                         </div>
@@ -211,15 +228,15 @@
                             <input type="checkbox" id="chk_dry" class="chk_height_width" value="Dry" name="skin_type[]">
                             <label class="form-check-label" for="chk_dry">Dry</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type="checkbox" id="chk_mature" class="chk_height_width" value="Mature" name="skin_type[]">
                             <label class="form-check-label" for="chk_mature">Mature</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type="checkbox" id="chk_sensitive" class="chk_height_width" value="Sensitive" name="skin_type[]">
                             <label class="form-check-label" for="chk_sensitive">Sensitive</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type="checkbox" id="chk_dehydrated" class="chk_height_width" value="Dehydrated" name="skin_type[]">
                             <label class="form-check-label" for="chk_dehydrated">Dehydrated</label>
                         </div>
@@ -227,7 +244,7 @@
                 </div>
                 <div class="row last-div-padding">
                     <div class="col-sm-10">
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type="checkbox" id="chk_combination" class="chk_height_width" value="Combination" name="skin_type[]">
                             <label class="form-check-label" for="chk_combination">Combination</label>
                         </div>
@@ -261,7 +278,7 @@
                             <label class="form-check-label" for="chk_tapotement">Tapotement</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_vibration" class="chk_height_width" value="Vibration" name="massage[]">
                             <label class="form-check-label" for="chk_vibration">Vibration</label>
                         </div>
@@ -402,30 +419,30 @@
                             <label class="form-check-label" for="chk_exfoliators">Exfoliators</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_specialised_mask" class="chk_height_width" value="Specialised Mask" name="muscle_tone_other[]">
                             <label class="form-check-label" for="chk_specialised_mask">Specialised Mask</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_massage_media" class="chk_height_width" value="Massage Media" name="muscle_tone_other[]">
                             <label class="form-check-label" for="chk_massage_media">Massage Media</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_toning_lotion" class="chk_height_width" value="Toning Lotion" name="muscle_tone_other[]">
                             <label class="form-check-label" for="chk_toning_lotion">Toning Lotion</label>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" style="padding: 0px 0px 7px 0px !important;">
                     <div class="col-sm-10">
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_moisturiser" class="chk_height_width" value="Moisturiser" name="muscle_tone_other[]">
                             <label class="form-check-label" for="chk_moisturiser">Moisturiser</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_setting_mask" class="chk_height_width" value="Setting Mask" name="muscle_tone_other[]">
                             <label class="form-check-label" for="chk_setting_mask">Setting Mask</label>
                         </div>
@@ -460,30 +477,30 @@
                             <label class="form-check-label" for="chk_aftercare_toning">Toning</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_aftercare_eye_cream" class="chk_height_width" value="Eye Cream" name="aftercare[]">
                             <label class="form-check-label" for="chk_aftercare_eye_cream">Eye Cream</label>
                         </div>
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_aftercare_neck_cream" class="chk_height_width" value="Neck Cream" name="aftercare[]">
                             <label class="form-check-label" for="chk_aftercare_neck_cream">Neck Cream</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_aftercare_exfoliate" class="chk_height_width" value="Exfoliate" name="aftercare[]">
                             <label class="form-check-label" for="chk_aftercare_exfoliate">Exfoliate</label>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" style="padding: 0px 0px 7px 0px !important;">
                     <div class="col-sm-10">
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_aftercare_diet_water_intake" class="chk_height_width" value="Diet / Water Intake" name="aftercare[]">
                             <label class="form-check-label" for="chk_aftercare_diet_water_intake">Diet / Water Intake</label>
                         </div>
 
-                        <div class="col-sm-4 col-lg-2 col-md-3">
+                        <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
                             <input type = "checkbox" id="chk_aftercare_setting_mask" class="chk_height_width" value="Setting Mask" name="aftercare[]">
                             <label class="form-check-label" for="chk_aftercare_setting_mask">Setting Mask</label>
                         </div>
@@ -501,7 +518,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" style="padding: 0px 0px 7px 0px !important;">
                     <div class="col-sm-10">
                         <div class="col-sm-4 col-lg-2 col-md-3">
                             <input type = "checkbox" id="chk_contra_action" class="chk_height_width" value="Contra Action" name="aftercare_other[]">
@@ -534,22 +551,22 @@
             </div>
             <div class="section">
                 <div class="row" style="margin-top:30px !important;padding:20px 0px !important;">
-                    <div class="col-sm-12">
-                        <div class="col-sm-2">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-sm-2 col-md-2 col-lg-2">
                             <label>Client Signature</label>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 col-md-5 col-lg-5">
                             <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                            <canvas id="customer_signature" name= "customer_signature" width="500" height="160"></canvas>
+                            <canvas id="customer_signature" class="therapist_signature" name= "customer_signature" width="500" height="160"></canvas>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-1 col-md-1 col-lg-1">
                             <button class="btn btn-primary" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
                         </div>
-                        <div class="col-sm-1">
+                        <div class="col-sm-1 col-md-1 col-lg-1">
                             <label style="text-align: right;">Date</label>
                         </div>
-                        <div class="col-sm-2">
-                            <input type="date" id="customer_signature_date" class="form-control" name="customer_signature_date" value="<?php echo date('Y-m-d'); ?>">
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <input type="date" id="customer_signature_date" class="form-control date_class" name="customer_signature_date" value="<?php echo date('Y-m-d'); ?>">
                         </div>
                     </div> 
                 </div>
@@ -562,7 +579,7 @@
                         </div>
                         <div class="col-sm-5">
                             <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                            <canvas id="therapist_signature" name= "therapist_signature" width="500" height="160"></canvas>
+                            <canvas id="therapist_signature" class="therapist_signature" name= "therapist_signature" width="500" height="160"></canvas>
                         </div>
                         <div class="col-sm-1">
                             <button class="btn btn-primary" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
@@ -571,7 +588,7 @@
                             <label style="text-align: right;">Date</label>
                         </div>
                         <div class="col-sm-2">
-                            <input type="date" id="therapist_signature_date" class="form-control" name="therapist_signature_date" value="<?php echo date('Y-m-d'); ?>">
+                            <input type="date" id="therapist_signature_date" class="form-control date_class" name="therapist_signature_date" value="<?php echo date('Y-m-d'); ?>">
                         </div>
                         
                     </div> 
@@ -582,7 +599,7 @@
                         <div class="col-sm-11">
                         </div>
                         <div class="col-sm-1">
-                            <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -45px;" value="submit" >Save & Continue</button>
+                            <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" style="margin-left: -45px;" value="submit" >Save & Continue</button>
                         </div>
                         
                         <!-- <button class="btn btn-primary" id="sig-submitBtn">Submit Signature</button>
