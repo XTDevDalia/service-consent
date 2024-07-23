@@ -141,13 +141,13 @@ $(document).ready(function() {
                         $('#txt_email').val(data.email);
                         $('#txt_customer_no').val(data.customer_no);
                     } else {
-                        alert(data.message);
+                        //alert(data.message);
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error('AJAX Error:', textStatus, errorThrown);
                     console.log('Response Text:', jqXHR.responseText); // Added for debugging
-                    alert('Error fetching data.');
+                    //alert('Error fetching data.');
                 }
             });
         }
