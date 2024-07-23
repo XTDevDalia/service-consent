@@ -30,7 +30,6 @@ require_once SC_PLUGIN_DIR_PATH . '/constants.php';
 add_action('init', 'register_session');
 add_action('wp_logout', 'end_session');
 add_action('init', 'check_access');
-add_action('admin_menu', 'editor_remove_menu_pages');
 add_action('admin_init', 'remove_admin_icons');
 
 
@@ -51,6 +50,7 @@ function check_access() {
         add_action('init', 'addMainform');
         add_action('admin_menu', 'register_service_forms');
         add_action('admin_menu', 'otherform');
+        add_action('admin_menu', 'editor_remove_menu_pages');
         require_once SC_PLUGIN_DIR_PATH . '/forms-process.php';
         require_once SC_PLUGIN_DIR_PATH . '/list-consent.php';
     }
