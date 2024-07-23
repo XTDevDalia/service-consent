@@ -1,30 +1,19 @@
 <?php
+
 session_start();
+
 function service_menu() {
     add_menu_page(
             'ServiceConsent',
-            'Customer Consent',
+            'Consent Form',
             'edit_posts',
-            'service-menu',
-            '',
-            '',
-            4
-    );
-}
-
-function service_submenu_addconsent() {
-    add_submenu_page(
-            'service-menu', // Parent menu slug (e.g., 'Tools')
-            'Add Customer Consent for the Services', // Page title
-            'Add Consent', // Menu title
-            'manage_options', // Capability (e.g., 'manage_options')
             'add-consent', // Menu slug
             'add_consent' // Callback function to display content
     );
-    add_submenu_page('service-menu',
+    add_menu_page(
             'Service listing',
             'Service List',
-            'manage_options', // Capability (e.g., 'manage_options')
+            'edit_posts', // Capability (e.g., 'manage_options')
             'list-consent', // Menu slug
             'service_list' // Callback function to display content
     );
@@ -104,8 +93,8 @@ function otherform() {
             $filepath = admin_url() . "?page=" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']]][0];
             //echo $filepath;exit;
             $_SESSION['form_index'] = $_SESSION['form_index'] + 1;
-           
-            if (($_SESSION['form_index']-1) == count($_SESSION['selected_forms'])) {
+
+            if (($_SESSION['form_index'] - 1) == count($_SESSION['selected_forms'])) {
                 unset($_SESSION['customer_id']);
                 unset($_SESSION['customer_name']);
                 unset($_SESSION['customer_phone']);
