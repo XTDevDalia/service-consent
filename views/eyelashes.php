@@ -119,18 +119,14 @@
                     </div>
                 </div>
                 <div class="row bgcolor last-div-padding">
-                    <div class="col-sm-10">
-                        <div class="col-sm-2">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-sm-2 col-md-2 col-lg-2">
                             <label>Client Signature</label>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 col-md-5 col-lg-5 position-relative">
                             <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                            <canvas id="customer_signature" name= "customer_signature" width="500" height="160"></canvas>
-                        </div>
-                        <div class="col-sm-1">
-                        </div>
-                        <div class="col-sm-1" style="margin-left:40px;">
-                            <button class="btn btn-primary" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
+                            <canvas id="customer_signature" class="therapist_signature" name="customer_signature" width="500" height="160"></canvas>
+                            <button class="btn btn-primary clear-btn" id="btn_customer_cancel" name="btn_customer_cancel">Clear Signature</button>
                         </div>
                     </div>
                 </div>
@@ -155,18 +151,14 @@
                     </div>
                 </div>
                 <div class="row bgcolor last-div-padding">
-                    <div class="col-sm-10">
+                    <div class="col-sm-12">
                         <div class="col-sm-2">
                             <label>Therapist Signature</label>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 position-relative">
                             <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                            <canvas id="therapist_signature" name= "therapist_signature" width="500" height="160"></canvas>
-                        </div>
-                        <div class="col-sm-1">
-                        </div>
-                        <div class="col-sm-1" style="margin-left:40px;">
-                            <button class="btn btn-primary" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
+                            <canvas id="therapist_signature" class="therapist_signature" name="therapist_signature" width="500" height="160"></canvas>
+                            <button class="btn btn-primary clear-btn" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear Signature</button>
                         </div>
                     </div>
                 </div>

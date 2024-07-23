@@ -36,3 +36,27 @@ input[type=checkbox], input[type=radio] {
 .remove-bold{
 	font-weight:normal !important;
 }
+.position-relative {
+    position: relative;
+}
+.clear-btn {
+    position: absolute;
+    bottom: 10px;  /* Adjust as necessary */
+    right: -110px;   /* Adjust as necessary */
+}
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .difference-two-label{
+        margin-top:10px !important;
+    }
+    
+    .therapist_signature{
+        height:160px !important;
+        width:300px !important;
+    }
+    .date_class{
+        width:auto !important;
+    }
+    .btn_class{
+        margin-left:-78px !important;
+    }
+}

@@ -87,8 +87,8 @@
                     <div class="row last-div-padding bgcolor" style="margin-top: 10px;">
                         <div class="col-sm-12">
                                 <p>I accept a patch test :&nbsp;
-                                    Yes&nbsp; <input type="radio" id="patch_yes" name="patch_test" value="yes">&nbsp;&nbsp;
-                                    No&nbsp; <input type="radio" id="patch_no" name="patch_test" value="no"> 
+                                    Yes&nbsp; <input type="radio" id="patch_yes" class="chk_height_width" name="patch_test" value="yes">&nbsp;&nbsp;
+                                    No&nbsp; <input type="radio" id="patch_no" class="chk_height_width" name="patch_test" value="no"> 
                                 </p>
 
                         </div>
@@ -120,8 +120,8 @@
                             <p>Have you received an allergic reaction to the treatment you have mentioned above before ?</p>
                         </div>
                         <div class="col-sm-6">
-                                Yes&nbsp; <input type="radio" id="allergic_yes" name="allergic" value="yes">&nbsp;&nbsp;
-                                No&nbsp; <input type="radio" id="allergic_no" name="allergic" value="no"> 
+                                Yes&nbsp; <input type="radio" id="allergic_yes" class="chk_height_width" name="allergic" value="yes">&nbsp;&nbsp;
+                                No&nbsp; <input type="radio" id="allergic_no" class="chk_height_width" name="allergic" value="no"> 
                         </div>
                     </div>
 
@@ -136,57 +136,49 @@
                             <p>Further, I grant Brow-Art and it's employee and representatives, permission to colour my hair and not hold them responsible for any and all adverse health reaction from this service.</p>
                         </div>
                     </div>
-                    <div class="section" style="padding:20px 0px;">
-                        <div class="row bgcolor last-div-padding">
-                            <div class="col-sm-10">
-                                <div class="col-sm-2">
-                                    <label>Client Signature</label>
-                                </div>
-                                <div class="col-sm-5">
-                                    <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                                    <canvas id="customer_signature" name= "customer_signature" width="500" height="160"></canvas>
-                                </div>
-                                <div class="col-sm-1">
-                                </div>
-                                <div class="col-sm-1">
-                                    <button class="btn btn-primary" id="btn_customer_cancel" name="btn_customer_cancel">Clear</button>
-                                </div>
-                            </div>
+                    <div class="section">
+                <div class="row" style="padding:20px 0px !important;">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <label>Client Signature</label>
+                        </div>
+                        <div class="col-sm-5 col-md-5 col-lg-5 position-relative">
+                            <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
+                            <canvas id="customer_signature" class="therapist_signature" name="customer_signature" width="500" height="160"></canvas>
+                            <button class="btn btn-primary clear-btn" id="btn_customer_cancel" name="btn_customer_cancel">Clear Signature</button>
                         </div>
                     </div>
-                    <div class="section" style="padding:20px 0px;">
-                        <div class="row bgcolor last-div-padding">
-                            <div class="col-sm-10" style="margin-top: 10px;">
-                                <div class="col-sm-2">
-                                    <label style="text-align: right;">Therapist Name</label>
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
-                                </div>
-                            </div>
-                            <div class="col-sm-10" style="margin-top: 10px;">
-                                <div class="col-sm-2">
-                                    <label>Therapist Signature</label>
-                                </div>
-                                <div class="col-sm-5">
-                                    <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                                    <canvas id="therapist_signature" name= "therapist_signature" width="500" height="160"></canvas>
-                                </div>
-                                <div class="col-sm-1">
-                                </div>
-                                <div class="col-sm-1">
-                                    <button class="btn btn-primary" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear</button>
-                                </div>
-                            </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="row" style="margin-top:30px; padding:20px 0px !important;">
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                                <label style="text-align: right;">Therapist Name</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
                         </div>
                     </div>
+                    <div class="col-sm-12" style="margin-top:10px !important;">
+                        <div class="col-sm-2">
+                            <label>Therapist Signature</label>
+                        </div>
+                        <div class="col-sm-5 position-relative">
+                            <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
+                            <canvas id="therapist_signature" class="therapist_signature" name="therapist_signature" width="500" height="160"></canvas>
+                            <button class="btn btn-primary clear-btn" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear Signature</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
                     <div class="row" style="margin-top: 10px;">
                     <div class="col-sm-12">
                         <div class="col-sm-11">
                         </div>
                         <div class="col-sm-1">
-                            <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -40px;" value="submit" >Save & Continue</button>
+                            <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" style="margin-left: -40px;" value="submit" >Save & Continue</button>
                         </div>
                     </div>      
                 </div>

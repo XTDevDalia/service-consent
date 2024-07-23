@@ -3,7 +3,7 @@ session_start();
 function service_menu() {
     add_menu_page(
             'ServiceConsent',
-            'Customer Consent',
+            'Consent Form',
             'edit_posts',
             'service-menu',
             '',
