@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 function service_menu() {
     add_menu_page(
             'ServiceConsent',
@@ -13,7 +11,7 @@ function service_menu() {
     add_menu_page(
             'Service listing',
             'Service List',
-            'edit_posts', // Capability (e.g., 'manage_options')
+            'manage_options', // Capability (e.g., 'manage_options')
             'list-consent', // Menu slug
             'service_list' // Callback function to display content
     );
@@ -93,18 +91,21 @@ function otherform() {
             $filepath = admin_url() . "?page=" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']]][0];
             //echo $filepath;exit;
             $_SESSION['form_index'] = $_SESSION['form_index'] + 1;
-
-            if (($_SESSION['form_index'] - 1) == count($_SESSION['selected_forms'])) {
+           
+            if (($_SESSION['form_index']-1) == count($_SESSION['selected_forms'])) 
+            {
                 unset($_SESSION['customer_id']);
-                unset($_SESSION['customer_name']);
-                unset($_SESSION['customer_phone']);
-                unset($_SESSION['customer_email']);
-                unset($_SESSION['customer_no']);
-                unset($_SESSION['selected_forms']);
-                unset($_SESSION['form_index']);
+               unset($_SESSION['customer_name']);
+               unset($_SESSION['customer_phone']);
+               unset($_SESSION['customer_email']);
+               unset($_SESSION['customer_no']);
+               unset($_SESSION['selected_forms']);
+               unset($_SESSION['form_index']);
                 wp_redirect(admin_url() . "admin.php?page=add-consent");
+                exit;
             } else {
                 wp_redirect($filepath);
+                exit;
             }
             session_write_close();
             exit;
