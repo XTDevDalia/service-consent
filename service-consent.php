@@ -29,16 +29,41 @@ require_once SC_PLUGIN_DIR_PATH . '/constants.php';
 //add_action('plugins_loaded', 'Codebunch\zcqApi\Bootstrap::instance', 99);
 add_action('init', 'register_session');
 add_action('wp_logout', 'end_session');
-add_action('wp_print_scripts', 'add_service_consent_js');
-add_action('admin_menu', 'service_menu');
-add_action('init', 'addMainform');
-//add_action('wp_ajax_load_recent_posts', 'otherform');
-//add_action('admin_menu', 'addMainform');
-add_action('admin_menu', 'register_service_forms');
-add_action('admin_menu', 'otherform');
-//add_action('admin_menu', 'service_list');
-require_once SC_PLUGIN_DIR_PATH . '/forms-process.php';
-require_once SC_PLUGIN_DIR_PATH . '/list-consent.php';
+add_action('init', 'get_uid');
+
+function get_uid() {
+    $user_id = get_current_user_id();
+    if ($user_id == 2) {
+        require_once SC_PLUGIN_DIR_PATH . '/forms-process.php';
+        require_once SC_PLUGIN_DIR_PATH . '/list-consent.php';
+        add_action('wp_print_scripts', 'add_service_consent_js');
+        add_action('admin_menu', 'service_menu');
+        add_action('admin_menu', 'addMainform');
+        add_action('admin_menu', 'register_service_forms');
+        add_action('admin_menu', 'otherform');
+        add_action('admin_menu', 'editor_remove_menu_pages');
+    }
+}
+
+function editor_remove_menu_pages() {
+    remove_menu_page('link-manager.php');
+    remove_menu_page('index.php');
+    remove_menu_page('users.php');
+    remove_menu_page('upload.php');
+    remove_menu_page('tools.php');
+    remove_menu_page('themes.php', 'background.php');
+    remove_menu_page('facial-consent');
+    remove_menu_page('plugins.php');
+    remove_menu_page('options-general.php'); // Removes the entire Settings menu
+    remove_menu_page('edit.php');
+    remove_menu_page('edit-comments.php');
+    remove_menu_page('post-new.php');
+    remove_submenu_page('themes.php', 'themes.php');
+    remove_submenu_page('themes.php', 'theme-editor.php');
+    remove_submenu_page('themes.php', 'widgets.php');
+    // Hide the Pages menu
+    remove_menu_page('edit.php?post_type=page');
+}
 
 function add_service_consent_js() {
     wp_register_script('prefix_bootstrap', '/wp-content/plugins/service-consent/js/bootstrap.min.js');

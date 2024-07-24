@@ -4,7 +4,7 @@ function service_menu() {
     add_menu_page(
             'ServiceConsent',
             'Consent Form',
-            'edit_posts',
+            'manage_options',
             'add-consent', // Menu slug
             'add_consent' // Callback function to display content
     );
