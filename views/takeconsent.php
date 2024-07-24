@@ -38,7 +38,7 @@ unset($_SESSION['form_index']);*/
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
-                    <label>Phone No.</label><span style="color:red"> *</span>
+                    <label>Customer Phone No.</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">
                     <input type="text" name="txt_phone" id="txt_phone" class="form-control">
@@ -48,7 +48,7 @@ unset($_SESSION['form_index']);*/
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
-                    <label>Name</label><span style="color:red"> *</span>
+                    <label>Customer Name</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">
                     <input type="text" name="txt_name" id="txt_name" class="form-control">
@@ -58,7 +58,7 @@ unset($_SESSION['form_index']);*/
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
-                    <label>Email</label>
+                    <label>Customer Email</label>
                 </div>
                 <div class="col-sm-4">
                     <input type="email" name="txt_email" id="txt_email" class="form-control">
@@ -68,7 +68,7 @@ unset($_SESSION['form_index']);*/
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
-                    <label>Client No.</label><span style="color:red"> *</span>
+                    <label>Visit No.</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">
                     <input type="text" name="txt_customer_no" id="txt_customer_no" class="form-control" readonly>

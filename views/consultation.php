@@ -29,16 +29,21 @@
                 <div class="col-sm-12">
                     <!-- <div class="col-sm-4"></div> -->
                     <div class="col-sm-4">
-                        <p style="font-weight: 700;text-decoration: underline;font-size:20px !important;">Counsultation Card</p>
+                        <p style="font-weight: 600;font-size:20px !important;">Counsultation Card</p>
+                    </div>
+                    <div class="col-sm-5">
+                    </div>
+                    <div class="col-sm-3">
+                    <p style="font-weight: 600;font-size:20px !important;">Visit No.: <?= (isset($_SESSION['customer_no'])) ? $_SESSION['customer_no'] : ''; ?></p>
                     </div>
                     <!-- <div class="col-sm-4"></div> -->
                 </div>
             </div>
 
             <div class="row last-div-padding bgcolor">
-                <div class="col-sm-10" style="margin-top: 10px;">
+                <div class="col-sm-10">
                     <div class="col-sm-3">
-                        <h3 style="font-weight:700"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
+                        <p style="font-weight:600;font-size:20px !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></p>
                     </div>
                     <div class="col-sm-1">
                     </div>

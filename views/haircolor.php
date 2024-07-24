@@ -48,10 +48,12 @@
             <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
             <div class="row" style="margin-top:30px;">
                         <div class="col-sm-12">
-                            <div class="col-sm-6"><h4 style="font-weight: 600;">Hair Colour Services Customer Consent Form:</h4></div>
+                            <div class="col-sm-6">
+                                <p style="font-weight: 600;font-size:20px !important;">Hair Colour Services Customer Consent Form:</p>
+                            </div>
                             <div class="col-sm-3"></div>
                             <div class="col-sm-3">
-                                <p class="textalign">No.: <?= (isset($_SESSION['customer_no'])) ? $_SESSION['customer_no'] : ''; ?></p>
+                                <p style="font-weight: 600;font-size:20px !important;">Visit No.: <?= (isset($_SESSION['customer_no'])) ? $_SESSION['customer_no'] : ''; ?></p>
                             </div>
                         </div>
                     </div>
