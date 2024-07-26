@@ -35,10 +35,13 @@ function get_uid() {
     $user_id = get_current_user_id();
     if ($user_id == 2) {
         require_once SC_PLUGIN_DIR_PATH . '/forms-process.php';
+        require_once SC_PLUGIN_DIR_PATH . '/patch-test-process.php';
         require_once SC_PLUGIN_DIR_PATH . '/list-consent.php';
+        require_once SC_PLUGIN_DIR_PATH . '/patch_test_list.php';
         add_action('wp_print_scripts', 'add_service_consent_js');
         add_action('admin_menu', 'service_menu');
         add_action('admin_menu', 'addMainform');
+        add_action('admin_menu', 'add_patch_test_forms');
         add_action('admin_menu', 'register_service_forms');
         add_action('admin_menu', 'otherform');
         add_action('admin_menu', 'editor_remove_menu_pages');

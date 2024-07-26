@@ -15,6 +15,20 @@ function service_menu() {
             'list-consent', // Menu slug
             'service_list' // Callback function to display content
     );
+    add_menu_page(
+        'Patch Test',
+        'Patch Test',
+        'manage_options', // Capability (e.g., 'manage_options')
+        'patch_test', // Menu slug
+        'patch_test_process' // Callback function to display content
+    );
+    add_menu_page(
+        'Patch Test List',
+        'Patch Test List',
+        'manage_options', // Capability (e.g., 'manage_options')
+        'patch_test_list', // Menu slug
+        'patch_test_listing' // Callback function to display content
+    );
 }
 
 function add_consent() {
