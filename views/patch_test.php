@@ -18,6 +18,7 @@
 
     $table_name_customer = $wpdb->prefix . "customer_master";
     $customers = $wpdb->get_results("SELECT * FROM $table_name_customer");
+    //print_r($customers);
 ?>
 
 <div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;">
@@ -36,22 +37,19 @@
                     <label>Customer Name</label>
                 </div>
                 <div class="col-sm-4">
-                    <select name="patch_test_customer" id="patch_test_customer" class="form-control" <?= $patch_test_id ? 'disabled' : '' ?>>
+                    <select name="patch_test_customer" id="patch_test_customer" class="form-control">
                         <option value="-1"><?= 'Select Customer' ?></option>
                         <?php foreach ($customers as $record) { ?>
                             <option value="<?= $record->customer_name ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>><?= $record->customer_name ?></option>
                         <?php } ?>
                     </select>
-                    <?php if ($patch_test_id) { ?>
-                        <input type="hidden" name="patch_test_customer" value="<?= $customer_name ?>">
-                    <?php } ?>
                 </div>
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
-                    <label>Patch Test Date & Time</label>
+                    <label>Patch Test Date & Time</label><span style="color:red"> </span>
                 </div>
                 <div class="col-sm-4">
                     <input type="datetime-local" name="patch_test_datetime" id="patch_test_datetime" class="form-control" value="<?= $patch_test_date_time ?>">
