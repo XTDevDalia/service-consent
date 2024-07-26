@@ -92,6 +92,17 @@ final class pluginconfig {
                 );";
             dbDelta($sql);
         }
+        $table_name = $wpdb->prefix . "patch_test";
+        if ($wpdb->get_var("SHOW TABLES LIKE '{$table_name}'") != $table_name) {
+            $sql = "CREATE TABLE $table_name (
+                `patch_test_id` bigint(20) NOT NULL AUTO_INCREMENT,
+                `customer_name` varchar(256) NOT NULL,
+                `patch_test_date_time` varchar(256) NOT NULL,
+                `patch_test_notes` varchar(256) NOT NULL,
+                 PRIMARY KEY  (patch_test_id)
+                );";
+            dbDelta($sql);
+        }
     }
 
     /**

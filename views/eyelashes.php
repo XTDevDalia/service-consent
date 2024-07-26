@@ -49,12 +49,12 @@
             <div class="row" style="margin-top:30px;">
                 <div class="col-sm-12">
                     <div class="col-sm-3">
-                        <h4 style="font-weight: 600;margin-left:-12px;">Lash Extension</h4>
+                        <p style="font-weight: 600;margin-left:-12px;font-size:20px !important;">Lash Extension</p>
                     </div>
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3"></div>
                     <div class="col-sm-3">
-                        <p class="textalign">No.: <?= (isset($_SESSION['customer_no'])) ? $_SESSION['customer_no'] : ''; ?></p>
+                        <p style="font-weight: 600;font-size:20px !important;">Visit No.: <?= (isset($_SESSION['customer_no'])) ? $_SESSION['customer_no'] : ''; ?></p>
                     </div>
                 </div>
             </div>
