@@ -53,13 +53,26 @@ function addMainform() {
             'customer_name' => $_POST['txt_name'],
             'customer_phone' => $_POST['txt_phone'],
             'customer_email' => $_POST['txt_email'],
-            'customer_no' => $_POST['txt_customer_no'],
         );
-
-        $wpdb->insert($table_name, $arrData);
+        $ret = $wpdb->get_results("SELECT * FROM $table_name WHERE customer_phone=" . $_POST['txt_phone']);
+        if (empty($ret)) {
+            $wpdb->insert($table_name, $arrData);
+        } else {
+            $query = $wpdb->prepare(
+                    "UPDATE $table_name SET customer_branch_id = %d,"
+                    . "customer_name=%s,"
+                    . "customer_email=%s WHERE customer_phone=%s",
+                    $arrData['customer_branch_id'],
+                    $arrData['customer_name'],
+                    $arrData['customer_email'],
+                    $arrData['customer_phone'],
+            );
+            $result = $wpdb->query($query);
+        }
+        //echo $wpdb->insert_id;die;
         $_SESSION['customer_id'] = $wpdb->insert_id;
         $_SESSION['customer_name'] = $arrData['customer_name'];
-        $_SESSION['customer_no'] = $arrData['customer_no'];
+        // $_SESSION['customer_no'] = $arrData['customer_no'];
         $_SESSION['selected_forms'] = $_POST['chk_service'];
         $_SESSION['form_index'] = 0;
         //$filepath = SC_PLUGIN_DIR_PATH . 'views/' . $serviceconfig['templates'][$_POST['chk_service'][0]];
@@ -72,7 +85,9 @@ function addMainform() {
         wp_redirect($filepath);
         exit;
     }
-    // print_r($wpdb->last_error);
+    /*echo $wpdb->last_query;
+    print_r($wpdb->last_error);
+    exit;*/
 }
 
 function otherform() {
@@ -90,6 +105,7 @@ function otherform() {
             $table_name = $table_prefix . "service_consent";
             $arrData = array(
                 'consent_customer_id' => $_SESSION['customer_id'],
+                'customer_visitor_no' => 'VS' . sprintf("%06d", $_SESSION['customer_id']),
                 'customer_service_date' => date('Y-m-d H:i:s'),
                 'customer_form_id' => $_SESSION['selected_forms'][$_SESSION['form_index'] - 1],
                 'customer_form_value_json' => json_encode($_POST),
@@ -105,16 +121,15 @@ function otherform() {
             $filepath = admin_url() . "?page=" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']]][0];
             //echo $filepath;exit;
             $_SESSION['form_index'] = $_SESSION['form_index'] + 1;
-           
-            if (($_SESSION['form_index']-1) == count($_SESSION['selected_forms'])) 
-            {
+
+            if (($_SESSION['form_index'] - 1) == count($_SESSION['selected_forms'])) {
                 unset($_SESSION['customer_id']);
-               unset($_SESSION['customer_name']);
-               unset($_SESSION['customer_phone']);
-               unset($_SESSION['customer_email']);
-               unset($_SESSION['customer_no']);
-               unset($_SESSION['selected_forms']);
-               unset($_SESSION['form_index']);
+                unset($_SESSION['customer_name']);
+                unset($_SESSION['customer_phone']);
+                unset($_SESSION['customer_email']);
+                unset($_SESSION['customer_no']);
+                unset($_SESSION['selected_forms']);
+                unset($_SESSION['form_index']);
                 wp_redirect(admin_url() . "admin.php?page=add-consent");
                 exit;
             } else {

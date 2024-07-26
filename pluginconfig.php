@@ -68,6 +68,7 @@ final class pluginconfig {
             $sql = "CREATE TABLE $table_name (
                 `consent_id` bigint(20) NOT NULL AUTO_INCREMENT,
                 `consent_customer_id` bigint(20) NOT NULL,
+                `customer_visitor_no` varchar(255) NOT NULL,
                 `customer_service_date` datetime NOT NULL,
                 `customer_form_id` int(11) NOT NULL,
                 `customer_form_value_json` text NOT NULL,
@@ -84,10 +85,9 @@ final class pluginconfig {
             $sql = "CREATE TABLE $table_name (
                 `customer_id` bigint(20) NOT NULL AUTO_INCREMENT,
                 `customer_branch_id` int(11) NOT NULL,
-                `customer_name` varchar(256) NOT NULL,
-                `customer_phone` varchar(256) NOT NULL,
-                `customer_email` varchar(256) NOT NULL,
-                `customer_no` varchar(256) NOT NULL,
+                `customer_name` varchar(255) NOT NULL,
+                `customer_phone` varchar(255) NOT NULL,
+                `customer_email` varchar(255) NOT NULL,
                  PRIMARY KEY  (customer_id)
                 );";
             dbDelta($sql);

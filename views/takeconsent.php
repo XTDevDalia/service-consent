@@ -1,10 +1,5 @@
 <?php
 global $serviceconfig;
-/*unset($_SESSION['customer_id']);
-unset($_SESSION['customer_name']);
-unset($_SESSION['customer_no']);
-unset($_SESSION['selected_forms']);
-unset($_SESSION['form_index']);*/
 ?>
 <div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;">
 </div>
@@ -71,22 +66,22 @@ unset($_SESSION['form_index']);*/
                     <label>Visit No.</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">
-                    <input type="text" name="txt_customer_no" id="txt_customer_no" class="form-control" readonly>
+                    <input type="text" name="txt_visit_no" id="txt_visit_no" class="form-control" readonly>
                 </div>
             </div>
         </div>
         <script>
-            function generateClientNo() {
-                let lastNumber = localStorage.getItem('lastClientNumber');
-                if (!lastNumber) {
-                    lastNumber = 0; // Starting point
-                }
-                lastNumber++;
-                let clientNo = 'CL' + String(lastNumber).padStart(3, '0');
-                localStorage.setItem('lastClientNumber', lastNumber);
-                document.getElementById('txt_customer_no').value = clientNo;
-            }
-            generateClientNo();
+//            function generateClientNo() {
+//                let lastNumber = localStorage.getItem('lastClientNumber');
+//                if (!lastNumber) {
+//                    lastNumber = 0; // Starting point
+//                }
+//                lastNumber++;
+//                let clientNo = 'CL' + String(lastNumber).padStart(3, '0');
+//                localStorage.setItem('lastClientNumber', lastNumber);
+//                document.getElementById('txt_customer_no').value = clientNo;
+//            }
+//            generateClientNo();
         </script>
 
         <?php
