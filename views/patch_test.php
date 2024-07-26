@@ -36,19 +36,22 @@
                     <label>Customer Name</label>
                 </div>
                 <div class="col-sm-4">
-                    <select name="patch_test_customer" id="patch_test_customer" class="form-control">
+                    <select name="patch_test_customer" id="patch_test_customer" class="form-control" <?= $patch_test_id ? 'disabled' : '' ?>>
                         <option value="-1"><?= 'Select Customer' ?></option>
                         <?php foreach ($customers as $record) { ?>
                             <option value="<?= $record->customer_name ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>><?= $record->customer_name ?></option>
                         <?php } ?>
                     </select>
+                    <?php if ($patch_test_id) { ?>
+                        <input type="hidden" name="patch_test_customer" value="<?= $customer_name ?>">
+                    <?php } ?>
                 </div>
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
-                    <label>Patch Test Date & Time</label><span style="color:red"> </span>
+                    <label>Patch Test Date & Time</label>
                 </div>
                 <div class="col-sm-4">
                     <input type="datetime-local" name="patch_test_datetime" id="patch_test_datetime" class="form-control" value="<?= $patch_test_date_time ?>">
