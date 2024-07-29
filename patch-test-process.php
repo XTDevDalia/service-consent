@@ -30,7 +30,7 @@ function add_patch_test_forms(){
             }
         } else {
             $data = array(
-                'customer_name' => $_POST['patch_test_name'],
+                'customer_name' => $_POST['patch_test_customer'],
                 'patch_test_date_time' => $_POST['patch_test_datetime'],
                 'patch_test_notes' => $_POST['patch_test_notes'],
             );
