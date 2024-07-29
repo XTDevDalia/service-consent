@@ -1,10 +1,3 @@
-<style>
-    .chk_height_width_list{
-	    height:13px !important;
-	    width:13px !important;
-        margin-top:0px !important;
-    }
-</style>
 <?php
 if (!class_exists('WP_List_Table')) {
     require_once(ABSPATH . 'wp-admin/includes/class-wp-list-table.php');

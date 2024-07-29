@@ -8,13 +8,15 @@ global $serviceconfig;
     <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
         <div class="row" style="margin-top:30px !important;">
             <div class="col-sm-12">
-                <h4 style="text-align: left;font-weight: 700;">Customer Consent</h4>
+                <div class="col-sm-6">
+                    <h4 style="text-align: left;font-weight: 700;">Customer Consent</h4>
+                </div>
             </div>
         </div>
 
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
-                <div class="col-sm-2 textalign">
+                <div class="col-sm-3 col-lg-2 col-md-3 textalign">
                     <label>Branch</label>
                 </div>
                 <div class="col-sm-4">
@@ -32,7 +34,7 @@ global $serviceconfig;
         </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
-                <div class="col-sm-2 textalign">
+                <div class="col-sm-3 col-lg-2 col-md-3 textalign">
                     <label>Customer Phone No.</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">
@@ -42,7 +44,7 @@ global $serviceconfig;
         </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
-                <div class="col-sm-2 textalign">
+                <div class="col-sm-3 col-lg-2 col-md-3 textalign">
                     <label>Customer Name</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">
@@ -52,7 +54,7 @@ global $serviceconfig;
         </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
-                <div class="col-sm-2 textalign">
+                <div class="col-sm-3 col-lg-2 col-md-3 textalign">
                     <label>Customer Email</label>
                 </div>
                 <div class="col-sm-4">
@@ -62,7 +64,7 @@ global $serviceconfig;
         </div>
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
-                <div class="col-sm-2 textalign">
+                <div class="col-sm-3 col-lg-2 col-md-3 textalign">
                     <label>Visit No.</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">

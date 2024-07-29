@@ -44,6 +44,15 @@
         </style>
     </head>
     <body>
+    <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">  
+                    <img src="<?php echo wp_upload_dir()['baseurl']; ?>/brow.png" height="50" width="100" style="margin-top:10px">
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+        </div>
         <div class="row" style="margin-top:30px;">
             <div class="col-sm-12">
                 <div class="col-sm-3"><p style="font-weight: 600;font-size:20px !important;">Facial Therapy</p></div>

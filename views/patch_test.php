@@ -20,36 +20,54 @@
     $customers = $wpdb->get_results("SELECT * FROM $table_name_customer");
     //print_r($customers);
 ?>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
+<!-- jQuery (required for Select2) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;">
 </div>
 <div class="container section">
-    <form action="" method="post" onsubmit="return validatePatchTestForm();">
+            <div class="col-sm-12">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">  
+                    <img src="<?php echo wp_upload_dir()['baseurl']; ?>/brow.png" height="50" width="100" style="margin-top:10px">
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+        <form action="" method="post" onsubmit="return validatePatchTestForm();">
         <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
         <div class="row" style="margin-top:30px !important;">
             <div class="col-sm-12">
-                <h4 style="text-align: left;font-weight: 700;"><?= $patch_test_id ? 'Edit Patch Test' : 'Patch Test' ?></h4>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12">
-                <div class="col-sm-2 textalign">
-                    <label>Customer Name</label>
-                </div>
                 <div class="col-sm-4">
-                    <select name="patch_test_customer" id="patch_test_customer" class="form-control">
-                        <option value="-1"><?= 'Select Customer' ?></option>
-                        <?php foreach ($customers as $record) { ?>
-                            <option value="<?= $record->customer_name ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>><?= $record->customer_name ?></option>
-                        <?php } ?>
-                    </select>
+                    <h4 style="text-align: left;font-weight: 700;"><?= $patch_test_id ? 'Edit Patch Test' : 'Patch Test' ?></h4>
                 </div>
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
+        <div class="col-sm-12">
+            <div class="col-sm-2 textalign">
+                <label>Customer Name</label>
+            </div>
+            <div class="col-sm-4">
+        <select name="patch_test_customer" id="patch_test_customer" class="form-control">
+            <option value="-1"><?= 'Select Customer' ?></option>
+            <?php foreach ($customers as $record) { ?>
+                <option value="<?= $record->customer_name ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>>
+                    <?= $record->customer_name ?> - <?= $record->customer_phone ?>
+                </option>
+            <?php } ?>
+        </select>
+    </div>
+        </div>
+    </div>
+
+        <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
-                    <label>Patch Test Date & Time</label><span style="color:red"> </span>
+                    <label>Patch Test Date Time</label><span style="color:red"> </span>
                 </div>
                 <div class="col-sm-4">
                     <input type="datetime-local" name="patch_test_datetime" id="patch_test_datetime" class="form-control" value="<?= $patch_test_date_time ?>">
@@ -74,3 +92,11 @@
         </div>     
     </form>
 </div>
+<script>
+        $(document).ready(function() {
+            $('#patch_test_customer').select2({
+                placeholder: 'Select Customer',
+                allowClear: true
+            });
+        });
+    </script>

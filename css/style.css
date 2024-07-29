@@ -36,15 +36,20 @@ input[type=checkbox], input[type=radio] {
 .remove-bold{
 	font-weight:normal !important;
 }
-.position-relative {
+ .position-relative {
     position: relative;
 }
 .clear-btn {
     position: absolute;
-    bottom: 10px;  /* Adjust as necessary */
-    right: -110px;   /* Adjust as necessary */
+    bottom: 10px;  
+    right: -110px;  
 }
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .clear-btn {
+        position: absolute;
+        bottom: 10px;  
+        right: -150px !important;  
+    }
     .difference-two-label{
         margin-top:10px !important;
     }
@@ -55,8 +60,25 @@ input[type=checkbox], input[type=radio] {
     }
     .date_class{
         width:auto !important;
+        margin-left:10px !important;
     }
     .btn_class{
         margin-left:-78px !important;
     }
+}
+
+.chk_height_width_list{
+	height:13px !important;
+	width:13px !important;
+    margin-top:0px !important;
+}
+#cb-select-all-2{
+    margin-top:-7px !important;
+	height:13px !important;
+	width:13px !important;
+}
+#cb-select-all-1{
+    margin-top:-7px !important;
+	height:13px !important;
+	width:13px !important;
 }

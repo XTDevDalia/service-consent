@@ -44,6 +44,15 @@
         </style>
     </head>
     <body>
+    <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">  
+                    <img src="<?php echo wp_upload_dir()['baseurl']; ?>/brow.png" height="50" width="100" style="margin-top:10px">
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+        </div>
         <form action="" method="post" name="consent_forms" id="consent_forms" >
             <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
             <div class="row" style="margin-top:30px;">
