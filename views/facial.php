@@ -50,7 +50,7 @@
                 <div class="col-sm-3"></div>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-3">
-                    <p style="font-weight: 600;font-size:20px !important;">Visit No.:  <?= (isset($_SESSION['customer_no'])) ? $_SESSION['customer_no'] : ''; ?></p>
+                    <p style="font-weight: 600;font-size:20px !important;">Visit No.:  <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></p>
                 </div>
             </div>
         </div>
