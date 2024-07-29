@@ -54,11 +54,12 @@ function addMainform() {
             'customer_branch_id' => $_POST['select_branch'],
             'customer_name' => $_POST['txt_name'],
             'customer_phone' => $_POST['txt_phone'],
-            'customer_email' => $_POST['txt_email'],
+            'customer_email' => $_POST['txt_email']
         );
-        $ret = $wpdb->get_results("SELECT * FROM $table_name WHERE customer_phone=" . $_POST['txt_phone']);
+        $ret = $wpdb->get_row("SELECT * FROM $table_name WHERE customer_phone=" . $_POST['txt_phone']);
         if (empty($ret)) {
             $wpdb->insert($table_name, $arrData);
+            $cid = $wpdb->insert_id;
         } else {
             $query = $wpdb->prepare(
                     "UPDATE $table_name SET customer_branch_id = %d,"
@@ -70,11 +71,12 @@ function addMainform() {
                     $arrData['customer_phone'],
             );
             $result = $wpdb->query($query);
+            $cid = $ret->customer_id;
         }
         //echo $wpdb->insert_id;die;
-        $_SESSION['customer_id'] = $wpdb->insert_id;
+        $_SESSION['customer_id'] = $cid;
         $_SESSION['customer_name'] = $arrData['customer_name'];
-        // $_SESSION['customer_no'] = $arrData['customer_no'];
+        $_SESSION['visit_no'] = $_POST['txt_visit_no'];
         $_SESSION['selected_forms'] = $_POST['chk_service'];
         $_SESSION['form_index'] = 0;
         //$filepath = SC_PLUGIN_DIR_PATH . 'views/' . $serviceconfig['templates'][$_POST['chk_service'][0]];
@@ -87,9 +89,9 @@ function addMainform() {
         wp_redirect($filepath);
         exit;
     }
-    /*echo $wpdb->last_query;
-    print_r($wpdb->last_error);
-    exit;*/
+    /* echo $wpdb->last_query;
+      print_r($wpdb->last_error);
+      exit; */
 }
 
 function otherform() {
@@ -107,7 +109,7 @@ function otherform() {
             $table_name = $table_prefix . "service_consent";
             $arrData = array(
                 'consent_customer_id' => $_SESSION['customer_id'],
-                'customer_visitor_no' => 'VS' . sprintf("%06d", $_SESSION['customer_id']),
+                'customer_visitor_no' => $_SESSION['visit_no'],
                 'customer_service_date' => date('Y-m-d H:i:s'),
                 'customer_form_id' => $_SESSION['selected_forms'][$_SESSION['form_index'] - 1],
                 'customer_form_value_json' => json_encode($_POST),
