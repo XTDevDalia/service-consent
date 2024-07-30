@@ -17,7 +17,7 @@ function add_patch_test_forms(){
     if (isset($_POST['patch_test_btn_save']) && $_POST['patch_test_btn_save'] == "submit") {
         $table_name = $table_prefix . "patch_test";
         $arrData = array(
-            'customer_name' => $_POST['patch_test_customer'],
+            'customer_id' => $_POST['patch_test_customer'],
             'patch_test_date_time' => $_POST['patch_test_datetime'],
             'patch_test_notes' => $_POST['patch_test_notes'],
         );
@@ -30,7 +30,7 @@ function add_patch_test_forms(){
             }
         } else {
             $data = array(
-                'customer_name' => $_POST['patch_test_customer'],
+                'customer_id' => $_POST['patch_test_customer'],
                 'patch_test_date_time' => $_POST['patch_test_datetime'],
                 'patch_test_notes' => $_POST['patch_test_notes'],
             );

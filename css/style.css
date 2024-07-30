@@ -82,3 +82,6 @@ input[type=checkbox], input[type=radio] {
 	height:13px !important;
 	width:13px !important;
 }
+.dropdown-width{
+    max-width: 35em !important;
+}

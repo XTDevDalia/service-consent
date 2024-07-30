@@ -34,10 +34,10 @@ function column_contact_details() {
     echo '</style>';
 }
 
-add_action('admin_head', 'column_patch_list_customer_name');
-function column_patch_list_customer_name() {
+add_action('admin_head', 'column_patch_list_customer_id');
+function column_patch_list_customer_id() {
     echo '<style type="text/css">';
-    echo '.column-customer_name { width: 15% !important; }'; // Adjust the width as needed
+    echo '.column-customer_id { width: 10% !important; }'; // Adjust the width as needed
     echo '</style>';
 }
 

@@ -8,7 +8,11 @@
 
     if ($patch_test_id) {
         $table_name_patch_test = $wpdb->prefix . 'patch_test';
-        $results = $wpdb->get_row("SELECT * from $table_name_patch_test WHERE patch_test_id = $patch_test_id");
+        $table_name_cust = $wpdb->prefix . 'customer_master';
+        $results = $wpdb->get_row("SELECT c.customer_name , p.* from $table_name_patch_test as p 
+                                left join $table_name_cust as c
+                                on c.customer_id = p.customer_id 
+                                WHERE patch_test_id = $patch_test_id");
         if ($results) {
             $customer_name = $results->customer_name;
             $patch_test_date_time = $results->patch_test_date_time;
@@ -18,7 +22,8 @@
 
     $table_name_customer = $wpdb->prefix . "customer_master";
     $customers = $wpdb->get_results("SELECT * FROM $table_name_customer");
-    //print_r($customers);
+    // print_r($customers);
+    //exit;
 ?>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 
@@ -29,15 +34,15 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;">
 </div>
-<div class="container section">
-            <div class="col-sm-12">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">  
-                    <img src="<?php echo wp_upload_dir()['baseurl']; ?>/brow.png" height="50" width="100" style="margin-top:10px">
-                </div>
-                <div class="col-sm-4"></div>
-            </div>
-        <form action="" method="post" onsubmit="return validatePatchTestForm();">
+<div class="section">
+    <div class="col-sm-12">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">  
+            <img src="<?php echo wp_upload_dir()['baseurl']; ?>/brow.png" height="50" width="100" style="margin-top:10px">
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <form action="" method="post" onsubmit="return validatePatchTestForm();">
         <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
         <div class="row" style="margin-top:30px !important;">
             <div class="col-sm-12">
@@ -47,23 +52,22 @@
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
-        <div class="col-sm-12">
-            <div class="col-sm-2 textalign">
-                <label>Customer Name</label>
+            <div class="col-sm-12">
+                <div class="col-sm-2 textalign">
+                    <label>Customer Name</label>
+                </div>
+                <div class="col-sm-4">
+                    <select name="patch_test_customer" id="patch_test_customer" class="form-control">
+                        <option value="-1"><?= 'Select Customer' ?></option>
+                        <?php foreach ($customers as $record) { ?>
+                            <option value="<?= $record->customer_id ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>>
+                                <?= $record->customer_name ?> - <?= $record->customer_phone ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+                </div>
             </div>
-            <div class="col-sm-4">
-        <select name="patch_test_customer" id="patch_test_customer" class="form-control">
-            <option value="-1"><?= 'Select Customer' ?></option>
-            <?php foreach ($customers as $record) { ?>
-                <option value="<?= $record->customer_name ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>>
-                    <?= $record->customer_name ?> - <?= $record->customer_phone ?>
-                </option>
-            <?php } ?>
-        </select>
-    </div>
         </div>
-    </div>
-
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
@@ -93,10 +97,10 @@
     </form>
 </div>
 <script>
-        $(document).ready(function() {
-            $('#patch_test_customer').select2({
-                placeholder: 'Select Customer',
-                allowClear: true
-            });
+    $(document).ready(function() {
+        $('#patch_test_customer').select2({
+            placeholder: 'Select Customer',
+            allowClear: true
         });
-    </script>
+    });
+</script>

@@ -15,10 +15,8 @@ $serviceconfig['slug'] = array(
 );
 define("BRANCH_ONE", 1);
 define("BRANCH_TWO", 2);
-define("BRANCH_THREE", 3);
 $serviceconfig['branch'] = array(
-    BRANCH_ONE => "Branch 1",
-    BRANCH_TWO => "Branch2",
-    BRANCH_THREE => "Branch 3",
+    BRANCH_ONE => "Brow art beauty salon 42 kirgate ,BD1 1QT",
+    BRANCH_TWO => "Brow Art hair and beauty salon , idle Road BD10 8EG"
 );
 ?>

@@ -94,8 +94,11 @@ class PatchTestListConsent extends WP_List_Table {
         $search_term = !empty($_GET['s']) ? esc_sql($_GET['s']) : '';
 
         $table_name_patch_test = $wpdb->prefix . 'patch_test';
+        $table_name_cust = $wpdb->prefix . 'customer_master';
 
-        $query = "SELECT * from $table_name_patch_test";
+        $query = "SELECT c.customer_name , p.* from $table_name_patch_test as p 
+                            left join $table_name_cust as c
+                                on c.customer_id = p.customer_id";
 
         // Adding search term condition
         if (!empty($search_term)) {
@@ -117,8 +120,12 @@ class PatchTestListConsent extends WP_List_Table {
         $offset = ($current_page - 1) * $per_page;
 
         $query .= " LIMIT $offset, $per_page";
+        //echo $query;
+        //exit;
 
         $results = $wpdb->get_results($query, ARRAY_A);
+        //print_r($results);
+        // exit;
         return $results;
     }
 }

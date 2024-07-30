@@ -4,7 +4,7 @@ global $wpdb;
 ?>
 <div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;">
 </div>
-<div class="container section">
+<div class="section">
     <form action="" method="post" onsubmit="return validateMainForm();">
         <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
         <div class="row" style="margin-top:30px !important;">
@@ -21,7 +21,7 @@ global $wpdb;
                     <label>Branch</label>
                 </div>
                 <div class="col-sm-4">
-                    <select name="select_branch" id="select_branch" class="form-control">
+                    <select name="select_branch" id="select_branch" class="form-control dropdown-width">
                         <?php
                         foreach ($serviceconfig['branch'] as $key => $val) {
                             ?>
@@ -33,6 +33,7 @@ global $wpdb;
                 </div>
             </div>
         </div>
+
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-3 col-lg-2 col-md-3 textalign">
@@ -44,6 +45,7 @@ global $wpdb;
                 </div>
             </div>
         </div>
+
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-3 col-lg-2 col-md-3 textalign">
@@ -54,16 +56,18 @@ global $wpdb;
                 </div>
             </div>
         </div>
+
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-3 col-lg-2 col-md-3 textalign">
-                    <label>Customer Email</label>
+                    <label>Customer Email</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">
                     <input type="email" name="txt_email" id="txt_email" class="form-control">
                 </div>
             </div>
         </div>
+
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-3 col-lg-2 col-md-3 textalign">
@@ -74,24 +78,12 @@ global $wpdb;
                 </div>
             </div>
         </div>
-        <script>
-//            function generateClientNo() {
-//                let lastNumber = localStorage.getItem('lastClientNumber');
-//                if (!lastNumber) {
-//                    lastNumber = 0; // Starting point
-//                }
-//                lastNumber++;
-//                let clientNo = 'CL' + String(lastNumber).padStart(3, '0');
-//                localStorage.setItem('lastClientNumber', lastNumber);
-//                document.getElementById('txt_customer_no').value = clientNo;
-//            }
-//            generateClientNo();
-        </script>
 
         <?php
-        $table_name = $wpdb->prefix . "service_master";
-        $ret = $wpdb->get_results("SELECT * FROM $table_name");
+            $table_name = $wpdb->prefix . "service_master";
+            $ret = $wpdb->get_results("SELECT * FROM $table_name");
         ?>
+
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-6">
@@ -100,13 +92,14 @@ global $wpdb;
             </div>
             <div class="col-sm-12" >
                 <div class="col-sm-2"></div>
-                <div class="col-sm-10" style="display: flex; flex-wrap: wrap;">
-                    <?php foreach ($ret as $record) { ?>
-                        <div class="col-sm-4">
-                            <input type="checkbox" name="chk_service[]" id="chk_<?= $record->service_form_id; ?>" value="<?= $record->service_form_id; ?>" class="chk_height_width">
-                            <?= $record->service_form_display_title; ?>
-                        </div>
-                    <?php } ?>
+                    <div class="col-sm-10" style="display: flex; flex-wrap: wrap;">
+                        <?php foreach ($ret as $record) { ?>
+                            <div class="col-sm-4">
+                                <input type="checkbox" name="chk_service[]" id="chk_<?= $record->service_form_id; ?>" value="<?= $record->service_form_id; ?>" class="chk_height_width">
+                                <label for="chk_<?= $record->service_form_id; ?>" style="font-weight:normal !important;display:inline !important;"><?= $record->service_form_display_title; ?></label>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-12" style="margin-bottom: 10px;margin-top:10px;">
@@ -116,40 +109,37 @@ global $wpdb;
                 </div>
             </div>
         </div>
-
     </form>
 </div>
 <script>
-            $(document).ready(function () {
-                $('#txt_phone').on('change', function () {
-                    let phone = $(this).val();
-                    var sign_file_path = $('#hdn_plugin_url').val();
-
-                    if (phone) {
-                        $.ajax({
-                            url: sign_file_path + 'fetch_customer.php',
-                            type: 'POST',
-                            data: {phone: phone},
-                            dataType: 'json',
-                            success: function (data) {
-                                //console.log("Response data:", data);
-                                if (data.success) {
-                                    $('#txt_name').val(data.name);
-                                    $('#txt_email').val(data.email);
-                                    $('#hdn_customer_id').val(data.customer_id);
-                                    $('#txt_visit_no').val(data.visit_no);
-                                } else {
-                                    //alert(data.message);
-                                }
-                            },
-                            error: function (jqXHR, textStatus, errorThrown) {
-                                console.error('AJAX Error:', textStatus, errorThrown);
-                                console.log('Response Text:', jqXHR.responseText); // Added for debugging
-                                //alert('Error fetching data.');
-                            }
-                        });
+    $(document).ready(function () {
+        $('#txt_phone').on('change', function () {
+            let phone = $(this).val();
+            var sign_file_path = $('#hdn_plugin_url').val();
+            if (phone) {
+                $.ajax({
+                    url: sign_file_path + 'fetch_customer.php',
+                    type: 'POST',
+                    data: {phone: phone},
+                    dataType: 'json',
+                    success: function (data) {
+                        //console.log("Response data:", data);
+                        if (data.success) {
+                            $('#txt_name').val(data.name);
+                            $('#txt_email').val(data.email);
+                            $('#hdn_customer_id').val(data.customer_id);
+                            $('#txt_visit_no').val(data.visit_no);
+                        } else {
+                             //alert(data.message);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.error('AJAX Error:', textStatus, errorThrown);
+                        console.log('Response Text:', jqXHR.responseText); // Added for debugging
+                            //alert('Error fetching data.');
                     }
                 });
-            });
-
+            }
+        });
+    });
 </script>
