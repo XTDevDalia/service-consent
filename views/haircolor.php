@@ -18,7 +18,8 @@
             }
             .section{
                 background: #f7f7f7;
-                margin-top: 20px !important;
+                margin-top: 10px !important;
+                padding : 5px 5px !important;
             }
             #customer_signature {
                 border: 2px dotted #CCCCCC;
@@ -46,13 +47,12 @@
     <body>
     <div class="row">
             <div class="col-sm-12">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">  
-                    <img src="<?php echo wp_upload_dir()['baseurl']; ?>/brow.png" height="50" width="100" style="margin-top:10px">
-                </div>
-                <div class="col-sm-4"></div>
+                <center>
+                    <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
+                </center>
             </div>
-        </div>
+    </div>
+
         <form action="" method="post" name="consent_forms" id="consent_forms" >
             <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
             <div class="row" style="margin-top:30px;">
@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-sm-3"></div>
                             <div class="col-sm-3">
-                                <p style="font-weight: 600;font-size:20px !important;">Visit No.: <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></p>
+                                <p style="font-weight: 600;font-size:20px !important;text-align:right;">Visit No.: <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></p>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="section">
                     <div class="row last-div-padding bgcolor" style="margin-top: 10px;">
                         <div class="col-sm-12">
                                 <p>I accept a patch test :&nbsp;
@@ -155,7 +155,7 @@
                         </div>
                         <div class="col-sm-5 col-md-5 col-lg-5 position-relative">
                             <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                            <canvas id="customer_signature" class="therapist_signature" name="customer_signature" width="500" height="160"></canvas>
+                            <canvas id="customer_signature" class="therapist_signature" name="customer_signature" style="width:100% !important;"></canvas>
                             <button class="btn btn-primary clear-btn" id="btn_customer_cancel" name="btn_customer_cancel">Clear Signature</button>
                         </div>
                     </div>
@@ -177,14 +177,14 @@
                         </div>
                         <div class="col-sm-5 position-relative">
                             <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                            <canvas id="therapist_signature" class="therapist_signature" name="therapist_signature" width="500" height="160"></canvas>
+                            <canvas id="therapist_signature" class="therapist_signature" name="therapist_signature" style="width:100% !important;"></canvas>
                             <button class="btn btn-primary clear-btn" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear Signature</button>
                         </div>
                     </div>
                 </div>
             </div>
-
-                    <div class="row" style="margin-top: 10px;">
+        </div>
+                <div class="row" style="margin-top: 10px;">
                     <div class="col-sm-12">
                         <div class="col-sm-11">
                         </div>

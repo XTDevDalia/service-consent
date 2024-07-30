@@ -18,11 +18,16 @@
             }
             .section{
                 background: #f7f7f7;
-                margin-top: 20px !important;
+                margin-top: 10px !important;
             }
          </style>
     </head>
     <body>
+    <div class="col-sm-12">
+                <center>
+                    <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
+                </center>
+            </div>
         <form action="" method="post" name="consent_forms" id="consent_forms" >
             <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">        
             <div class="row" style="margin-top:30px;">
@@ -55,7 +60,7 @@
                     </div>  
                 </div> 
             </div>
-            <div class="section" style="padding:20px 0;">
+            <div class="section" style="padding:10px 10px;">
     <div class="row last-div-padding bgcolor">
         <div class="col-12 col-md-4 col-lg-3 mb-3">
             <label>Scar Tissue:</label> 
@@ -193,7 +198,7 @@
                         </div>
                         <div class="col-sm-5 col-md-5 col-lg-5 position-relative">
                             <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                            <canvas id="customer_signature" class="therapist_signature" name="customer_signature" width="500" height="160"></canvas>
+                            <canvas id="customer_signature" class="therapist_signature" name="customer_signature" style="width:100% !important;"></canvas>
                             <button class="btn btn-primary clear-btn" id="btn_customer_cancel" name="btn_customer_cancel">Clear Signature</button>
                         </div>
                         <div class="col-sm-1 col-md-1 col-lg-1">

@@ -18,7 +18,7 @@
         }
         .section{
             background: #f7f7f7;
-            margin-top: 20px !important;
+            margin-top: 10px !important;
         }
         #customer_signature {
                     border: 2px dotted #CCCCCC;
@@ -45,27 +45,25 @@
     </head>
     <body>     
         <div class="row">
-            <div class="col-sm-12">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">  
-                    <img src="<?php echo wp_upload_dir()['baseurl']; ?>/brow.png" height="50" width="100" style="margin-top:10px">
-                </div>
-                <div class="col-sm-4"></div>
+        <div class="col-sm-12">
+                <center>
+                    <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
+                </center>
             </div>
         </div>   
-        <div class="row" style="margin-top:30px;">
+        <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-3"><p style="font-weight: 600;font-size:20px !important;">Manicure / Pedicure</p></div>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-3">
-                    <p style="font-weight: 600;font-size:20px !important;">Visit No.: <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></p>
+                    <p style="font-weight: 600;font-size:20px !important;text-align:right !important;">Visit No.: <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></p>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="margin-top:-20px;">
                 <div class="col-sm-3">
                     <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
                 </div>
@@ -506,7 +504,7 @@
                         </div>
                         <div class="col-sm-5 col-md-5 col-lg-5 position-relative">
                             <input type="hidden" id="hdn_customer_signature" class="form-control" name="hdn_customer_signature">
-                            <canvas id="customer_signature" class="therapist_signature" name="customer_signature" width="500" height="160"></canvas>
+                            <canvas id="customer_signature" class="therapist_signature" name="customer_signature" style="width:100% !important;"></canvas>
                             <button class="btn btn-primary clear-btn" id="btn_customer_cancel" name="btn_customer_cancel">Clear Signature</button>
                         </div>
                         <div class="col-sm-1 col-md-1 col-lg-1">
@@ -526,7 +524,7 @@
                         </div>
                         <div class="col-sm-5 position-relative">
                             <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                            <canvas id="therapist_signature" class="therapist_signature" name="therapist_signature" width="500" height="160"></canvas>
+                            <canvas id="therapist_signature" class="therapist_signature" name="therapist_signature" style="width:100% !important;"></canvas>
                             <button class="btn btn-primary clear-btn" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear Signature</button>
                         </div>
                         <div class="col-sm-1">
