@@ -141,7 +141,6 @@ if ($ret) {
                             $('#txt_name').val(data.name);
                             $('#txt_email').val(data.email);
                             $('#hdn_customer_id').val(data.customer_id);
-                            $('#txt_visit_no').val(data.visit_no);
                         } else {
                              //alert(data.message);
                         }
