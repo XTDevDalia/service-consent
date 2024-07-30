@@ -131,7 +131,7 @@ function otherform() {
                 unset($_SESSION['customer_name']);
                 unset($_SESSION['customer_phone']);
                 unset($_SESSION['customer_email']);
-                unset($_SESSION['customer_no']);
+                unset($_SESSION['visit_no']);
                 unset($_SESSION['selected_forms']);
                 unset($_SESSION['form_index']);
                 wp_redirect(admin_url() . "admin.php?page=add-consent");
