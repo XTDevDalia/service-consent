@@ -35,13 +35,11 @@
 <div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;">
 </div>
 <div class="section">
-    <div class="col-sm-12">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">  
-            <img src="<?php echo wp_upload_dir()['baseurl']; ?>/brow.png" height="50" width="100" style="margin-top:10px">
-        </div>
-        <div class="col-sm-4"></div>
-    </div>
+            <div class="col-sm-12">
+                <center>
+                    <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
+                </center>
+            </div>
     <form action="" method="post" onsubmit="return validatePatchTestForm();">
         <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
         <div class="row" style="margin-top:30px !important;">

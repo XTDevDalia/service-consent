@@ -16,7 +16,7 @@ function column_service_date() {
 add_action('admin_head', 'column_branch');
 function column_branch() {
     echo '<style type="text/css">';
-    echo '.column-customer_branch_id { width: 9% !important; }'; // Adjust the width as needed
+    echo '.column-customer_branch_id { width: 15% !important; }'; // Adjust the width as needed
     echo '</style>';
 }
 
