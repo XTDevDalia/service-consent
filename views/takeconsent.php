@@ -1,6 +1,19 @@
 <?php
 global $serviceconfig;
 global $wpdb;
+$table_name = $wpdb->prefix . "customer_master";
+$result = $wpdb->get_row("SELECT * FROM $table_name ORDER BY customer_id DESC limit 0,1");
+$custid = 1;
+$v_no = "VS" . sprintf("%06d", 1);
+if($result){
+    $custid= $result->customer_id + 1;
+}
+$table_name = $wpdb->prefix . "service_consent";
+$ret = $wpdb->get_row("SELECT * FROM $table_name ORDER BY customer_service_date DESC limit 0,1");
+if ($ret) {
+    $count = $ret->consent_id + 1;
+    $v_no = "VS" . sprintf("%06d", $custid) . $count;
+}
 ?>
 <div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;">
 </div>
@@ -68,7 +81,7 @@ global $wpdb;
                     <label>Visit No.</label><span style="color:red"> *</span>
                 </div>
                 <div class="col-sm-4">
-                    <input type="text" name="txt_visit_no" id="txt_visit_no" class="form-control" readonly>
+                    <input type="text" name="txt_visit_no" id="txt_visit_no" value="<?=$v_no?>" class="form-control" readonly>
                 </div>
             </div>
         </div>
@@ -118,36 +131,28 @@ global $wpdb;
     </form>
 </div>
 <script>
-            $(document).ready(function () {
-                $('#txt_phone').on('change', function () {
-                    let phone = $(this).val();
-                    var sign_file_path = $('#hdn_plugin_url').val();
+    $(document).ready(function () {
+        $('#txt_phone').on('change', function () {
+            let phone = $(this).val();
+            var sign_file_path = $('#hdn_plugin_url').val();
 
-                    if (phone) {
-                        $.ajax({
-                            url: sign_file_path + 'fetch_customer.php',
-                            type: 'POST',
-                            data: {phone: phone},
-                            dataType: 'json',
-                            success: function (data) {
-                                //console.log("Response data:", data);
-                                if (data.success) {
-                                    $('#txt_name').val(data.name);
-                                    $('#txt_email').val(data.email);
-                                    $('#hdn_customer_id').val(data.customer_id);
-                                    $('#txt_visit_no').val(data.visit_no);
-                                } else {
-                                    //alert(data.message);
-                                }
-                            },
-                            error: function (jqXHR, textStatus, errorThrown) {
-                                console.error('AJAX Error:', textStatus, errorThrown);
-                                console.log('Response Text:', jqXHR.responseText); // Added for debugging
-                                //alert('Error fetching data.');
-                            }
-                        });
+            if (phone) {
+                $.ajax({
+                    url: sign_file_path + 'fetch_customer.php',
+                    type: 'POST',
+                    data: {phone: phone},
+                    dataType: 'json',
+                    success: function (data) {
+                        //console.log("Response data:", data);
+                        if (data.success) {
+                            $('#txt_name').val(data.name);
+                            $('#txt_email').val(data.email);
+                            $('#hdn_customer_id').val(data.customer_id);
+                        }
                     }
                 });
-            });
+            }
+        });
+    });
 
 </script>
