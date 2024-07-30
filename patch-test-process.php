@@ -3,7 +3,7 @@ function patch_test_process(){
     include(SC_PLUGIN_DIR_PATH . '/views/patch_test.php');
 }
 global $patch_test_id; 
-$patch_test_id= $_GET['patch_test_id'];
+$patch_test_id= @$_GET['patch_test_id'];
 function add_patch_test_forms(){
     global $wpdb;
     global $table_prefix;
