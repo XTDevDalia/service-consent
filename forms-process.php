@@ -16,18 +16,20 @@ function service_menu() {
             'service_list' // Callback function to display content
     );
     add_menu_page(
-            'Patch Test',
-            'Patch Test',
-            'manage_options', // Capability (e.g., 'manage_options')
-            'patch_test', // Menu slug
-            'patch_test_process' // Callback function to display content
+        'Patch Test',
+        'Patch Test',
+        'manage_options', // Capability (e.g., 'manage_options')
+        'patch_test', // Menu slug
+        'patch_test_process', // Callback function to display content
+        'dashicons-welcome-widgets-menus'
     );
     add_menu_page(
-            'Patch Test List',
-            'Patch Test List',
-            'manage_options', // Capability (e.g., 'manage_options')
-            'patch_test_list', // Menu slug
-            'patch_test_listing' // Callback function to display content
+        'Patch Test List',
+        'Patch Test List',
+        'manage_options', // Capability (e.g., 'manage_options')
+        'patch_test_list', // Menu slug
+        'patch_test_listing', // Callback function to display content
+        'dashicons-welcome-widgets-menus'
     );
 }
 
