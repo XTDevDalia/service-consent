@@ -91,6 +91,15 @@ if ($ret) {
                 </div>
             </div>
         </div>
+        
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12" id="patch_test_div" style="display: none;">
+                <div class="col-sm-6">
+                    <label>Patch Test was Done on :</label>
+                    <span id="patch_test_date_value" style="margin-left:48px;color:green;font-weight:bold;"></span>
+                </div>
+            </div>
+        </div>
 
         <?php
             $table_name = $wpdb->prefix . "service_master";
@@ -136,7 +145,17 @@ if ($ret) {
                         if (data.success) {
                             $('#txt_name').val(data.name);
                             $('#txt_email').val(data.email);
+                            $('#txt_patch_test').val(data.patch_test_date);
                             $('#hdn_customer_id').val(data.customer_id);
+
+                            if (data.patch_test_date) {
+                                // Show the div and set its content
+                                $('#patch_test_div').show();
+                                $('#patch_test_date_value').append(data.patch_test_date);
+                            } else {
+                                // Hide the div
+                                $('#patch_test_div').hide();
+                            }
                         } else {
                              //alert(data.message);
                         }
