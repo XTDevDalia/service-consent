@@ -98,28 +98,24 @@ if ($ret) {
         ?>
 
         <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12">
-                <div class="col-sm-6">
-                    <h4>Select Service Form</h4>
-                </div>
-            </div>
-            <div class="col-sm-12" >
-                <div class="col-sm-2"></div>
-                    <div class="col-sm-10" style="display: flex; flex-wrap: wrap;">
-                        <?php foreach ($ret as $record) { ?>
-                            <div class="col-sm-4">
-                                <input type="checkbox" name="chk_service[]" id="chk_<?= $record->service_form_id; ?>" value="<?= $record->service_form_id; ?>" class="chk_height_width">
-                                <label for="chk_<?= $record->service_form_id; ?>" style="font-weight:normal !important;display:inline !important;"><?= $record->service_form_display_title; ?></label>
-                            </div>
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12" style="margin-bottom: 10px;margin-top:10px;">
-                <div class="col-sm-2"></div>
+            <div class="col-sm-12" style="display: flex; align-items: flex-start;">
                 <div class="col-sm-2">
-                    <button type="submit" name="main_btn_save" id="main_btn_save" class="form-control btn-primary" value="submit">Save & Next</button>
+                    <label>Select Service Form</label><span style="color:red"> *</span>
                 </div>
+                <div class="col-sm-10" style="display: flex; flex-wrap: wrap;">
+                    <?php foreach ($ret as $record) { ?>
+                        <div class="col-sm-4" style="display: flex; align-items: center;">
+                            <input type="checkbox" name="chk_service[]" id="chk_<?= $record->service_form_id; ?>" value="<?= $record->service_form_id; ?>" class="chk_height_width">
+                            <label for="chk_<?= $record->service_form_id; ?>" style="font-weight: normal; margin-left: 5px;"><?= $record->service_form_display_title; ?></label>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12" style="margin-bottom: 10px;margin-top:10px;">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+                <button type="submit" name="main_btn_save" id="main_btn_save" class="form-control btn-primary" value="submit">Save & Next</button>
             </div>
         </div>
     </form>

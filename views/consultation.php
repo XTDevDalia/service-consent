@@ -232,7 +232,7 @@
                     <div class="col-sm-11">
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" style="margin-left: 0px;" value="submit" >Save Data</button>
+                        <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" style="margin-left: 0px;" value="submit" >Save & Continue</button>
                     </div>
                 </div>
             </div>

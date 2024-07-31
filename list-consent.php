@@ -98,7 +98,7 @@ class ListConsent extends WP_List_Table {
             SELECT c.customer_id,pt.patch_test_id,
                    DATE_FORMAT(s.customer_service_date, '%d-%b-%Y') AS customer_service_date,
                    c.customer_branch_id, c.customer_name,
-                   CONCAT(c.customer_phone, ' - ', c.customer_email) AS contact_details,
+                   CONCAT(c.customer_phone, '<br>', c.customer_email) AS contact_details,
                    GROUP_CONCAT(sm.service_form_display_title) AS site_list,
                    (SELECT COUNT(*) FROM $table_name_patch_test WHERE customer_id = c.customer_id) AS has_patch_test
             FROM $table_name_ser AS s

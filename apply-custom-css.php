@@ -23,14 +23,21 @@ function column_branch() {
 add_action('admin_head', 'column_customer_name');
 function column_customer_name() {
     echo '<style type="text/css">';
-    echo '.column-customer_name { width: 15% !important; }'; // Adjust the width as needed
+    echo '.column-customer_name { width: 10% !important; }'; // Adjust the width as needed
     echo '</style>';
 }
 
 add_action('admin_head', 'column_contact_details');
 function column_contact_details() {
     echo '<style type="text/css">';
-    echo '.column-contact_details { width: 22% !important; }'; // Adjust the width as needed
+    echo '.column-contact_details { width: 15% !important; }'; // Adjust the width as needed
+    echo '</style>';
+}
+
+add_action('admin_head', 'column_selected_services');
+function column_selected_services() {
+    echo '<style type="text/css">';
+    echo '.column-site_list { width: 30% !important; }'; // Adjust the width as needed
     echo '</style>';
 }
 
