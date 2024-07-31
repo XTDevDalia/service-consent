@@ -55,7 +55,7 @@
                     <label>Customer Name</label>
                 </div>
                 <div class="col-sm-4">
-                    <select name="patch_test_customer" id="patch_test_customer" class="form-control">
+                    <select name="patch_test_customer" id="patch_test_customer" class="form-control dropdown-width">
                         <option value="-1"><?= 'Select Customer' ?></option>
                         <?php foreach ($customers as $record) { ?>
                             <option value="<?= $record->customer_id ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>>
