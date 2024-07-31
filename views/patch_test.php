@@ -67,15 +67,16 @@
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12">
-                <div class="col-sm-2 textalign">
-                    <label>Patch Test Date Time</label><span style="color:red"> </span>
-                </div>
-                <div class="col-sm-4">
-                    <input type="datetime-local" name="patch_test_datetime" id="patch_test_datetime" class="form-control" value="<?= $patch_test_date_time ?>">
-                </div>
-            </div>
+    <div class="col-sm-12">
+        <div class="col-sm-2 textalign">
+            <label>Patch Test Date Time</label><span style="color:red"> </span>
         </div>
+        <div class="col-sm-4">
+            <input type="datetime-local" name="patch_test_datetime" id="patch_test_datetime" class="form-control" value="<?= date('Y-m-d\TH:i') ?>">
+        </div>
+    </div>
+</div>
+
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
