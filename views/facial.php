@@ -17,7 +17,7 @@
                 padding:0px 0px !important;
             }
             .section{
-                    background: #f7f7f7;
+                background: #f7f7f7;
                 margin-top: 20px !important;
             }
             #customer_signature {
@@ -44,7 +44,7 @@
         </style>
     </head>
     <body>
-    <div class="row">
+        <div class="row">
             <div class="col-sm-12">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4">  
@@ -313,17 +313,17 @@
                 <div class="row last-div-padding">
                     <div class="col-sm-10">
                         <div class="col-sm-4 col-lg-2 col-md-3">
-                            <input type = "radio" id="skin_texture_poor" class="chk_height_width" value="Poor" name="skin_teture_type[]">
-                            <label class="form-check-label" for="skin_textrure_poor">Poor</label>
+                            <input type = "radio" id="skin_texture_poor" class="chk_height_width" value="Poor" name="skin_texture[]">
+                            <label class="form-check-label" for="skin_texture_poor">Poor</label>
                         </div>
 
                         <div class="col-sm-4 col-lg-2 col-md-3">
-                            <input type = "radio" id="skin_texture_average" class="chk_height_width" value="Average" name="skin_teture_type[]">
-                            <label class="form-check-label" for="skin_textrure_average">Average</label>
+                            <input type = "radio" id="skin_texture_average" class="chk_height_width" value="Average" name="skin_texture[]">
+                            <label class="form-check-label" for="skin_texture_average">Average</label>
                         </div>
 
                         <div class="col-sm-4 col-lg-2 col-md-3">
-                            <input type = "radio" id="skin_textrure_good" class="chk_height_width" value="Good" name="skin_teture_type[]">
+                            <input type = "radio" id="skin_textrure_good" class="chk_height_width" value="Good" name="skin_texture[]">
                             <label class="form-check-label" for="skin_textrure_good">Good</label>
                         </div>
                     </div>
@@ -577,3 +577,7 @@
         </form>
     </body>
 </html>
+<script>
+    var sign_file_path = $('#hdn_plugin_url').val();
+    fetchjsondata('<?= $_SESSION['customer_id'] ?>', '<?php echo FACIAL ?>', sign_file_path);
+</script>
