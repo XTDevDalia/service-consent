@@ -26,13 +26,13 @@ class ListConsent extends WP_List_Table {
         );
     }
 
-    function column_customer_id($item) {
-        $actions = array(
-            'delete' => sprintf('<a href="?page=%s&action=%s&customer_id=%s" onclick="return confirmDelete()">Trash</a>', $_REQUEST['page'], 'delete', $item['customer_id']),
-        );
+    // function column_customer_id($item) {
+    //     $actions = array(
+    //         'delete' => sprintf('<a href="?page=%s&action=%s&customer_id=%s" onclick="return confirmDelete()">Trash</a>', $_REQUEST['page'], 'delete', $item['customer_id']),
+    //     );
 
-        return sprintf('%1$s %2$s', $item['customer_id'], $this->row_actions($actions));
-    }
+    //     return sprintf('%1$s %2$s', $item['customer_id'], $this->row_actions($actions));
+    // }
 
     function get_sortable_columns() {
         $sortable_columns = array(
