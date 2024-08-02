@@ -9,15 +9,12 @@
 .last-div-padding{
     padding: 0px 0px 7px 0px !important;
 }
-input[type=checkbox]:checked::before {
-    content: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%233582c4%27%2F%3E%3C%2Fsvg%3E);
-    width: 15px;
-}
-input[type=checkbox]:focus, input[type=file]:focus, input[type=radio]:focus {
+
+input[type=radio]:focus {
     outline: none !important;
     outline-offset: -2px;
 }
-input[type=checkbox], input[type=radio] {
+input[type=radio] {
     margin: none !important;
 /*     margin-top: 1px \9; */
     line-height: normal;
@@ -29,9 +26,7 @@ input[type=checkbox], input[type=radio] {
     overflow: visible;
 }
 .chk_height_width{
-	margin-top:-7px !important;
-	height:13px !important;
-	width:13px !important;
+    margin-left:20px;
 }
 .remove-bold{
 	font-weight:normal !important;
@@ -42,7 +37,7 @@ input[type=checkbox], input[type=radio] {
 .clear-btn {
     position: absolute;
     bottom: 10px;  
-    right: -110px;  
+    right: -20px;  
 }
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
     .clear-btn {
@@ -73,15 +68,158 @@ input[type=checkbox], input[type=radio] {
     margin-top:0px !important;
 }
 #cb-select-all-2{
-    margin-top:-7px !important;
 	height:13px !important;
 	width:13px !important;
 }
 #cb-select-all-1{
-    margin-top:-7px !important;
 	height:13px !important;
 	width:13px !important;
 }
 .dropdown-width{
     max-width: 35em !important;
+}
+.section{
+    background: #f7f7f7;
+margin-top: 10px !important;
+} */
+/* The container */
+/* The container */
+/* The container */
+.container-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    /* font-size: 22px; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom checkbox */
+  .container-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    height: 25px;
+    width: 25px;
+    background-color:#ccc;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container-checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container-checkbox input:checked ~ .checkmark {
+    background-color: #2196f3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .container-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container-checkbox .checkmark:after {
+    left: 8px;
+    top: 3px;
+    width: 7px;
+    height: 15px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  /* The container */
+  .container-radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    /* font-size: 22px; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .container-radio .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ccc !important;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container-radio:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container-radio input:checked ~ .checkmark {
+    background-color: #2196f3 !important;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .container-radio .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container-radio input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container-radio .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+  #wpfooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px;
+    color: #50575e;
+    display: none !important;
 }

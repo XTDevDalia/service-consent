@@ -18,7 +18,7 @@ class PatchTestListConsent extends WP_List_Table {
             case 'patch_test_date_time':
                 // Assuming $item['patch_test_date_time'] contains datetime in 'Y-m-d H:i:s' format
                 $datetime = strtotime($item['patch_test_date_time']);
-                $date = date('d-F-Y', $datetime); // Format date as '24-July-2024'
+                $date = date('d-M-Y', $datetime); // Format date as '24-July-2024' 
                 $time = date('h:i A', $datetime); // Format time as '07:12 PM'
                 return "$date - $time";
             default:
