@@ -28,10 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['phone'])) {
             'success' => true,
             'name' => $result->customer_name,
             'email' => $result->customer_email,
-<<<<<<< HEAD
-=======
             'patch_test_date' => $result->patch_test_date,
->>>>>>> 79b0be861468d95e77c3e892487779f69196acc5
         ]);
     } else {
         echo json_encode([
