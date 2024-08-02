@@ -338,19 +338,19 @@
                <div class="col-sm-10 ">
                   <div class="col-sm-4 col-lg-2 col-md-3">
                      <label class="container-radio">Poor
-                     <input type = "radio" id="skin_texture_poor" value="Poor" name="skin_teture_type[]">
+                     <input type = "radio" id="skin_texture_poor" value="Poor" name="skin_texture[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
                   <div class="col-sm-4 col-lg-2 col-md-3">
                      <label class="form-check-label container-radio">Average
-                     <input type = "radio" value="Average" name="skin_teture_type[]">
+                     <input type = "radio" id="skin_texture_average" value="Average" name="skin_texture[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
                   <div class="col-sm-4 col-lg-2 col-md-3">
                      <label class="form-check-label container-radio">Good
-                     <input type = "radio" id="skin_textrure_good" value="Good" name="skin_teture_type[]">
+                     <input type = "radio" id="skin_texture_good" value="Good" name="skin_texture[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
@@ -670,3 +670,7 @@
       </form>
    </body>
 </html>
+<script>
+    var sign_file_path = $('#hdn_plugin_url').val();
+    fetchjsondata('<?= $_SESSION['customer_id'] ?>', '<?php echo FACIAL ?>', sign_file_path);
+</script>
