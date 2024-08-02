@@ -24,17 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['phone'])) {
     // print_r($result);
     //exit;
     if ($result) {
-        $table_name = $wpdb->prefix . "service_consent";
-        $ret = $wpdb->get_row("SELECT * FROM $table_name ORDER BY customer_service_date DESC limit 0,1");
-        $count = 0;
-        if ($ret) {
-            $count = $ret->consent_id + 1;
-        }
         echo json_encode([
             'success' => true,
             'name' => $result->customer_name,
             'email' => $result->customer_email,
+<<<<<<< HEAD
+=======
             'patch_test_date' => $result->patch_test_date,
+>>>>>>> 79b0be861468d95e77c3e892487779f69196acc5
         ]);
     } else {
         echo json_encode([
