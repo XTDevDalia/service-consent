@@ -34,15 +34,6 @@
          cursor: crosshair;
          background:white;
          }
-         input[type=radio]:checked::before {
-         content: "";
-         border-radius: 50%;
-         width: .8rem !important;
-         height: .8rem !important;
-         margin: .1875rem;
-         background-color: #3582c4;
-         line-height: 1.14285714;
-         }
       </style>
    </head>
    <body>
@@ -66,7 +57,7 @@
             </div>
          </div>
       </div>
-      <form action="" method="post" name="consent_forms" id="consent_forms" >
+      <form action="" method="post" onsubmit="return data_protection_policy();">
          <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
          <div class="section">
             <div class="row section-title">
@@ -587,6 +578,46 @@
                </div>
             </div>
          </div>
+         <div style="margin-top:10px !important;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="col-sm-6">
+                        <label class="form-check-label chk_height_width container-checkbox" for="chk_data_protection_policy">
+                            Agree <a href="#" id="termsLink" data-toggle="modal" data-target="#termsModal">Data Protection Policy</a>
+                            <input type="checkbox" id="chk_data_protection_policy" class="" value="checked" name="chk_data_protection_policy">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="termsModalLabel">Data Protection Policy</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p style="font-size:14px !important;">The General Data Protection Regulation (GDPR) has been implemented in the UK under the Data Protection Act of 2018. GDPR mandates that everyone who uses personal data abide by stringent guidelines known as "data protection principles." They have to ensure that the data is:</p>
+                        <ul style="list-style-type: disc;margin: 0;padding: 0 0 0 20px;">
+                            <li>Used fairly, lawfully, and transparently</li>
+                            <li>Used for specified, explicit purposes</li>
+                            <li>Used in a way that is adequate, relevant, and limited to only what is necessary</li>
+                            <li>Accurate and, where necessary, kept up to date</li>
+                            <li>Kept for no longer than is necessary</li>
+                        </ul>
+                        <p style="font-size:14px !important;">Our goal at Brow Art Beauty Salon is to uphold the highest privacy standards in order to comply with the new GDPR regulations that went into effect on May 25, 2018. Whichever way you choose to communicate with us, we will only gather information that is necessary for us to deliver the best possible service to you. This Privacy Policy provides detailed information on when and why we collect your personal information and how we use it.</p>
+                        <p style="font-size:14px !important;">I understand that you might keep sensitive personal information about me such as my medical history, highly personal details, and the outcomes of any tests or treatments deemed essential for my health.</p>
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
          <div class="section">
             <div class="row" style="padding:20px 0px !important;">
                <div class="col-sm-12 col-md-12 col-lg-12">
@@ -639,3 +670,4 @@
       </form>
    </body>
 </html>
+

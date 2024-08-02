@@ -223,3 +223,6 @@ margin-top: 10px !important;
     color: #50575e;
     display: none !important;
 }
+.modal-header, .modal-body, .modal-footer {
+    padding: 20px;
+}
