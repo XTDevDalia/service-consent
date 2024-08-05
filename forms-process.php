@@ -10,7 +10,7 @@ function service_menu() {
     );
     add_menu_page(
             'Service listing',
-            'Service List',
+            'Visit List',
             'manage_options', // Capability (e.g., 'manage_options')
             'list-consent', // Menu slug
             'service_list' // Callback function to display content
@@ -181,7 +181,7 @@ function service_list() {
     // Creating an instance
     $table = new ListConsent();
 
-    echo '<div class="wrap"><h2>Customer Consents</h2>';
+    echo '<div class="wrap"><h2>Customer Visit Consents List</h2>';
     // Prepare table
     $table->prepare_items();
     // Display table

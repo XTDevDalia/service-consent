@@ -66,6 +66,35 @@ function editor_remove_menu_pages() {
     remove_submenu_page('themes.php', 'widgets.php');
     // Hide the Pages menu
     remove_menu_page('edit.php?post_type=page');
+	remove_menu_page('woocommerce');
+	remove_menu_page('booknetic');
+	remove_menu_page('formidable');
+	remove_menu_page('wpcf7');
+	remove_menu_page('edit.php?post_type=dt_portfolios');
+	remove_menu_page('edit.php?post_type=dt_catalog');
+	remove_menu_page('edit.php?post_type=dt_service');
+	remove_menu_page('edit.php?post_type=dt_person');
+	remove_menu_page('edit.php?post_type=dt_headers');
+	remove_menu_page('edit.php?post_type=dt_footers');
+	remove_menu_page('edit.php?post_type=dt_mega_menus');
+	remove_menu_page('edit.php?post_type=product');
+	remove_menu_page('edit.php?post_type=custom-css-js');
+	remove_menu_page('vc-general');
+	remove_menu_page('ai1wm_export');
+	remove_menu_page('wp-database-backup');
+	remove_menu_page('layerslider');
+	remove_menu_page('loginizer');
+	remove_menu_page('sg-cachepress');
+	remove_menu_page('wp-add-custom-css_settings');
+	remove_menu_page('wp_file_manager');
+	remove_menu_page('wp-phpmyadmin-extension');
+	remove_menu_page('qlwapp');
+	remove_menu_page('envato-market');
+	remove_menu_page('um_main_menu');
+	remove_menu_page('edit.php?post_type=dt_customers');
+	remove_menu_page('edit.php?post_type=shop_coupon');
+	remove_menu_page('fw-extensions');
+	remove_menu_page('yith_system_info');
 }
 
 function add_service_consent_js() {

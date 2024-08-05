@@ -41,6 +41,30 @@
          background-color: #3582c4;
          line-height: 1.14285714;
          }
+		  	@media only screen and (min-width: 993px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -135px !important;
+			}
+        }
+		  		  	@media only screen and (min-width: 993px) and (max-width: 1185px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -200px !important;
+			}
+        }
+		  	@media only screen and (min-width: 992px) and (max-width: 1350px) {
+			.btn_class{
+					margin-left:0px !important;
+				}
+        }
+		   @media only screen and (min-width: 768px) and (max-width: 991px) {
+			.btn_class{
+					margin-left:-12px !important;
+				}
+        }
       </style>
    </head>
    <body>
@@ -149,13 +173,13 @@
                   <div class="col-sm-2" >
                      <label>Client Name:</label>
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-5 col-md-5 col-lg-3">
                      <input type="text"  class="form-control" value="<?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?>">
                   </div>
-                  <div class="col-sm-1">
+                  <div class="col-sm-1 col-lg-1">
                      <label>Date</label>
                   </div>
-                  <div class="col-sm-2">
+                  <div class="col-sm-3 col-lg-3 col-md-3">
                      <input type="date" id="client_date" class="form-control" name="client_date" value="<?php echo date('Y-m-d'); ?>">
                   </div>
                </div>
@@ -179,13 +203,13 @@
                   <div class="col-sm-2">
                      <label>Therapist Name</label>
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-5 col-md-5 col-lg-3">
                      <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
                   </div>
                   <div class="col-sm-1">
                      <label>Date</label>
                   </div>
-                  <div class="col-sm-2">
+                  <div class="col-sm-3">
                      <input type="date" id="therapist_date" class="form-control" name="therapist_date" value="<?php echo date('Y-m-d'); ?>">
                   </div>
                </div>
@@ -204,11 +228,11 @@
             </div>
          </div>
          <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12">
-               <div class="col-sm-11">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+               <div class="col-sm-10 col-md-10 col-lg-10">
                </div>
-               <div class="col-sm-1">
-                  <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary" style="margin-left: -40px;" value="submit" >Save & Continue</button>
+               <div class="col-sm-2 col-lg-2 col-md-2">
+                  <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" value="submit">Save & Continue</button>
                </div>
             </div>
          </div>

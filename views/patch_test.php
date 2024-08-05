@@ -5,7 +5,7 @@
     $customer_name = "";
     $patch_test_date_time = "";
     $patch_test_notes = "";
-
+    
     if ($patch_test_id) {
         $table_name_patch_test = $wpdb->prefix . 'patch_test';
         $table_name_cust = $wpdb->prefix . 'customer_master';
@@ -19,38 +19,31 @@
             $patch_test_notes = $results->patch_test_notes;
         }
     }
-
+    
     $table_name_customer = $wpdb->prefix . "customer_master";
     $customers = $wpdb->get_results("SELECT * FROM $table_name_customer");
     // print_r($customers);
     //exit;
-?>
+    ?>
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-
 <!-- jQuery (required for Select2) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 <!-- Select2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-<div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;">
-</div>
+<div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;"></div>
 <div class="section">
-            <div class="col-sm-12">
-                <center>
-                    <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
-                </center>
-            </div>
+    <div class="col-sm-12" style="margin-top:10px;background:black;border-top-right-radius: 10px;border-top-left-radius: 10px;">
+        <div class="col-sm-3">
+            <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
+        </div>
+        <div class="col-sm-4" style="color:white;">
+            <h3 style="text-align:center;">Patch Test</h3>
+        </div>
+    </div>
     <form action="" method="post" onsubmit="return validatePatchTestForm();">
         <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
-        <div class="row" style="margin-top:30px !important;">
-            <div class="col-sm-12">
-                <div class="col-sm-4">
-                    <h4 style="text-align: left;font-weight: 700;"><?= $patch_test_id ? 'Edit Patch Test' : 'Patch Test' ?></h4>
-                </div>
-            </div>
-        </div>
         <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12">
+            <div class="col-sm-12" style="margin-top:20px;">
                 <div class="col-sm-2 textalign">
                     <label>Customer Name</label>
                 </div>
@@ -58,25 +51,24 @@
                     <select name="patch_test_customer" id="patch_test_customer" class="form-control dropdown-width">
                         <option value="-1"><?= 'Select Customer' ?></option>
                         <?php foreach ($customers as $record) { ?>
-                            <option value="<?= $record->customer_id ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>>
-                                <?= $record->customer_name ?> - <?= $record->customer_phone ?>
-                            </option>
+                        <option value="<?= $record->customer_id ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>>
+                            <?= $record->customer_name ?> - <?= $record->customer_phone ?>
+                        </option>
                         <?php } ?>
                     </select>
                 </div>
             </div>
         </div>
         <div class="row" style="margin-top: 10px;">
-    <div class="col-sm-12">
-        <div class="col-sm-2 textalign">
-            <label>Patch Test Date Time</label><span style="color:red"> </span>
+            <div class="col-sm-12">
+                <div class="col-sm-2 textalign">
+                    <label>Patch Test Date Time</label><span style="color:red"> </span>
+                </div>
+                <div class="col-sm-4">
+                    <input type="datetime-local" name="patch_test_datetime" id="patch_test_datetime" class="form-control" value="<?= date('Y-m-d\TH:i') ?>">
+                </div>
+            </div>
         </div>
-        <div class="col-sm-4">
-            <input type="datetime-local" name="patch_test_datetime" id="patch_test_datetime" class="form-control" value="<?= date('Y-m-d\TH:i') ?>">
-        </div>
-    </div>
-</div>
-
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
                 <div class="col-sm-2 textalign">
@@ -92,7 +84,7 @@
             <div class="col-sm-2">
                 <button type="submit" name="patch_test_btn_save" id="patch_test_btn_save" class="form-control btn-primary" value="submit"><?= $patch_test_id ? 'Update' : 'Save' ?></button>
             </div>
-        </div>     
+        </div>
     </form>
 </div>
 <script>
