@@ -236,3 +236,6 @@ display:none !important;
   margin: 5px 15px 2px;
   padding: 1px 12px;
 }
+  .wp-list-table tfoot {
+        display: none !important;
+    }

@@ -157,9 +157,12 @@ function register_service_forms() {
         // echo $_SESSION['form_index'];
         // echo $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index']-1]][0];die;
 
-        add_menu_page(
-                __('My Forms', 'my-plugin-textdomain'),
-                __('My Forms', 'my-plugin-textdomain'),
+        add_submenu_page(
+                '',
+                'consent forms',
+                'consent forms',
+                //__('My Forms', 'my-plugin-textdomain'),
+               // __('My Forms', 'my-plugin-textdomain'),
                 'manage_options',
                 $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index'] - 1]][0], // Empty slug to hide from menu
                 'render_service_forms'
