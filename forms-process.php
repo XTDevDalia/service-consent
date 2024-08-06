@@ -13,7 +13,8 @@ function service_menu() {
             'Visit List',
             'manage_options', // Capability (e.g., 'manage_options')
             'list-consent', // Menu slug
-            'service_list' // Callback function to display content
+            'service_list',
+            'dashicons-menu-alt' // Callback function to display content
     );
     add_menu_page(
         'Patch Test',
@@ -29,7 +30,7 @@ function service_menu() {
         'manage_options', // Capability (e.g., 'manage_options')
         'patch_test_list', // Menu slug
         'patch_test_listing', // Callback function to display content
-        'dashicons-welcome-widgets-menus'
+        'dashicons-menu-alt'
     );
 }
 
