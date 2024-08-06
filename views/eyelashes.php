@@ -41,13 +41,6 @@
          background-color: #3582c4;
          line-height: 1.14285714;
          }
-		  	@media only screen and (min-width: 993px) {
-			 .clear-btn {
-    			position: absolute;
-    			bottom: 10px;
-    			right: -135px !important;
-			}
-        }
 		  		  	@media only screen and (min-width: 993px) and (max-width: 1185px) {
 			 .clear-btn {
     			position: absolute;
@@ -134,7 +127,7 @@
                         <label class="form-check-label chk_height_width container-checkbox" for="chk_data_protection_policy">
                             Agree <a href="#" id="termsLink" data-toggle="modal" data-target="#termsModal">Data Protection Policy</a>
                             <input type="checkbox" id="chk_data_protection_policy" class="" value="checked" name="chk_data_protection_policy">
-                            <span class="checkmark"></span>
+                            <span class="checkmark" style="margin-left:-35px;"></span>
                         </label>
                     </div>
                 </div>
@@ -173,7 +166,7 @@
                   <div class="col-sm-2" >
                      <label>Client Name:</label>
                   </div>
-                  <div class="col-sm-5 col-md-5 col-lg-3">
+                  <div class="col-sm-5 col-md-6 col-lg-4">
                      <input type="text"  class="form-control" value="<?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?>">
                   </div>
                   <div class="col-sm-1 col-lg-1">
@@ -203,7 +196,7 @@
                   <div class="col-sm-2">
                      <label>Therapist Name</label>
                   </div>
-                  <div class="col-sm-5 col-md-5 col-lg-3">
+                  <div class="col-sm-5 col-md-6 col-lg-4">
                      <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
                   </div>
                   <div class="col-sm-1">

@@ -53,25 +53,18 @@
     		}
 			   .lblmedia{
 				   position:relative !important;
-				   right:-60px !important;
+				   /* right:-60px !important; */
 			   }
 			   .datemedia{
 				   position:relative !important;
 				   right:-50px !important;
 			   }
         }
-		  	@media only screen and (min-width: 993px) {
-			 .clear-btn {
-    			position: absolute;
-    			bottom: 10px;
-    			right: -135px !important;
-			}
-        }
 		  		  	@media only screen and (min-width: 993px) and (max-width: 1185px) {
 			 .clear-btn {
     			position: absolute;
     			bottom: 10px;
-    			right: -200px !important;
+    			right: -130px !important;
 			}
         }
 		  	@media only screen and (min-width: 992px) and (max-width: 1350px) {
@@ -92,24 +85,27 @@
                 <div class="col-sm-3">
                     <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
                 </div>
-                <div class="col-sm-4" style="color:white;">
+                <div class="col-sm-5" style="color:white;">
                     <h3 style="text-align:center;">Manicure / Pedicure</h3>
                 </div>
-                <div class="col-sm-4" style="color:white;margin-top:15px;">
-                    <h4 style="text-align:right;">Visit No.:  <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></h4>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2" style="color:white;margin-top:15px;">
+                    <h4 style="text-align:center;">Visit No: <br> <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></h4>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="col-sm-3">
-                    <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
-                </div>
+        <div class="" style="background-color:#f7f7f7 !important;">
+            <div class="row">
+               <div class="col-sm-10">
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                  <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
+                  </div>
+               </div>
             </div>
-        </div>
+      </div>
         <form action="" method="post" onsubmit="return data_protection_policy();">
             <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
-            <div class="section form-group">
+            <div class="section form-group" style="margin-top:0px !important;border-top-left-radius: 0px !important;border-top-right-radius: 0px !important;">
                 <div class="row section-title">
                     <div class="col-sm-12">
                         <div class="col-sm-3" style="margin-top:20px !important">
@@ -117,137 +113,137 @@
                         </div>
                     </div>
                 </div>
-                <div class="row container-checkbox">
-                    <div class="col-sm-10">
+                <div class="row container-checkbox"style="padding-left:10px !important;margin-top:10px;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label class="chk_height_width" for="chk_eczema">Eczema
+                            <label class="chk_height_width center-align" for="chk_eczema">Eczema
                             <input type="checkbox" id="chk_eczema" class="" value="Eczema" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_onychomycosis" class="chk_height_width">Onychomycosis
+                            <label for="chk_onychomycosis" class="chk_height_width center-align">Onychomycosis
                             <input type="checkbox" id="chk_onychomycosis"  value="Onychomycosis" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_allergic_reactions" class="chk_height_width">Allergic Reactions
+                            <label for="chk_allergic_reactions" class="chk_height_width center-align">Allergic Reactions
                             <input type="checkbox" id="chk_allergic_reactions"  value="Allergic Reactions" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_open_wounds" class="chk_height_width">Open Wounds
+                            <label for="chk_open_wounds" class="chk_height_width center-align">Open Wounds
                             <input type="checkbox" id="chk_open_wounds"  value="Open Wounds" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_psofiasis" class="chk_height_width">Psofiasis
+                            <label for="chk_psofiasis" class="chk_height_width center-align">Psofiasis
                             <input type = "checkbox" id="chk_psofiasis"  value="Psofiasis" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_pseudomonas" class="chk_height_width">Pseudomonas
+                            <label for="chk_pseudomonas" class="chk_height_width center-align">Pseudomonas
                             <input type = "checkbox" id="chk_pseudomonas"  value="Pseudomonas" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="row container-checkbox" style="margin-top:10px;">
-                    <div class="col-sm-10">
+                <div class="row container-checkbox" style="margin-top:20px;padding-left:10px !important;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_irritated_skin" class="chk_height_width">Irritated Skin
+                            <label for="chk_irritated_skin" class="chk_height_width center-align">Irritated Skin
                             <input type = "checkbox" id="chk_irritated_skin"  value="Irritated Skin" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_cuts_abrasions" class="chk_height_width">Cuts / Abrasions
+                            <label for="chk_cuts_abrasions" class="chk_height_width center-align">Cuts / Abrasions
                             <input type = "checkbox" id="chk_cuts_abrasions"  value="Cuts / Abrasions" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_bitten_nails" class="chk_height_width">Bitten Nails
+                            <label for="chk_bitten_nails" class="chk_height_width center-align">Bitten Nails
                             <input type = "checkbox" id="chk_bitten_nails"  value="Bitten Nails" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_paranychias" class="chk_height_width">Paranychias
+                            <label for="chk_paranychias" class="chk_height_width center-align">Paranychias
                             <input type = "checkbox" id="chk_paranychias"  value="Paranychias" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_itchy_skin" class="chk_height_width">Itchy Skin
+                            <label for="chk_itchy_skin" class="chk_height_width center-align">Itchy Skin
                             <input type = "checkbox" id="chk_itchy_skin"  value="Itchy Skin" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_onycholysis" class="chk_height_width">Onycholysis
+                            <label for="chk_onycholysis" class="chk_height_width center-align">Onycholysis
                             <input type = "checkbox" id="chk_onycholysis"  value="Onycholysis" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="row container-checkbox" style="margin-top:10px;">
-                    <div class="col-sm-10">
+                <div class="row container-checkbox" style="margin-top:20px;padding-left:10px !important;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_skin_infections" class="chk_height_width"> Skin Infections
+                            <label for="chk_skin_infections" class="chk_height_width center-align"> Skin Infections
                             <input type = "checkbox" id="chk_skin_infections"  value="Skin Infections" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_onychia" class="chk_height_width">Onychia
+                            <label for="chk_onychia" class="chk_height_width center-align">Onychia
                             <input type = "checkbox" id="chk_onychia"  value="Onychia" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_sore_skin_tissue" class="chk_height_width">Sore Skin Tissue
+                            <label for="chk_sore_skin_tissue" class="chk_height_width center-align">Sore Skin Tissue
                             <input type = "checkbox" id="chk_sore_skin_tissue"  value="Sore Skin Tissue" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_onychocryptosis" class="chk_height_width">Onychocryptosis
+                            <label for="chk_onychocryptosis" class="chk_height_width center-align">Onychocryptosis
                             <input type = "checkbox" id="chk_onychocryptosis"  value="Onychocryptosis" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_nail_infections" class="chk_height_width">Nail Infections
+                            <label for="chk_nail_infections" class="chk_height_width center-align">Nail Infections
                             <input type = "checkbox" id="chk_nail_infections"  value="Nail Infections" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_verucca_vulgaris" class="chk_height_width">Verucca Vulgaris
+                            <label for="chk_verucca_vulgaris" class="chk_height_width center-align">Verucca Vulgaris
                             <input type = "checkbox" id="chk_verucca_vulgaris"  value="Verucca Vulgaris" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="row container-checkbox" style="margin-top:10px;">
-                    <div class="col-sm-10">
+                <div class="row container-checkbox" style="margin-top:20px;padding-left:10px !important;margin-bottom:10px;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_white_patchy_nails" class="chk_height_width">White Patchy Nails
+                            <label for="chk_white_patchy_nails" class="chk_height_width center-align">White Patchy Nails
                             <input type = "checkbox" id="chk_white_patchy_nails"  value="White Patchy Nails" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_bruised_nails" class="chk_height_width">Bruised Nails
-                            <input type = "checkbox" id="chk_bruised_nails" c value="Bruised Nails" name="contra_indications[]">
+                            <label for="chk_bruised_nails" class="chk_height_width center-align">Bruised Nails
+                            <input type = "checkbox" id="chk_bruised_nails" value="Bruised Nails" name="contra_indications[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
@@ -263,28 +259,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="row last-div-padding">
-                    <div class="col-sm-10">
+                <div class="row last-div-padding" style="padding-left:10px !important;margin-top:10px;margin-bottom:10px;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_questioning" class="chk_height_width">Questioning
+                            <label for="chk_questioning" class="chk_height_width center-align">Questioning
                             <input type="checkbox" id="chk_questioning"  value="Questioning" name="range_1[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_visual" class="chk_height_width">Visual
+                            <label for="chk_visual" class="chk_height_width center-align">Visual
                             <input type="checkbox" id="chk_visual"  value="Visual" name="range_1[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_manual" class="chk_height_width">Manual
+                            <label for="chk_manual" class="chk_height_width center-align">Manual
                             <input type="checkbox" id="chk_manual"  value="Manual" name="range_1[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_ref_client_record" class="chk_height_width">Ref. Client Record
+                            <label for="chk_ref_client_record" class="chk_height_width center-align">Ref. Client Record
                             <input type="checkbox" id="chk_ref_client_record"  value="Ref. Client Record" name="range_1[]">
                             <span class="checkmark"></span>
                             </label>
@@ -300,35 +296,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="row last-div-padding">
-                    <div class="col-sm-10 col-md-10">
+                <div class="row last-div-padding" style="padding-left:10px !important;margin-top:10px;margin-bottom:10px;">
+                    <div class="col-sm-12 col-md-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_file_and_polish" class="chk_height_width">File and Polish
+                            <label for="chk_file_and_polish" class="chk_height_width center-align">File and Polish
                             <input type = "checkbox" id="chk_file_and_polish"  value="File and Polish" name="range_2[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_mini_madicure_padicure" class="chk_height_width">Mini Manicure / Padicure
+                            <label for="chk_mini_madicure_padicure" class="chk_height_width center-align">Mini Manicure / Padicure
                             <input type = "checkbox" id="chk_mini_madicure_padicure"  value="Mini Manicure / Padicure" name="range_2[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_spa_manicure_padicure" class="chk_height_width">Spa Manicure / Padicure
+                            <label for="chk_spa_manicure_padicure" class="chk_height_width center-align">Spa Manicure / Padicure
                             <input type = "checkbox" id="chk_spa_manicure_padicure"  value="Spa Manicure / Padicure" name="range_2[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
-                        <div class="col-sm-4 col-lg-3 col-md-4 difference-two-label">
-                            <label for="chk_parrafin_mask_manicure_padicure" class="chk_height_width">Parrafin mask Manicure / Padicure
-                            <input type = "checkbox" id="chk_parrafin_mask_manicure_padicure"  value="Parrafin mask Manicure / Padicure" name="range_2[]">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                            <label for="chk_brow_art_signature_padicure" class="chk_height_width center-align">Brow art signature padicure
+                            <input type = "checkbox" id="chk_brow_art_signature_padicure"  value="Brow art signature padicure" name="range_2[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-4 difference-two-label">
-                            <label for="chk_brow_art_signature_padicure" class="chk_height_width">Brow art signature padicure
-                            <input type = "checkbox" id="chk_brow_art_signature_padicure"  value="Brow art signature padicure" name="range_2[]">
+                            <label for="chk_parrafin_mask_manicure_padicure" class="chk_height_width center-align">Parrafin mask Manicure / Padicure
+                            <input type = "checkbox" id="chk_parrafin_mask_manicure_padicure"  value="Parrafin mask Manicure / Padicure" name="range_2[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
@@ -343,34 +339,34 @@
                         </div>
                     </div>
                 </div>
-                <div class="row last-div-padding">
-                    <div class="col-sm-10">
+                <div class="row last-div-padding" style="padding-left:10px !important;margin-top:10px;margin-bottom:10px;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_parafin_wax" class="chk_height_width">Parafin Wax
+                            <label for="chk_parafin_wax" class="chk_height_width center-align">Parafin Wax
                             <input type = "checkbox" id="chk_parafin_wax"  value="Parafin Wax" name="range_3[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_hand_mask" class="chk_height_width">Hand Mask
+                            <label for="chk_hand_mask" class="chk_height_width center-align">Hand Mask
                             <input type = "checkbox" id="chk_hand_mask"  value="Hand Mask" name="range_3[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_thermal_mitts" class="chk_height_width">Thermal Mitts
+                            <label for="chk_thermal_mitts" class="chk_height_width center-align">Thermal Mitts
                             <input type = "checkbox" id="chk_thermal_mitts"  value="Thermal Mitts" name="range_3[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_extoliate" class="chk_height_width">Extoliate
+                            <label for="chk_extoliate" class="chk_height_width center-align">Extoliate
                             <input type = "checkbox" id="chk_extoliate"  value="Extoliate" name="range_3[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_warm_oil" class="chk_height_width">Warm Oil
+                            <label for="chk_warm_oil" class="chk_height_width center-align">Warm Oil
                             <input type = "checkbox" id="chk_warm_oil"  value="Warm Oil" name="range_3[]">
                             <span class="checkmark"></span>
                             </label>
@@ -386,22 +382,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="row last-div-padding">
-                    <div class="col-sm-10">
+                <div class="row last-div-padding" style="padding-left:10px !important;margin-top:10px;margin-bottom:10px;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_dark_colour" class="chk_height_width">Dark Colour
+                            <label for="chk_dark_colour" class="chk_height_width center-align">Dark Colour
                             <input type = "checkbox" id="chk_dark_colour"  value="Dark Colour" name="range_4[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_french" class="chk_height_width">French
+                            <label for="chk_french" class="chk_height_width center-align">French
                             <input type = "checkbox" id="chk_french"  value="French" name="range_4[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_buuffed" class="chk_height_width">Buuffed
+                            <label for="chk_buuffed" class="chk_height_width center-align">Buuffed
                             <input type = "checkbox" id="chk_buuffed" value="Buuffed" name="range_4[]">
                             <span class="checkmark"></span>
                             </label>
@@ -417,114 +413,114 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-10">
+                <div class="row" style="padding-left:10px !important;margin-top:10px;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_dry_nail" class="chk_height_width">Dry Nail
+                            <label for="chk_dry_nail" class="chk_height_width center-align">Dry Nail
                             <input type = "checkbox" id="chk_dry_nail"  value="Dry Nail" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_strong" class="chk_height_width">Strong
+                            <label for="chk_strong" class="chk_height_width center-align">Strong
                             <input type = "checkbox" id="chk_strong" value="Strong" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_foot_hand_cream" class="chk_height_width">Foot / Hand Cream
+                            <label for="chk_foot_hand_cream" class="chk_height_width center-align">Foot / Hand Cream
                             <input type = "checkbox" id="chk_foot_hand_cream"  value="Foot / Hand Cream" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_effeurage" class="chk_height_width">Effeurage
+                            <label for="chk_effeurage" class="chk_height_width center-align">Effeurage
                             <input type = "checkbox" id="chk_effeurage"  value="Effeurage" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_week_bitten" class="chk_height_width">Weak & Bitten
+                            <label for="chk_week_bitten" class="chk_height_width center-align">Weak & Bitten
                             <input type = "checkbox" id="chk_week_bitten"  value="Weak & Bitten" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_brittle" class="chk_height_width">Brittle
+                            <label for="chk_brittle" class="chk_height_width center-align">Brittle
                             <input type = "checkbox" id="chk_brittle"  value="Brittle" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin-top:10px;">
-                    <div class="col-sm-10">
+                <div class="row" style="margin-top:20px;padding-left:10px !important;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_oil" class="chk_height_width" >Oil
+                            <label for="chk_oil" class="chk_height_width center-align" >Oil
                             <input type = "checkbox" id="chk_oil" value="Oil" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_topotement" class="chk_height_width">Topotement
+                            <label for="chk_topotement" class="chk_height_width center-align">Topotement
                             <input type = "checkbox" id="chk_topotement"  value="Topotement" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_dry_cuticles" class="chk_height_width">Dry Cuticles
+                            <label for="chk_dry_cuticles" class="chk_height_width center-align">Dry Cuticles
                             <input type = "checkbox" id="chk_dry_cuticles"  value="Dry Cuticles" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_ridge_furrows" class="chk_height_width">Ridge & Furrows
+                            <label for="chk_ridge_furrows" class="chk_height_width center-align">Ridge & Furrows
                             <input type = "checkbox" id="chk_ridge_furrows"  value="Ridge & Furrows" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_cream" class="chk_height_width" >Cream
+                            <label for="chk_cream" class="chk_height_width center-align" >Cream
                             <input type = "checkbox" id="chk_cream" value="Cream" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_petrissoge" class="chk_height_width">Petrissoge
+                            <label for="chk_petrissoge" class="chk_height_width center-align">Petrissoge
                             <input type = "checkbox" id="chk_petrissoge"  value="Petrissoge" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                     </div>
                 </div>
-                <diV class="row" style="margin-top:10px;">
-                    <div class="col-sm-10">
+                <diV class="row" style="margin-top:20px;padding-left:10px !important;margin-bottom:10px;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_split" class="chk_height_width">Split
+                            <label for="chk_split" class="chk_height_width center-align">Split
                             <input type = "checkbox" id="chk_split" value="Split" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_hangnails" class="chk_height_width">Hangnails
+                            <label for="chk_hangnails" class="chk_height_width center-align">Hangnails
                             <input type = "checkbox" id="chk_hangnails" value="Hangnails" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label for="chk_hard_skin" class="chk_height_width">Hard Skin
+                            <label for="chk_hard_skin" class="chk_height_width center-align">Hard Skin
                             <input type = "checkbox" id="chk_hard_skin" value="Hard Skin" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label for="chk_friction" class="chk_height_width">Friction
+                            <label for="chk_friction" class="chk_height_width center-align">Friction
                             <input type = "checkbox" id="chk_friction"  value="Friction" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
-                            <label class="last-div-padding chk_height_width" for="chk_overgrown_cuticles">Overgrown Cuticles
+                            <label class="last-div-padding chk_height_width center-align" for="chk_overgrown_cuticles">Overgrown Cuticles
                             <input type = "checkbox" id="chk_overgrown_cuticles" value="Overgrown Cuticles" name="skin_nail_analysis[]">
                             <span class="checkmark"></span>
                             </label>
@@ -542,7 +538,7 @@
                         </div>
                     </div>
                 </div>
-                <textarea cols="150" rows="10" class="form-control"></textarea>
+                <textarea cols="150" rows="10" class="form-control" style="margin-bottom:10px;width:98%;margin-left:13px;"></textarea>
             </div>
             <div class="section last-div-padding container-checkbox">
                 <div class="row section-title">
@@ -552,22 +548,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="row ">
-                    <div class="col-sm-10">
+                <div class="row " style="padding-left:10px !important;margin-top:10px;margin-bottom:10px;">
+                    <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-3 col-md-4">
-                            <label for="chk_specialised_manicure_pedicure" class="chk_height_width">Specialised Manicure / Pedicure
+                            <label for="chk_specialised_manicure_pedicure" class="chk_height_width center-align">Specialised Manicure / Pedicure
                             <input type="checkbox" id="chk_specialised_manicure_pedicure"  value="Specialised Manicure / Pedicure" name="future_treatments[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-4">
-                            <label for="chk_improve_nail_condition" class="chk_height_width">Improve Nail Condition
+                            <label for="chk_improve_nail_condition" class="chk_height_width center-align">Improve Nail Condition
                             <input type="checkbox" id="chk_improve_nail_condition"  value="Improve Nail Condition" name="future_treatments[]">
                             <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-3 col-md-4">
-                            <label for="chk_improve_skin_condition" class="chk_height_width">Improve Skin Condition
+                            <label for="chk_improve_skin_condition" class="chk_height_width center-align">Improve Skin Condition
                             <input type="checkbox" id="chk_improve_skin_condition"  value="Improve Skin Condition" name="future_treatments[]">
                             <span class="checkmark"></span>
                             </label>
@@ -604,14 +600,14 @@
                </div>
             </div>
          </div>
-         <div style="margin-top:10px !important;">
+         <div style="margin-top:10px !important;padding-left:10px !important;">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="col-sm-6">
                         <label class="form-check-label chk_height_width container-checkbox" for="chk_data_protection_policy">
                             Agree <a href="#" id="termsLink" data-toggle="modal" data-target="#termsModal">Data Protection Policy</a>
                             <input type="checkbox" id="chk_data_protection_policy" class="" value="checked" name="chk_data_protection_policy">
-                            <span class="checkmark"></span>
+                            <span class="checkmark" style="margin-left:-35px;"></span>
                         </label>
                     </div>
                 </div>

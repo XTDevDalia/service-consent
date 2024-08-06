@@ -59,13 +59,6 @@
 				   right:-50px !important;
 			   }
         }
-		  	@media only screen and (min-width: 993px) {
-			 .clear-btn {
-    			position: absolute;
-    			bottom: 10px;
-    			right: -135px !important;
-			}
-        }
 		  		  	@media only screen and (min-width: 993px) and (max-width: 1185px) {
 			 .clear-btn {
     			position: absolute;
@@ -102,19 +95,18 @@
             </div>
          </div>
       </div>
-      <div class="row">
-         <div class="col-sm-12">
-            <div class="col-sm-3">
-               <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
+      <div class="" style="background-color:#f7f7f7 !important;">
+            <div class="row">
+               <div class="col-sm-10">
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                  <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
+                  </div>
+               </div>
             </div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3"></div>
-         </div>
       </div>
       <form action="" method="post" onsubmit="return data_protection_policy();">
          <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
-         <div class="section">
+         <div class="section" style="margin-top:0px !important;border-top-left-radius: 0px !important;border-top-right-radius: 0px !important;">
             <div class="row section-title">
                <div class="col-sm-10">
                   <div class="col-sm-6 col-md-6 col-lg-6">
@@ -122,8 +114,8 @@
                   </div>
                </div>
             </div>
-            <div class="row container-checkbox">
-               <div class="col-sm-10">
+            <div class="row container-checkbox" style="padding-left:10px !important;margin-top:10px;">
+               <div class="col-sm-12">
                   <div class="col-sm-4 col-lg-2 col-md-4">
                      <label for="chk_open_wounds" class="chk_height_width">Open Wounds
                      <input type="checkbox" id="chk_open_wounds"  value="Open Wounds" name="brow_lamination[]">
@@ -162,8 +154,8 @@
                   </div>
                </div>
             </div>
-            <div class="row container-checkbox" >
-               <div class="col-sm-10">
+            <div class="row container-checkbox" style="padding-left:10px !important;margin-top:20px;">
+               <div class="col-sm-12">
                   <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_epilepsy">Epilepsy
                      <input type = "checkbox" id="chk_epilepsy" class="" value="Epilepsy" name="brow_lamination[]">
@@ -202,8 +194,8 @@
                   </div>
                </div>
             </div>
-            <div class="row container-checkbox" >
-               <div class="col-sm-10">
+            <div class="row container-checkbox" style="padding-left:10px !important;margin-top:20px;">
+               <div class="col-sm-12">
                   <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_conjuctivitis">Conjuctivitis
                      <input type = "checkbox" id="chk_conjuctivitis" class="" value="Conjuctivitis" name="brow_lamination[]">
@@ -263,7 +255,7 @@
                         <label class="form-check-label chk_height_width container-checkbox" for="chk_data_protection_policy">
                             Agree <a href="#" id="termsLink" data-toggle="modal" data-target="#termsModal">Data Protection Policy</a>
                             <input type="checkbox" id="chk_data_protection_policy" class="" value="checked" name="chk_data_protection_policy">
-                            <span class="checkmark"></span>
+                            <span class="checkmark" style="margin-left:-35px;"></span>
                         </label>
                     </div>
                 </div>
