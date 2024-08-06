@@ -47,7 +47,7 @@ class ListConsent extends WP_List_Table {
     function get_columns() {
         $columns = array(
             'cb' => '<input type="checkbox"/>',
-            'customer_id' => __('Customer ID', 'cltd_example'),
+            'customer_id' => __('ID', 'cltd_example'),
             'customer_service_date' => __('Service Date', 'cltd_example'),
             'customer_branch_id' => __('Branch', 'cltd_example'),
             'customer_name' => __('Name', 'cltd_example'),

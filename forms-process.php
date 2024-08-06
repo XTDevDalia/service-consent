@@ -184,7 +184,7 @@ function service_list() {
     // Creating an instance
     $table = new ListConsent();
 
-    echo '<div class="wrap"><h2>Customer Visit Consents List</h2>';
+    echo '<div class="wrap"><h2>Customer Visits</h2>';
     // Prepare table
     $table->prepare_items();
     // Display table
