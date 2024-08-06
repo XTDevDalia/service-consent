@@ -274,19 +274,19 @@
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_mature">Mature
                                 <input type="checkbox" id="chk_mature" class="" value="Mature" name="skin_type[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_sensitive">Sensitive
                                 <input type="checkbox" id="chk_sensitive" class="" value="Sensitive" name="skin_type[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_dehydrated">Dehydrated
                                 <input type="checkbox" id="chk_dehydrated" class="" value="Dehydrated" name="skin_type[]">
                                 <span class="checkmark"></span>
@@ -294,9 +294,9 @@
                         </div>
                     </div>
                 </div>
-            <div class="row last-div-padding" style="margin-bottom:10px !important;padding-left:10px !important;">
+                <div class="row last-div-padding" style="margin-bottom:10px !important;padding-left:10px !important;">
                     <div class="col-sm-10">
-                  <div class="col-sm-4 col-lg-2 col-md-4" style="margin-top:10px">
+                        <div class="col-sm-4 col-lg-2 col-md-4" style="margin-top:10px">
                             <label class="form-check-label chk_height_width center-align" for="chk_combination">Combination
                                 <input type="checkbox" id="chk_combination" class="" value="Combination" name="skin_type[]">
                                 <span class="checkmark"></span>
@@ -315,25 +315,25 @@
                 </div>
                 <div class="row last-div-padding" style="margin-bottom:10px !important;padding-left:10px !important;margin-top:10px;">
                     <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_effeurage">Effeurage
                                 <input type = "checkbox" id="chk_effeurage" class="" value="Effeurage" name="massage[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_pertrissage">Pertrissage
                                 <input type = "checkbox" id="chk_pertrissage" class="" value="Pertrissage" name="massage[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_tapotement">Tapotement
                                 <input type = "checkbox" id="chk_tapotement" class="" value="Tapotement" name="massage[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_vibration">Vibration
                                 <input type = "checkbox" id="chk_vibration" class="" value="Vibration" name="massage[]">
                                 <span class="checkmark"></span>
@@ -352,13 +352,13 @@
                 </div>
                 <div class="row last-div-padding" style="margin-bottom:10px !important;padding-left:10px !important;margin-top:10px;">
                     <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_oil">Oil
                                 <input type = "checkbox" id="chk_oil" class="" value="Oil" name="massage_medium[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_cream">Cream
                                 <input type = "checkbox" id="chk_cream" class="" value="Cream" name="massage_medium[]">
                                 <span class="checkmark"></span>
@@ -377,19 +377,19 @@
                 </div>
                 <div class="row last-div-padding" style="margin-top:10px;">
                     <div class="col-sm-12 ">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="container-radio center-align" for="skin_texture_poor">Poor
                                 <input type = "radio" id="skin_texture_poor" value="Poor" name="skin_texture[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label container-radio center-align" for="skin_texture_average">Average
                                 <input type = "radio" id="skin_texture_average" value="Average" name="skin_texture[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label container-radio center-align" for="skin_texture_good">Good
                                 <input type = "radio" id="skin_texture_good" value="Good" name="skin_texture[]">
                                 <span class="checkmark"></span>
@@ -408,19 +408,19 @@
                 </div>
                 <div class="row last-div-padding" style="margin-top:10px;">
                     <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label container-radio center-align">Poor
                                 <input type = "radio" id="si_elasticity_poor" value="Poor" name="si_elasticity[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label container-radio center-align">Average
                                 <input type = "radio" id="si_elasticity_average" value="Average" name="si_elasticity[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label container-radio center-align">Good
                                 <input type = "radio" id="si_elasticity_good" value="Good" name="si_elasticity[]">
                                 <span class="checkmark"></span>
@@ -440,17 +440,17 @@
                 </div>
                 <div class="row last-div-padding" style="margin-top:10px;">
                     <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label container-radio center-align">Poor</label>
                             <input type = "radio" value="Poor" name="muscle_tone[]">
                             <span class="checkmark"></span>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label container-radio center-align">Average</label>
                             <input type = "radio" value="Average" name="muscle_tone[]">
                             <span class="checkmark"></span>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label container-radio center-align">Good</label>
                             <input type = "radio" value="Good" name="muscle_tone[]">
                             <span class="checkmark"></span>
@@ -461,37 +461,37 @@
             <div class="section container-checkbox" style="padding-left:10px !important;">
                 <div class="row" style="padding:12px 0px 0px 0px;">
                     <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_cleanser">Cleanser
                                 <input type = "checkbox" id="chk_cleanser" class="" value="Cleanser" name="muscle_tone_other[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_not_setting_mask">Not Setting Mask
                                 <input type = "checkbox" id="chk_not_setting_mask" class="" value="Not Setting Mask" name="muscle_tone_other[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_exfoliators">Exfoliators
                                 <input type = "checkbox" id="chk_exfoliators" class="" value="Exfoliators" name="muscle_tone_other[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_specialised_mask">Specialised Mask
                                 <input type = "checkbox" id="chk_specialised_mask" class="" value="Specialised Mask" name="muscle_tone_other[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_massage_media">Massage Media
                                 <input type = "checkbox" id="chk_massage_media" class="" value="Massage Media" name="muscle_tone_other[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_toning_lotion">Toning Lotion
                                 <input type = "checkbox" id="chk_toning_lotion" class="" value="Toning Lotion" name="muscle_tone_other[]">
                                 <span class="checkmark"></span>
@@ -501,13 +501,13 @@
                 </div>
                 <div class="row container-checkbox" style="padding: 0px 0px 7px 0px !important;margin-top:20px;">
                     <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_moisturiser">Moisturiser
                                 <input type = "checkbox" id="chk_moisturiser" class="" value="Moisturiser" name="muscle_tone_other[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_setting_mask">Setting Mask
                                 <input type = "checkbox" id="chk_setting_mask" class="" value="Setting Mask" name="muscle_tone_other[]">
                                 <span class="checkmark"></span>
@@ -526,37 +526,37 @@
                 </div>
                 <div class="row container-checkbox" style="padding-left:10px !important;margin-top:10px;">
                     <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_aftercare_cleanser">Cleanser
                                 <input type = "checkbox" id="chk_aftercare_cleanser" class="" value="Cleanser" name="aftercare[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_aftercare_mask">Mask
                                 <input type = "checkbox" id="chk_aftercare_mask" class="" value="Mask" name="aftercare[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_aftercare_toning">Toning
                                 <input type = "checkbox" id="chk_aftercare_toning" class="" value="Toning" name="aftercare[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_aftercare_eye_cream">Eye Cream
                                 <input type = "checkbox" id="chk_aftercare_eye_cream" class="" value="Eye Cream" name="aftercare[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_aftercare_neck_cream">Neck Cream
                                 <input type = "checkbox" id="chk_aftercare_neck_cream" class="" value="Neck Cream" name="aftercare[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                        <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                             <label class="form-check-label chk_height_width center-align" for="chk_aftercare_exfoliate">Exfoliate
                                 <input type = "checkbox" id="chk_aftercare_exfoliate" class="" value="Exfoliate" name="aftercare[]">
                                 <span class="checkmark"></span>
@@ -566,13 +566,13 @@
                 </div>
                 <div class="row container-checkbox" style="padding: 0px 0px 7px 0px !important;margin-top:20px;padding-left:10px !important;">
                     <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_aftercare_diet_water_intake">Diet / Water Intake
                                 <input type = "checkbox" id="chk_aftercare_diet_water_intake" class="" value="Diet / Water Intake" name="aftercare[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_aftercare_setting_mask">Setting Mask
                                 <input type = "checkbox" id="chk_aftercare_setting_mask" class="" value="Setting Mask" name="aftercare[]">
                                 <span class="checkmark"></span>
@@ -584,19 +584,19 @@
             <div class="section container-checkbox" style="padding-left:10px !important;margin-bottom:10px;">
                 <div class="row" style="padding:7px 0px 0px 0px;">
                     <div class="col-sm-12" style="margin-top:5px;">
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_contra_action">Contra-Action
                                 <input type = "checkbox" id="chk_contra_action" class="" value="Contra Action" name="aftercare_other[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_skin_blemishes">Skin Blemishes
                                 <input type = "checkbox" id="chk_skin_blemishes" class="" value="Skin Blemishes" name="aftercare_other[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4">
+                        <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_erythema">Erythema
                                 <input type = "checkbox" id="chk_erythema" class="" value="Erythema" name="aftercare_other[]">
                                 <span class="checkmark"></span>
@@ -667,47 +667,46 @@
                             <canvas id="customer_signature" class="therapist_signature" name="customer_signature" width="400" height="160"></canvas>
                             <button class="btn btn-primary clear-btn" id="btn_customer_cancel" name="btn_customer_cancel">Clear Signature</button>
                         </div>
-                  <div class="col-sm-1 col-md-1 col-lg-1 lblmedia">
-                     <label style="text-align: right;">Date</label>
-                  </div>
-                  <div class="col-sm-2 col-md-2 col-lg-2 datemedia">
-                     <input type="date" id="customer_signature_date" class="form-control date_class" name="customer_signature_date" value="<?php echo date('Y-m-d'); ?>">
-                  </div>
-               </div>
+                        <div class="col-sm-1 col-md-1 col-lg-1 lblmedia">
+                            <label style="text-align: right;">Date</label>
+                        </div>
+                        <div class="col-sm-2 col-md-2 col-lg-2 datemedia">
+                            <input type="date" id="customer_signature_date" class="form-control date_class" name="customer_signature_date" value="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-         <div class="section">
-            <div class="row" style="margin-top:30px; padding:20px 0px !important;">
-               <div class="col-sm-12">
-                  <div class="col-sm-2">
-                     <label>Therapist Signature</label>
-                  </div>
-                  <div class="col-sm-5 position-relative">
-                     <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
-                     <canvas id="therapist_signature" class="therapist_signature" name="therapist_signature" width="400" height="160"></canvas>
-                     <button class="btn btn-primary clear-btn" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear Signature</button>
-                  </div>
-                  <div class="col-sm-1 lblmedia">
-                     <label style="text-align: right;">Date</label>
-                  </div>
-                  <div class="col-sm-2 datemedia">
-                     <input type="date" id="therapist_signature_date" class="form-control date_class" name="therapist_signature_date" value="<?php echo date('Y-m-d'); ?>">
-                  </div>
-               </div>
+            <div class="section">
+                <div class="row" style="margin-top:30px; padding:20px 0px !important;">
+                    <div class="col-sm-12">
+                        <div class="col-sm-2">
+                            <label>Therapist Signature</label>
+                        </div>
+                        <div class="col-sm-5 position-relative">
+                            <input type="hidden" id="hdn_therapist_signature" class="form-control" name="hdn_therapist_signature">
+                            <canvas id="therapist_signature" class="therapist_signature" name="therapist_signature" width="400" height="160"></canvas>
+                            <button class="btn btn-primary clear-btn" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear Signature</button>
+                        </div>
+                        <div class="col-sm-1 lblmedia">
+                            <label style="text-align: right;">Date</label>
+                        </div>
+                        <div class="col-sm-2 datemedia">
+                            <input type="date" id="therapist_signature_date" class="form-control date_class" name="therapist_signature_date" value="<?php echo date('Y-m-d'); ?>">
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-         <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12">
-               <div class="col-sm-11">
-               </div>
-               <div class="col-sm-1">
-                  <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" style="margin-left: -45px;" value="submit" >Save & Continue</button>
-               </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-sm-12">
+                    <div class="col-sm-11">
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" style="margin-left: -45px;" value="submit" >Save & Continue</button>
+                    </div>
+                </div>
             </div>
-         </div>
-      </form>
-   </body>
-</html>
+        </form>
+    </body>
 <script>
     var sign_file_path = $('#hdn_plugin_url').val();
     fetchjsondata('<?= $_SESSION['customer_id'] ?>', '<?php echo FACIAL ?>', sign_file_path);
