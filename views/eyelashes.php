@@ -231,4 +231,8 @@
          </div>
       </form>
    </body>
+   <script>
+        var sign_file_path = $('#hdn_plugin_url').val();
+        fetchjsondata('<?= $_SESSION['customer_id'] ?>', '<?php echo EYELASHES ?>', sign_file_path);
+    </script>
 </html>
