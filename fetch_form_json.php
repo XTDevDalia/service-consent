@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cust_id']) && isset($_
         $consentjson = $ret->customer_form_value_json;
         $lastEntry = json_decode($consentjson, true);
         echo json_encode($lastEntry);
-        //echo $consentjson;
     } else {
         echo json_encode([
             'success' => false,
