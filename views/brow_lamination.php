@@ -48,7 +48,7 @@
     			right: -135px !important;
 			}
 			   .difference-two-label{
-        		margin-top:10px !important;
+        		margin-top:20px !important;
     		}
 			   .lblmedia{
 				   position:relative !important;
@@ -104,7 +104,7 @@
                </div>
             </div>
       </div>
-      <form action="" method="post" onsubmit="return data_protection_policy();">
+      <form action="" method="post" name="consent_forms" id="consent_forms" onsubmit="return data_protection_policy();">
          <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
          <div class="section" style="margin-top:0px !important;border-top-left-radius: 0px !important;border-top-right-radius: 0px !important;">
             <div class="row section-title">
@@ -156,19 +156,19 @@
             </div>
             <div class="row container-checkbox" style="padding-left:10px !important;margin-top:20px;">
                <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4">
                      <label class="form-check-label chk_height_width" for="chk_epilepsy">Epilepsy
                      <input type = "checkbox" id="chk_epilepsy" class="" value="Epilepsy" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4">
                      <label class="form-check-label chk_height_width" for="chk_cold_sores">Cold Sores
                      <input type = "checkbox" id="chk_cold_sores" class="" value="Cold Sores" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4">
                      <label class="form-check-label chk_height_width" for="chk_rashes">Rashes
                      <input type = "checkbox" id="chk_rashes" class="" value="Rashes" name="brow_lamination[]">
                      <span class="checkmark"></span>
@@ -196,19 +196,19 @@
             </div>
             <div class="row container-checkbox" style="padding-left:10px !important;margin-top:20px;">
                <div class="col-sm-12">
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4">
                      <label class="form-check-label chk_height_width" for="chk_conjuctivitis">Conjuctivitis
                      <input type = "checkbox" id="chk_conjuctivitis" class="" value="Conjuctivitis" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4">
                      <label class="form-check-label chk_height_width" for="chk_impetigo">Impetigo
                      <input type = "checkbox" id="chk_impetigo" class="" value="Impetigo" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4">
                      <label class="form-check-label chk_height_width" for="chk_ringworm">Ringworm
                      <input type = "checkbox" id="chk_ringworm" class="" value="Ringworm" name="brow_lamination[]">
                      <span class="checkmark"></span>
@@ -347,8 +347,4 @@
          </div>
       </form>
    </body>
-   <script>
-        var sign_file_path = $('#hdn_plugin_url').val();
-        fetchjsondata('<?= $_SESSION['customer_id'] ?>', '<?php echo BROWLAMINATION ?>', sign_file_path);
-    </script>
 </html>

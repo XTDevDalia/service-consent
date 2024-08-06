@@ -126,7 +126,7 @@
             </div>
          </div>
       </div>
-      <form action="" method="post" onsubmit="return data_protection_policy();">
+      <form action="" method="post" name="consent_forms" id="consent_forms" onsubmit="return data_protection_policy();">
       <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">        
       <div class="" style="background-color:#f7f7f7 !important;">
             <div class="row">

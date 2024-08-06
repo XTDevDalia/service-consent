@@ -103,7 +103,7 @@
                </div>
             </div>
       </div>
-        <form action="" method="post" onsubmit="return data_protection_policy();">
+        <form action="" method="post" name="consent_forms" id="consent_forms" onsubmit="return data_protection_policy();">
             <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
             <div class="section form-group" style="margin-top:0px !important;border-top-left-radius: 0px !important;border-top-right-radius: 0px !important;">
                 <div class="row section-title">
@@ -691,8 +691,4 @@
             </div>
         </form>
     </body>
-    <script>
-        var sign_file_path = $('#hdn_plugin_url').val();
-        fetchjsondata('<?= $_SESSION['customer_id'] ?>', '<?php echo MANPED ?>', sign_file_path);
-    </script>
 </html>

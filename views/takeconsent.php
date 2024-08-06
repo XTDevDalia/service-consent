@@ -69,7 +69,7 @@
                     <input type="hidden" name="hdn_customer_id" id="hdn_customer_id" class="form-control">
                 </div>
                 <div class="col-sm-8 col-md-6 col-lg-4">
-                    <input type="text" name="txt_phone" id="txt_phone" class="form-control">
+                    <input type="number" name="txt_phone" id="txt_phone" class="form-control">
                 </div>
             </div>
         </div>
@@ -138,10 +138,10 @@
 
 <div class="row" style="margin-bottom: 10px;margin-top:10px;">
             <div class="col-sm-12">
-               <div class="col-sm-10">
+               <div class="col-sm-9 col-md-9 col-lg-10">
                </div>
-               <div class="col-sm-2">
-                  <button type="submit" name="main_btn_save" id="main_btn_save" style="margin-left: 10px;margin-top:10px;" class="form-control btn btn-primary btn_class" value="submit" >Save & Next</button>
+               <div class="col-sm-3 col-md-3 col-lg-2">
+                  <button type="submit" name="main_btn_save" id="main_btn_save" style="margin-top:10px;" class="form-control btn btn-primary btn_class" value="submit" >Save & Next</button>
                </div>
             </div>
          </div>
