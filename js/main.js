@@ -33,25 +33,33 @@ function validateMainForm() {
     }
     return true;
 }
- function data_protection_policy(){
+function data_protection_policy() {
     var dataProtectionPolicyCheckbox = document.getElementById('chk_data_protection_policy');
     if (!dataProtectionPolicyCheckbox.checked) {
         alert('You must agree to the Data Protection Policy before submitting.');
         return false;
     }
     return true;
- }
+}
 var found = false;
 function searchJSON(obj, searchString, inpname, matchkey) {
     $.each(obj, function (key, value) {
         //alert(value + "------" + searchString + "-----" + inpname + " -----" + key + ":::" + inpname.search(key));
         if (typeof value === 'object') {
-            searchJSON(value, searchString,inpname,key);
-        } else if (value === searchString){ // inpname.search(key) !== -1) {
-            if(matchkey != "" && inpname.search(matchkey) !== -1)
-           // alert(inpname + "--" + key);
-            found = true;
-            return false; // Break the loop
+            searchJSON(value, searchString, inpname, key);
+        } else {
+            let tempvar1 = value.trim();
+            let tempvar2 = searchString.trim();
+            //console.log(tempvar1 + "::" + tempvar2);
+            // console.log(tempvar1 == tempvar2);
+            if (tempvar1 === tempvar2) { // inpname.search(key) !== -1) {
+               // console.log(matchkey + " -- " + inpname + "--" + inpname.search(matchkey));
+                if (matchkey !== "" && inpname.search(matchkey) !== -1) { // match only while it is object
+                   // console.log(inpname + "--" + key);
+                    found = true;
+                    return false; // Break the loop
+                }
+            }
         }
     });
 }
@@ -62,17 +70,16 @@ function fetchjsondata(custid, formid, filepath) {
         data: {cust_id: custid, form_id: formid},
         dataType: 'json',
         success: function (data) {
-            console.log(data);
             $('form#consent_forms :input').each(function () {
                 var input = $(this);
                 // Check if the input is a checkbox
                 if (input.is(':checkbox') || input.is(':radio')) {
                     // Get the label associated with the checkbox
                     var label = $('label[for="' + input.attr('id') + '"]').text();
+                    //  alert(label);
                     var inpname = input.attr('name');
                     found = false;
-                    searchJSON(data, label, inpname,'');
-                    //alert(found);
+                    searchJSON(data, label, inpname, '');
                     if (found) {
                         input.prop('checked', true);
                     }
