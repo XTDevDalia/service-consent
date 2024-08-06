@@ -409,19 +409,19 @@
                 <div class="row last-div-padding" style="margin-top:10px;">
                     <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label class="form-check-label container-radio center-align">Poor
+                            <label class="form-check-label container-radio center-align" for="si_elasticity_poor">Poor
                                 <input type = "radio" id="si_elasticity_poor" value="Poor" name="si_elasticity[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label class="form-check-label container-radio center-align">Average
+                            <label class="form-check-label container-radio center-align" for="si_elasticity_average">Average
                                 <input type = "radio" id="si_elasticity_average" value="Average" name="si_elasticity[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label class="form-check-label container-radio center-align">Good
+                            <label class="form-check-label container-radio center-align" for="si_elasticity_good">Good
                                 <input type = "radio" id="si_elasticity_good" value="Good" name="si_elasticity[]">
                                 <span class="checkmark"></span>
                             </label>
@@ -429,8 +429,7 @@
                     </div>
                 </div>
             </div>
-            <div class=
-                 "section last-div-padding">
+            <div class="section last-div-padding">
                 <div class="row section-title">
                     <div class="col-sm-12">
                         <div class="col-sm-3" style="margin-top:20px !important">
@@ -441,19 +440,22 @@
                 <div class="row last-div-padding" style="margin-top:10px;">
                     <div class="col-sm-12">
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label class="form-check-label container-radio center-align">Poor</label>
-                            <input type = "radio" value="Poor" name="muscle_tone[]">
+                            <label class="form-check-label container-radio center-align" for="muscle_tone_poor">Poor
+                            <input type = "radio" value="Poor" id="muscle_tone_poor" name="muscle_tone[]">
                             <span class="checkmark"></span>
+                            </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label class="form-check-label container-radio center-align">Average</label>
-                            <input type = "radio" value="Average" name="muscle_tone[]">
+                            <label class="form-check-label container-radio center-align" for="muscle_tone_avg">Average
+                            <input type = "radio" value="Average" id="muscle_tone_avg" name="muscle_tone[]">
                             <span class="checkmark"></span>
+                            </label>
                         </div>
                         <div class="col-sm-4 col-lg-2 col-md-4">
-                            <label class="form-check-label container-radio center-align">Good</label>
-                            <input type = "radio" value="Good" name="muscle_tone[]">
+                            <label class="form-check-label container-radio center-align" for="muscle_tone_good">Good
+                            <input type = "radio" value="Good" id="muscle_tone_good" name="muscle_tone[]">
                             <span class="checkmark"></span>
+                            </label>
                         </div>
                     </div>
                 </div>

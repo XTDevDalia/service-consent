@@ -100,6 +100,15 @@
 			.btn_class{
 					margin-left:-82px !important;
 				}
+            .chkmediamedium{
+               margin-left:3px;
+            }
+            .chkmedialow{
+               margin-left:2px;
+            }
+            .chkmediastrip{
+               margin-right:-11px;
+            }
         }
       </style>
    </head>
@@ -326,10 +335,10 @@
                <div class="col-sm-6 col-lg-2 col-md-4">
                   <label>Perming :</label>
                </div>
-               <div class="col-sm-3 col-lg-2 col-md-3 chkmedialow">
+               <div class="col-sm-3 col-lg-2 col-md-3 ">
                    <label for="chk_low" class="remove-bold chk_height_width">Low
                   <input type="checkbox" id="chk_low"  value="Low">
-                  <span class="checkmark" style="border-radius:0% !important;"></span>
+                  <span class="checkmark chkmedialow" style="border-radius:0% !important;"></span>
                   </label>
                </div>
                <div class="col-sm-3 col-lg-2 col-md-3 chkmediamedium">
@@ -355,13 +364,13 @@
                <div class="col-sm-6 col-lg-2 col-md-4">
                   <label>Lash Type:</label>
                </div>
-               <div class="col-sm-3 col-lg-2 col-md-3 chkmedialow">
+               <div class="col-sm-3 col-lg-2 col-md-3">
                    <label for="chk_strip" class="remove-bold chk_height_width">Strip
                   <input type="checkbox" id="chk_strip"  value="Strip">
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
-               <div class="col-sm-3 col-lg-2 col-md-3">
+               <div class="col-sm-3 col-lg-2 col-md-3 chkmediastrip">
                     <label class="remove-bold chk_height_width" for="chk_individual">Individual
                   <input type="checkbox" id="chk_individual"  value="Individual" >
                   <span class="checkmark" style="border-radius:0% !important;"></span>

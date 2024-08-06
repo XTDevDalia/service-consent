@@ -44,7 +44,7 @@
         <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12" style="margin-top:20px;">
-                <div class="col-sm-2 textalign">
+                <div class="col-sm-4 col-md-3 col-lg-3 textalign">
                     <label>Customer Name</label>
                 </div>
                 <div class="col-sm-4">
