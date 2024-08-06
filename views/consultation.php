@@ -84,13 +84,6 @@
 				   right:-50px !important;
 			   }
         }
-		  	@media only screen and (min-width: 993px) {
-			 .clear-btn {
-    			position: absolute;
-    			bottom: 10px;
-    			right: -135px !important;
-			}
-        }
 		  		  	@media only screen and (min-width: 993px) and (max-width: 1185px) {
 			 .clear-btn {
     			position: absolute;
@@ -126,24 +119,25 @@
       </div>
       <form action="" method="post" onsubmit="return data_protection_policy();">
       <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">        
-      <div class="row last-div-padding bgcolor" >
-         <div class="col-sm-12" style="margin-top:10px;">
-            <div class="col-sm-3">
-               <p style="font-weight:600;font-size:20px !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></p>
-            </div>
-            <div class="col-sm-4">
-            </div>
-            <div class="col-sm-2">
+      <div class="" style="background-color:#f7f7f7 !important;">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                     <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
+                  </div><div class="col-sm-1"></div>
+                  <div class="col-sm-2" style="margin-top:10px;">
                <label>Tel No. Work</label>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-3" style="margin-top:10px;">
                <input type="text" id="txt_tel_no_work" name="txt_tel_no_work" class="form-control">
             </div>
-         </div>
+               </div>
+            </div>
       </div>
-      <div class="section" style="padding:10px 10px;">
+
+      <div class="section" style="padding:10px 10px;margin-top:0px !important;">
          <div class="row last-div-padding bgcolor">
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3" style="display:flex;">
                <label>Scar Tissue:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="scar_tissue_yes" name="scar_tissue" value="yes">
@@ -154,7 +148,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3" style="display:flex;">
                <label>Eye Infection:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="eye_infection_yes" name="eye_infection" value="yes">
@@ -165,7 +159,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3" style="display:flex;">
                <label>Skin Disorders:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="skin_disorders_yes" name="skin_disorders" value="yes">
@@ -176,7 +170,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Contact Lenses:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="contact_lenses_yes" name="contact_lenses" value="yes">
@@ -187,7 +181,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Hyper Skin:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="hyper_skin_yes" name="hyper_skin" value="yes">
@@ -198,7 +192,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Nervous Disorder:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="nervous_disorders_yes" name="nervous_disorders" value="yes">
@@ -209,7 +203,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Allergies:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="allergies_yes" name="allergies" value="yes">
@@ -220,7 +214,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Cuts / Bruising:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="cuts_yes" name="cuts" value="yes">
@@ -231,7 +225,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Skin Infection:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="skin_infection_yes" name="skin_infection" value="yes">
@@ -242,7 +236,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Swelling:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="swelling_yes" name="swelling" value="yes">
@@ -419,7 +413,7 @@
                         <label class="form-check-label chk_height_width container-checkbox remove-bold" for="chk_data_protection_policy">
                             Agree <a href="#" id="termsLink" data-toggle="modal" data-target="#termsModal">Data Protection Policy</a>
                             <input type="checkbox" id="chk_data_protection_policy" class="" value="checked" name="chk_data_protection_policy">
-                            <span class="checkmark" style="border-radius:0% !important;"></span>
+                            <span class="checkmark" style="border-radius:0% !important;margin-left:-35px;"></span>
                         </label>
                     </div>
                 </div>
@@ -490,14 +484,15 @@
          </div>
       </div>
 		        </div>
-      <div class="row" style="margin-top: 10px;">
-         <div class="col-sm-12">
-            <div class="col-sm-11">
+              <div class="row" style="margin-top: 10px;">
+                <div class="col-sm-12">
+                    <div class="col-sm-11">
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" style="margin-left: -45px;" value="submit" >Save & Continue</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-1">
-               <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" value="submit" >Save & Continue</button>
-            </div>
-         </div>
 
    </body>
 </html>
