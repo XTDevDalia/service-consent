@@ -588,7 +588,7 @@
                     <div class="col-sm-12" style="margin-top:5px;">
                         <div class="col-sm-4 col-lg-2 col-md-4">
                             <label class="form-check-label chk_height_width center-align" for="chk_contra_action">Contra-Action
-                                <input type = "checkbox" id="chk_contra_action" class="" value="Contra Action" name="aftercare_other[]">
+                                <input type = "checkbox" id="chk_contra_action" class="" value="Contra-Action" name="aftercare_other[]">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
