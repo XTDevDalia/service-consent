@@ -95,7 +95,53 @@
                     border-radius: 50%;
                     background: white;
                 }
-
+ @media only screen and (min-width: 993px) and (max-width: 1470px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -135px !important;
+			}
+			   .difference-two-label{
+        		margin-top:10px !important;
+    		}
+			   .lblmedia{
+				   position:relative !important;
+				   right:-70px !important;
+			   }
+			   .datemedia{
+				   position:relative !important;
+				   right:-10px !important;
+			   }
+        }
+		  	@media only screen and (min-width: 993px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -135px !important;
+			}
+        }
+		  		  	@media only screen and (min-width: 993px) and (max-width: 1185px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -200px !important;
+			}
+        }
+		  	@media only screen and (min-width: 992px) and (max-width: 1350px) {
+			.btn_class{
+					margin-left:-75px !important;
+				}
+        }
+			@media only screen and (min-width: 768px) and (max-width: 991px) {
+			.btn_class{
+					margin-left:-82px !important;
+				}
+				.datemedia{
+				   position:relative !important;
+					right: 30px !important;
+        			width: 125% !important;
+			   }
+        }
         </style>
     </head>
     <body>
@@ -120,13 +166,13 @@
                     <div class="col-sm-3">
                         <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-4">
                     </div>
-                    <div class="col-sm-2" style="margin-top:20px;">
+                    <div class="col-sm-2 lblmedia" style="margin-top:20px;">
                         <label>Date : </label>
                     </div>
-                    <div class="col-sm-2" style="margin-top:20px;">
-                        <input type="date" id="main_date" name="main_date" class="form-control" value="<?php echo date('Y-m-d'); ?>">
+                    <div class="col-sm-3" style="margin-top:20px;">
+                        <input type="date" id="main_date" name="main_date" class="form-control datemedia" value="<?php echo date('Y-m-d'); ?>">
                     </div>
                 </div>
             </div>
@@ -257,9 +303,9 @@
                     <div class="row" style="margin-top:30px; padding:20px 0px !important;">
                         <div class="col-sm-12">
                             <div class="col-sm-2">
-                                <label style="text-align: right;">Therapist Name</label>
+                                <label>Therapist Name</label>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-5 col-md-5 col-lg-3">
                                 <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
                             </div>
                         </div>
@@ -281,7 +327,7 @@
                     <div class="col-sm-11">
                     </div>
                     <div class="col-sm-1">
-                        <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" style="margin-left: -40px;" value="submit" >Save & Continue</button>
+                        <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" value="submit" >Save & Continue</button>
                     </div>
                 </div>
             </div>

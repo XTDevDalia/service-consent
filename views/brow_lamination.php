@@ -41,6 +41,51 @@
          background-color: #3582c4;
          line-height: 1.14285714;
          }
+		  @media only screen and (min-width: 993px) and (max-width: 1470px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -135px !important;
+			}
+			   .difference-two-label{
+        		margin-top:10px !important;
+    		}
+			   .lblmedia{
+				   position:relative !important;
+				   right:-70px !important;
+			   }
+			   .datemedia{
+				   position:relative !important;
+				   right:-50px !important;
+			   }
+        }
+		  	@media only screen and (min-width: 993px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -135px !important;
+			}
+        }
+		  		  	@media only screen and (min-width: 993px) and (max-width: 1185px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -200px !important;
+			}
+        }
+		  	@media only screen and (min-width: 992px) and (max-width: 1350px) {
+			.btn_class{
+					margin-left:-25px !important;
+				}
+        }
+		  @media only screen and (min-width: 768px) and (max-width: 992px) {
+			.btn_saveclass{
+					margin-left:-40px !important;
+				}
+			  .lblmedia{
+				  margin-left:10px !important;
+			  }
+        }
       </style>
    </head>
    <body>
@@ -79,37 +124,37 @@
             </div>
             <div class="row container-checkbox">
                <div class="col-sm-10">
-                  <div class="col-sm-4 col-lg-2 col-md-3">
+                  <div class="col-sm-4 col-lg-2 col-md-4">
                      <label for="chk_open_wounds" class="chk_height_width">Open Wounds
                      <input type="checkbox" id="chk_open_wounds"  value="Open Wounds" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3">
+                  <div class="col-sm-4 col-lg-2 col-md-4">
                      <label class="remove-bold chk_height_width" for="chk_pregnancy">Pregnancy
                      <input type="checkbox" id="chk_pregnancy" class="" value="Pregnancy" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 ">
+                  <div class="col-sm-4 col-lg-2 col-md-4 ">
                      <label class="form-check-label chk_height_width" for="chk_allergies">Allergies
                      <input type="checkbox" id="chk_allergies" class="" value="Allergies" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_asthma">Asthma
                      <input type="checkbox" id="chk_asthma" class="" value="Asthma" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_veruccas">Verucca's
                      <input type = "checkbox" id="chk_veruccas" class="" value="Veruccas" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_Eczema">Eczema
                      <input type = "checkbox" id="chk_Eczema" class="" value="Eczema" name="brow_lamination[]"> 
                      <span class="checkmark"></span>
@@ -117,39 +162,39 @@
                   </div>
                </div>
             </div>
-            <div class="row container-checkbox" style="margin-top:10px;">
+            <div class="row container-checkbox" >
                <div class="col-sm-10">
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_epilepsy">Epilepsy
                      <input type = "checkbox" id="chk_epilepsy" class="" value="Epilepsy" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_cold_sores">Cold Sores
                      <input type = "checkbox" id="chk_cold_sores" class="" value="Cold Sores" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_rashes">Rashes
                      <input type = "checkbox" id="chk_rashes" class="" value="Rashes" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_Psoriasis">Psoriasis
                      <input type = "checkbox" id="chk_Psoriasis" class="" value="Psoriasis" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_Sunburn">Sunburn
                      <input type = "checkbox" id="chk_Sunburn" class="" value="Sunburn" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_recent_scars">Recent Scars
                      <input type = "checkbox" id="chk_recent_scars" class="" value="Recent Scars" name="brow_lamination[]">
                      <span class="checkmark"></span>
@@ -157,27 +202,27 @@
                   </div>
                </div>
             </div>
-            <div class="row container-checkbox" style="margin-top:10px;">
+            <div class="row container-checkbox" >
                <div class="col-sm-10">
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_conjuctivitis">Conjuctivitis
                      <input type = "checkbox" id="chk_conjuctivitis" class="" value="Conjuctivitis" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_impetigo">Impetigo
                      <input type = "checkbox" id="chk_impetigo" class="" value="Impetigo" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_ringworm">Ringworm
                      <input type = "checkbox" id="chk_ringworm" class="" value="Ringworm" name="brow_lamination[]">
                      <span class="checkmark"></span>
                      </label>
                   </div>
-                  <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+                  <div class="col-sm-4 col-lg-2 col-md-4 difference-two-label">
                      <label class="form-check-label chk_height_width" for="chk_burns">Burns
                      <input type = "checkbox" id="chk_burns" class="" value="Burns" name="brow_lamination[]">
                      <span class="checkmark"></span>
@@ -262,10 +307,10 @@
                      <canvas id="customer_signature" class="therapist_signature" name="customer_signature" width="400" height="160"></canvas>
                      <button class="btn btn-primary clear-btn" id="btn_customer_cancel" name="btn_customer_cancel">Clear Signature</button>
                   </div>
-                  <div class="col-sm-1 col-md-1 col-lg-1">
+                  <div class="col-sm-1 col-md-1 col-lg-1 lblmedia">
                      <label style="text-align: right;">Date</label>
                   </div>
-                  <div class="col-sm-2 col-md-2 col-lg-2">
+                  <div class="col-sm-2 col-md-2 col-lg-2 datemedia">
                      <input type="date" id="customer_signature_date" class="form-control date_class" name="customer_signature_date" value="<?php echo date('Y-m-d'); ?>">
                   </div>
                </div>
@@ -275,9 +320,9 @@
             <div class="row" style="margin-top:30px; padding:20px 0px !important;">
                <div class="col-sm-12">
                   <div class="col-sm-2">
-                     <label style="text-align: right;">Therapist Name</label>
+                     <label>Therapist Name</label>
                   </div>
-                  <div class="col-sm-4">
+                  <div class="col-sm-5 col-lg-4 col-md-4">
                      <input type="text" id="txt_therapist_name" class="form-control" name="txt_therapist_name">
                   </div>
                </div>
@@ -290,10 +335,10 @@
                      <canvas id="therapist_signature" class="therapist_signature" name="therapist_signature" width="400" height="160"></canvas>
                      <button class="btn btn-primary clear-btn" id="btn_therapist_cancel" name="btn_therapist_cancel">Clear Signature</button>
                   </div>
-                  <div class="col-sm-1">
+                  <div class="col-sm-1 lblmedia">
                      <label style="text-align: right;">Date</label>
                   </div>
-                  <div class="col-sm-2">
+                  <div class="col-sm-2 datemedia">
                      <input type="date" id="therapist_signature_date" class="form-control date_class" name="therapist_signature_date" value="<?php echo date('Y-m-d'); ?>">
                   </div>
                </div>
@@ -304,7 +349,7 @@
                <div class="col-sm-11">
                </div>
                <div class="col-sm-1">
-                  <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" value="submit" >Save Data</button>
+                  <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_saveclass btn_class" value="submit" >Save Data</button>
                </div>
             </div>
          </div>

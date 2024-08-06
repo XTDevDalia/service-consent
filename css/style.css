@@ -1,228 +1,235 @@
 .contraIndications {
-    height: 12px !important;
-    /* width: 15px !important; */
+  height: 12px !important;
+  /* width: 15px !important; */
 }
 .textalign {
-    text-align: left !important;
+  text-align: left !important;
 }
 
 .last-div-padding{
-    padding: 0px 0px 7px 0px !important;
+  padding: 0px 0px 7px 0px !important;
 }
 
 input[type=radio]:focus {
-    outline: none !important;
-    outline-offset: -2px;
+  outline: none !important;
+  outline-offset: -2px;
 }
 input[type=radio] {
-    margin: none !important;
+  margin: none !important;
 /*     margin-top: 1px \9; */
-    line-height: normal;
+  line-height: normal;
 }
 #wpbody-content {
-    padding-bottom: 65px;
-    float: left;
-    width: 98% !important;
-    overflow: visible;
+  padding-bottom: 65px;
+  float: left;
+  width: 98% !important;
+  overflow: visible;
 }
 .chk_height_width{
-    margin-left:20px;
+  margin-left:20px;
 }
 .remove-bold{
-	font-weight:normal !important;
+font-weight:normal !important;
 }
- .position-relative {
-    position: relative;
+.position-relative {
+  position: relative;
 }
 .clear-btn {
-    position: absolute;
-    bottom: 10px;  
-    right: -20px;  
+  position: absolute;
+  bottom: 10px;  
+  right: -20px;  
 }
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
-    .clear-btn {
-        position: absolute;
-        bottom: 10px;  
-        right: -150px !important;  
-    }
-    .difference-two-label{
-        margin-top:10px !important;
-    }
-    
-    .therapist_signature{
-        height:160px !important;
-        width:300px !important;
-    }
-    .date_class{
-        width:auto !important;
-        margin-left:10px !important;
-    }
-    .btn_class{
-        margin-left:-78px !important;
-    }
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .clear-btn {
+      position: absolute;
+      bottom: 10px;  
+      right: -150px !important;  
+  }
+  .difference-two-label{
+      margin-top:10px !important;
+  }
+  
+  .therapist_signature{
+      height:160px !important;
+      width:300px !important;
+  }
+  .date_class{
+      width:auto !important;
+      margin-left:10px !important;
+  }
 }
 
 .chk_height_width_list{
-	height:13px !important;
-	width:13px !important;
-    margin-top:0px !important;
+height:13px !important;
+width:13px !important;
+  margin-top:0px !important;
 }
 #cb-select-all-2{
-	height:13px !important;
-	width:13px !important;
+height:13px !important;
+width:13px !important;
 }
 #cb-select-all-1{
-	height:13px !important;
-	width:13px !important;
+height:13px !important;
+width:13px !important;
 }
 .dropdown-width{
-    max-width: 35em !important;
+  max-width: 35em !important;
 }
 .section{
-    background: #f7f7f7;
+  background: #f7f7f7;
 margin-top: 10px !important;
-} */
+padding-bottom: 10px !important;
+} 
 /* The container */
 /* The container */
 /* The container */
 .container-checkbox {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    /* font-size: 22px; */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: block;
+  position: relative;
+  padding-left: 0px !important;
+  margin-bottom: 12px;
+  cursor: pointer;
+  /* font-size: 22px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-  }
-  
-  /* Hide the browser's default checkbox */
-  .container-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  /* Create a custom checkbox */
-  .container-checkbox .checkmark {
-    position: absolute;
-    top: 0;
-    left: 5px;
-    height: 25px;
-    width: 25px;
-    background-color:#ccc;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .container-checkbox:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .container-checkbox input:checked ~ .checkmark {
-    background-color: #2196f3;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .container-checkbox .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .container-checkbox input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .container-checkbox .checkmark:after {
-    left: 8px;
-    top: 3px;
-    width: 7px;
-    height: 15px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-  
-  /* The container */
-  .container-radio {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    /* font-size: 22px; */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Hide the browser's default radio button */
-  .container-radio input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  /* Create a custom radio button */
-  .container-radio .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #ccc !important;
-    border-radius: 50%;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .container-radio:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .container-radio input:checked ~ .checkmark {
-    background-color: #2196f3 !important;
-  }
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  .container-radio .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the indicator (dot/circle) when checked */
-  .container-radio input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the indicator (dot/circle) */
-  .container-radio .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
-  }
-  #wpfooter {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px 20px;
-    color: #50575e;
-    display: none !important;
+}
+
+/* Hide the browser's default checkbox */
+.container-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.container-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  height: 25px;
+  width: 25px;
+  background-color:#ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.container-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-checkbox input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.container-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-checkbox .checkmark:after {
+  left: 8px;
+  top: 3px;
+  width: 7px;
+  height: 15px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* The container */
+.container-radio {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  /* font-size: 22px; */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.container-radio .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #ccc !important;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container-radio:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container-radio input:checked ~ .checkmark {
+  background-color: #2196f3 !important;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.container-radio .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container-radio input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container-radio .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+#wpfooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  color: #50575e;
+  display: none !important;
 }
 .modal-header, .modal-body, .modal-footer {
-    padding: 20px;
+  padding: 20px;
+}
+.notice, div.error, div.updated {
+display:none !important;
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  border-left-width: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+  margin: 5px 15px 2px;
+  padding: 1px 12px;
 }

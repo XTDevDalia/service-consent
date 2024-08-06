@@ -35,7 +35,7 @@
                 <div class="col-sm-3 col-lg-2 col-md-3 textalign">
                     <label>Branch</label>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-8 col-md-6 col-lg-4">
                     <select name="select_branch" id="select_branch" class="form-control dropdown-width">
                         <?php
                             foreach ($serviceconfig['branch'] as $key => $val) {
@@ -54,7 +54,7 @@
                     <label>Customer Phone No.</label><span style="color:red"> *</span>
                     <input type="hidden" name="hdn_customer_id" id="hdn_customer_id" class="form-control">
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-8 col-md-6 col-lg-4">
                     <input type="text" name="txt_phone" id="txt_phone" class="form-control">
                 </div>
             </div>
@@ -64,7 +64,7 @@
                 <div class="col-sm-3 col-lg-2 col-md-3 textalign">
                     <label>Customer Name</label><span style="color:red"> *</span>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-8 col-md-6 col-lg-4">
                     <input type="text" name="txt_name" id="txt_name" class="form-control">
                 </div>
             </div>
@@ -74,7 +74,7 @@
                 <div class="col-sm-3 col-lg-2 col-md-3 textalign">
                     <label>Customer Email</label><span style="color:red"> *</span>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-8 col-md-6 col-lg-4">
                     <input type="email" name="txt_email" id="txt_email" class="form-control">
                 </div>
             </div>
@@ -84,7 +84,7 @@
                 <div class="col-sm-3 col-lg-2 col-md-3 textalign">
                     <label>Visit No.</label><span style="color:red"> *</span>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-8 col-md-6 col-lg-4">
                     <input type="text" name="txt_visit_no" id="txt_visit_no" value="<?=$v_no?>" class="form-control" readonly>
                 </div>
             </div>
@@ -103,12 +103,12 @@
             ?>
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12" style="display: flex; align-items: flex-start;">
-                <div class="col-sm-2">
-                    <label>Select Service Form</label><span style="color:red"> *</span>
+                <div class="col-sm-3 col-md-3 col-lg-2">
+                    <label>Select Service Form</label>
                 </div>
                 <div class="col-sm-10 container-checkbox" style="display: flex; flex-wrap: wrap;">
                     <?php foreach ($ret as $record) { ?>
-                    <div class="col-sm-4" style="display: flex; align-items: center;margin-top:10px;">
+                    <div class="col-sm-6 col-md-6 col-lg-4" style="display: flex; align-items: center;margin-top:10px;">
                         <label for="chk_<?= $record->service_form_id; ?>" style="font-weight: normal; margin-left: 20px;"><?= $record->service_form_display_title; ?>    
                         <input type="checkbox" name="chk_service[]" id="chk_<?= $record->service_form_id; ?>" value="<?= $record->service_form_id; ?>" class="chk_height_width">
                         <span class="checkmark"></span>
@@ -119,8 +119,8 @@
             </div>
         </div>
         <div class="col-sm-12" style="margin-bottom: 10px;margin-top:10px;">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-2" style="margin-left:-10px;">
+            <div class="col-sm-2 col-md-3 col-lg-2"></div>
+            <div class="col-sm-4 col-md-4 col-lg-2" style="margin-left:-10px;">
                 <button type="submit" name="main_btn_save" id="main_btn_save" class="form-control btn-primary" value="submit">Save & Next</button>
             </div>
         </div>

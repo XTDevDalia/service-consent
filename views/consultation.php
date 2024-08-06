@@ -66,6 +66,48 @@
          border-radius: 50%;
          background: white;
          }
+		  @media only screen and (min-width: 993px) and (max-width: 1470px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -135px !important;
+			}
+			   .difference-two-label{
+        		margin-top:10px !important;
+    		}
+			   .lblmedia{
+				   position:relative !important;
+				   right:-60px !important;
+			   }
+			   .datemedia{
+				   position:relative !important;
+				   right:-50px !important;
+			   }
+        }
+		  	@media only screen and (min-width: 993px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -135px !important;
+			}
+        }
+		  		  	@media only screen and (min-width: 993px) and (max-width: 1185px) {
+			 .clear-btn {
+    			position: absolute;
+    			bottom: 10px;
+    			right: -200px !important;
+			}
+        }
+		  	@media only screen and (min-width: 992px) and (max-width: 1350px) {
+			.btn_class{
+					margin-left:-65px !important;
+				}
+        }
+		  @media only screen and (min-width: 768px) and (max-width: 991px) {
+			.btn_class{
+					margin-left:-82px !important;
+				}
+        }
       </style>
    </head>
    <body>
@@ -101,7 +143,7 @@
       </div>
       <div class="section" style="padding:10px 10px;">
          <div class="row last-div-padding bgcolor">
-            <div class="col-12 col-md-4 col-lg-3 mb-3" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3" style="display:flex;">
                <label>Scar Tissue:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="scar_tissue_yes" name="scar_tissue" value="yes">
@@ -112,7 +154,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-3" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3" style="display:flex;">
                <label>Eye Infection:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="eye_infection_yes" name="eye_infection" value="yes">
@@ -123,7 +165,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-3" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3" style="display:flex;">
                <label>Skin Disorders:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="skin_disorders_yes" name="skin_disorders" value="yes">
@@ -134,7 +176,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Contact Lenses:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="contact_lenses_yes" name="contact_lenses" value="yes">
@@ -145,7 +187,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Hyper Skin:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="hyper_skin_yes" name="hyper_skin" value="yes">
@@ -156,7 +198,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Nervous Disorder:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="nervous_disorders_yes" name="nervous_disorders" value="yes">
@@ -167,7 +209,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Allergies:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="allergies_yes" name="allergies" value="yes">
@@ -178,7 +220,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Cuts / Bruising:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="cuts_yes" name="cuts" value="yes">
@@ -189,7 +231,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Skin Infection:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="skin_infection_yes" name="skin_infection" value="yes">
@@ -200,7 +242,7 @@
                <span class="checkmark"></span>
                </label>
             </div>
-            <div class="col-12 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
+            <div class="col-sm-4 col-md-4 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Swelling:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
                <input type="radio" id="swelling_yes" name="swelling" value="yes">
@@ -224,30 +266,30 @@
       <div class="section" style="padding:20px 0;">
          <div class="row container-checkbox">
             <div class="col-sm-10" style="display:flex;">
-               <div class="col-sm-4 col-lg-2 col-md-3">
+               <div class="col-sm-6 col-lg-2 col-md-4">
                   <label>Client Characteristics:</label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3">
+               <div class="col-sm-3 col-lg-2 col-md-3">
                   <label for="chk_fair" class="remove-bold chk_height_width">Fair
                   <input type="checkbox" id="chk_fair"  value="Fair">
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3">
-                  <label class="remove-bold chk_height_width" for="chk_red">Red / aubum
-                  <input type="checkbox" id="chk_red"  value="Red / aubum" >
-                  <span class="checkmark" style="border-radius:0% !important;"></span>
-                  </label>
-               </div>
-               <div class="col-sm-4 col-lg-2 col-md-3 ">
+               <div class="col-sm-3 col-lg-2 col-md-3 ">
                   <label class="remove-bold form-check-label chk_height_width" for="chk_dark">Dark
                   <input type="checkbox" id="chk_dark" value="Dark">
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+               <div class="col-sm-3 col-lg-2 col-md-3">
                   <label class="remove-bold form-check-label chk_height_width" for="chk_greay">Greay
                   <input type="checkbox" id="chk_greay" value="Greay">
+                  <span class="checkmark" style="border-radius:0% !important;"></span>
+                  </label>
+               </div>
+				<div class="col-sm-5 col-lg-2 col-md-3">
+                  <label class="remove-bold chk_height_width" for="chk_red">Red / aubum
+                  <input type="checkbox" id="chk_red"  value="Red / aubum" >
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
@@ -255,28 +297,28 @@
          </div>
          <div class="row container-checkbox" style="margin-top:10px;">
             <div class="col-sm-10" style="display:flex;">
-               <div class="col-sm-4 col-lg-2 col-md-3">
+               <div class="col-sm-6 col-lg-2 col-md-4">
                   <label>Tint Colour:</label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3">
+               <div class="col-sm-3 col-lg-2 col-md-3">
                   <label for="chk_brown" class="remove-bold chk_height_width">Brown
                   <input type="checkbox" id="chk_brown"  value="Brown">
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3">
+               <div class="col-sm-3 col-lg-2 col-md-3">
                   <label class="remove-bold chk_height_width" for="chk_Black">Black
                   <input type="checkbox" id="chk_Black"  value="Black" >
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3 ">
+               <div class="col-sm-3 col-lg-2 col-md-3">
                   <label class="remove-bold form-check-label chk_height_width" for="chk_Blue">Blue
                   <input type="checkbox" id="chk_Blue" value="Blue">
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3 difference-two-label">
+               <div class="col-sm-5 col-lg-2 col-md-3">
                   <label class="remove-bold form-check-label chk_height_width" for="chk_Blue_Black">Blue / Black
                   <input type="checkbox" id="chk_Blue_Black" value="Blue / Black">
                   <span class="checkmark" style="border-radius:0% !important;"></span>
@@ -284,51 +326,59 @@
                </div>
             </div>
          </div>
-         <div class="row container-checkbox" style="margin-top:10px;">
+		  
+		           <div class="row container-checkbox" style="margin-top:10px;">
             <div class="col-sm-10" style="display:flex;">
-               <div class="col-sm-4 col-lg-2 col-md-3">
-                  <label>Perming:</label>
+               <div class="col-sm-6 col-lg-2 col-md-4">
+                  <label>Perming :</label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3">
-                  <label for="chk_low" class="remove-bold chk_height_width">Low
+               <div class="col-sm-3 col-lg-2 col-md-3 chkmedialow">
+                   <label for="chk_low" class="remove-bold chk_height_width">Low
                   <input type="checkbox" id="chk_low"  value="Low">
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3">
-                  <label class="remove-bold chk_height_width" for="chk_medium">Medium
+               <div class="col-sm-3 col-lg-2 col-md-3 chkmediamedium">
+                   <label class="remove-bold chk_height_width" for="chk_medium">Medium
                   <input type="checkbox" id="chk_medium"  value="Medium" >
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3">
-                  <label class="remove-bold chk_height_width" for="chk_high">High
+               <div class="col-sm-3 col-lg-2 col-md-3 chkmediahigh">
+                  <label class="remove-bold form-check-label chk_height_width" for="chk_high">High
                   <input type="checkbox" id="chk_high"  value="High" >
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
+               <div class="col-sm-5 col-lg-2 col-md-3">
+             
+               </div>
             </div>
          </div>
-         <div class="row container-checkbox" style="margin-top:10px;">
+		  
+		  <div class="row container-checkbox" style="margin-top:10px;">
             <div class="col-sm-10" style="display:flex;">
-               <div class="col-sm-4 col-lg-2 col-md-3">
+               <div class="col-sm-6 col-lg-2 col-md-4">
                   <label>Lash Type:</label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3">
-                  <label for="chk_strip" class="remove-bold chk_height_width">Strip
+               <div class="col-sm-3 col-lg-2 col-md-3 chkmedialow">
+                   <label for="chk_strip" class="remove-bold chk_height_width">Strip
                   <input type="checkbox" id="chk_strip"  value="Strip">
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
-               <div class="col-sm-4 col-lg-2 col-md-3">
-                  <label class="remove-bold chk_height_width" for="chk_individual">Individual
+               <div class="col-sm-3 col-lg-2 col-md-3">
+                    <label class="remove-bold chk_height_width" for="chk_individual">Individual
                   <input type="checkbox" id="chk_individual"  value="Individual" >
                   <span class="checkmark" style="border-radius:0% !important;"></span>
                   </label>
                </div>
+               <div class="col-sm-3 col-lg-2 col-md-3 chkmediahigh">
+               </div>
+               <div class="col-sm-5 col-lg-2 col-md-3">
+               </div>
             </div>
          </div>
-      </div>
       <div class="row" style="margin-top: 10px;">
          <div class="col-sm-12">
             <div class="col-sm-4">
@@ -413,10 +463,10 @@
                   <canvas id="customer_signature" class="therapist_signature" name="customer_signature" width="400" height="160"></canvas>
                   <button class="btn btn-primary clear-btn" id="btn_customer_cancel" name="btn_customer_cancel">Clear Signature</button>
                </div>
-               <div class="col-sm-1 col-md-1 col-lg-1">
+               <div class="col-sm-1 col-md-1 col-lg-1 lblmedia">
                   <label style="text-align: right;">Date</label>
                </div>
-               <div class="col-sm-2 col-md-2 col-lg-2">
+               <div class="col-sm-2 col-md-2 col-lg-2 datemedia">
                   <input type="date" id="customer_signature_date" class="form-control date_class" name="customer_signature_date" value="<?php echo date('Y-m-d'); ?>">
                </div>
             </div>
@@ -439,14 +489,15 @@
             </div>
          </div>
       </div>
+		        </div>
       <div class="row" style="margin-top: 10px;">
          <div class="col-sm-12">
             <div class="col-sm-11">
             </div>
             <div class="col-sm-1">
-               <button type="submit" name="other_btn_save" style="margin-left:-35px !important;" id="other_btn_save" class="btn btn-primary" value="submit" >Save & Continue</button>
+               <button type="submit" name="other_btn_save" id="other_btn_save" class="btn btn-primary btn_class" value="submit" >Save & Continue</button>
             </div>
          </div>
-      </div>
+
    </body>
 </html>
