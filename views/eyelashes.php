@@ -66,11 +66,11 @@
             <div class="col-sm-3">
                <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
             </div>
-            <div class="col-sm-4" style="color:white;">
+            <div class="col-sm-5" style="color:white;">
                <h3 style="text-align:center;">Lash Extension</h3>
             </div>
             <div class="col-sm-4" style="color:white;margin-top:15px;">
-               <h4 style="text-align:right;">Visit No.:  <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></h4>
+               <h4 style="text-align:center;">Visit No: <br> <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></h4>
             </div>
          </div>
       </div>

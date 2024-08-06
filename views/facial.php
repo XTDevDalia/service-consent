@@ -98,7 +98,7 @@
                </div>
             </div>
       </div>
-      <form action="" method="post" name="consent_forms" id="consent_forms" onsubmit="return data_protection_policy();">
+      <form action="" method="post" name="consent_forms" id="consent_forms1" onsubmit="return data_protection_policy();">
          <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
          <div class="section" style="margin-top:0px !important;border-top-left-radius: 0px !important;border-top-right-radius: 0px !important;">
             <div class="row section-title">
