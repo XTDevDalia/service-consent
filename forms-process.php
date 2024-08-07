@@ -33,6 +33,14 @@ function service_menu() {
         'patch_test_listing', // Callback function to display content
         'dashicons-feedback'
     );
+    add_submenu_page(
+        '',
+        'Thank You',
+        'Thank You',
+        'manage_options',
+        'thank-you', // Empty slug to hide from menu
+        'render_thankyou'
+    );
 }
 
 function add_consent() {
@@ -136,7 +144,7 @@ function otherform() {
                 unset($_SESSION['visit_no']);
                 unset($_SESSION['selected_forms']);
                 unset($_SESSION['form_index']);
-                wp_redirect(admin_url() . "admin.php?page=add-consent");
+                wp_redirect(admin_url() . "admin.php?page=thank-you");
                 exit;
             } else {
                 wp_redirect($filepath);
@@ -163,8 +171,6 @@ function register_service_forms() {
                 '',
                 'consent forms',
                 'consent forms',
-                //__('My Forms', 'my-plugin-textdomain'),
-               // __('My Forms', 'my-plugin-textdomain'),
                 'manage_options',
                 $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index'] - 1]][0], // Empty slug to hide from menu
                 'render_service_forms'
@@ -181,6 +187,13 @@ function render_service_forms() {
         wp_enqueue_script('signaturejs');
     }
 }
+
+function render_thankyou() {
+    global $serviceconfig;
+    include(SC_PLUGIN_DIR_PATH . "views/thankyou.php");
+    exit;
+}
+
 
 function service_list() {
     // Creating an instance
