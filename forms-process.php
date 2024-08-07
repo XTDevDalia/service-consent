@@ -174,7 +174,7 @@ function render_service_forms() {
     global $serviceconfig;
     if ($_SESSION) {
         // Load your form(s) here
-        echo include(SC_PLUGIN_DIR_PATH . "views/" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index'] - 1]][1]);
+        include(SC_PLUGIN_DIR_PATH . "views/" . $serviceconfig['slug'][$_SESSION['selected_forms'][$_SESSION['form_index'] - 1]][1]);
         wp_register_script('signaturejs', '/wp-content/plugins/service-consent/js/signature.js');
         wp_enqueue_script('signaturejs');
     }
