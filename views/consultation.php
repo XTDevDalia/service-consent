@@ -118,11 +118,11 @@
             <div class="col-sm-3">
                <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
             </div>
-            <div class="col-sm-4" style="color:white;">
+            <div class="col-sm-5" style="color:white;">
                <h3 style="text-align:center;">Counsultation Card</h3>
             </div>
             <div class="col-sm-4" style="color:white;margin-top:15px;">
-               <h4 style="text-align:right;">Visit No.:  <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></h4>
+               <h4 style="text-align:center;">Visit No: <br> <?= (isset($_SESSION['visit_no'])) ? $_SESSION['visit_no'] : ''; ?></h4>
             </div>
          </div>
       </div>
@@ -149,110 +149,110 @@
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3" style="display:flex;">
                <label>Scar Tissue:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="scar_tissue_yes" name="scar_tissue" value="yes">
+               <input type="radio" id="scar_tissue_yes" name="scar_tissue" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="scar_tissue_no" name="scar_tissue" value="no">
+               <input type="radio" id="scar_tissue_no" name="scar_tissue" value="No">
                <span class="checkmark"></span>
                </label>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3" style="display:flex;">
                <label>Eye Infection:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="eye_infection_yes" name="eye_infection" value="yes">
+               <input type="radio" id="eye_infection_yes" name="eye_infection" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="eye_infection_no" name="eye_infection" value="no">
+               <input type="radio" id="eye_infection_no" name="eye_infection" value="No">
                <span class="checkmark"></span>
                </label>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3" style="display:flex;">
                <label>Skin Disorders:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="skin_disorders_yes" name="skin_disorders" value="yes">
+               <input type="radio" id="skin_disorders_yes" name="skin_disorders" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="skin_disorders_no" name="skin_disorders" value="no">
+               <input type="radio" id="skin_disorders_no" name="skin_disorders" value="No">
                <span class="checkmark"></span>
                </label>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Contact Lenses:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="contact_lenses_yes" name="contact_lenses" value="yes">
+               <input type="radio" id="contact_lenses_yes" name="contact_lenses" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="contact_lenses_no" name="contact_lenses" value="no">
+               <input type="radio" id="contact_lenses_no" name="contact_lenses" value="No">
                <span class="checkmark"></span>
                </label>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Hyper Skin:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="hyper_skin_yes" name="hyper_skin" value="yes">
+               <input type="radio" id="hyper_skin_yes" name="hyper_skin" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="hyper_skin_no" name="hyper_skin" value="no">
+               <input type="radio" id="hyper_skin_no" name="hyper_skin" value="No">
                <span class="checkmark"></span>
                </label>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Nervous Disorder:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="nervous_disorders_yes" name="nervous_disorders" value="yes">
+               <input type="radio" id="nervous_disorders_yes" name="nervous_disorders" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="nervous_disorders_no" name="nervous_disorders" value="no">
+               <input type="radio" id="nervous_disorders_no" name="nervous_disorders" value="No">
                <span class="checkmark"></span>
                </label>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Allergies:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="allergies_yes" name="allergies" value="yes">
+               <input type="radio" id="allergies_yes" name="allergies" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="allergies_no" name="allergies" value="no">
+               <input type="radio" id="allergies_no" name="allergies" value="No">
                <span class="checkmark"></span>
                </label>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Cuts / Bruising:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="cuts_yes" name="cuts" value="yes">
+               <input type="radio" id="cuts_yes" name="cuts" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="cuts_no" name="cuts" value="no">
+               <input type="radio" id="cuts_no" name="cuts" value="No">
                <span class="checkmark"></span>
                </label>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Skin Infection:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="skin_infection_yes" name="skin_infection" value="yes">
+               <input type="radio" id="skin_infection_yes" name="skin_infection" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="skin_infection_no" name="skin_infection" value="no">
+               <input type="radio" id="skin_infection_no" name="skin_infection" value="No">
                <span class="checkmark"></span>
                </label>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-3 mb-3 difference-two-label" style="display:flex;">
                <label>Swelling:</label> 
                <label class="container-radio" style="margin-left:15px;">Yes
-               <input type="radio" id="swelling_yes" name="swelling" value="yes">
+               <input type="radio" id="swelling_yes" name="swelling" value="Yes">
                <span class="checkmark"></span>
                </label>
                <label class="container-radio" style="margin-left:15px;"><span style="margin-top:10px;">No</span>
-               <input type="radio" id="swelling_no" name="swelling" value="no">
+               <input type="radio" id="swelling_no" name="swelling" value="No">
                <span class="checkmark"></span>
                </label>
             </div>

@@ -6,14 +6,16 @@ function service_menu() {
             'Consent Form',
             'manage_options',
             'add-consent', // Menu slug
-            'add_consent' // Callback function to display content
+            'add_consent', // Callback function to display content
+            'dashicons-format-aside'
     );
     add_menu_page(
             'Service listing',
             'Visit List',
             'manage_options', // Capability (e.g., 'manage_options')
             'list-consent', // Menu slug
-            'service_list' // Callback function to display content
+            'service_list',
+            'dashicons-feedback' // Callback function to display content
     );
     add_menu_page(
         'Patch Test',
@@ -21,7 +23,7 @@ function service_menu() {
         'manage_options', // Capability (e.g., 'manage_options')
         'patch_test', // Menu slug
         'patch_test_process', // Callback function to display content
-        'dashicons-welcome-widgets-menus'
+        'dashicons-welcome-write-blog'
     );
     add_menu_page(
         'Patch Test List',
@@ -29,7 +31,7 @@ function service_menu() {
         'manage_options', // Capability (e.g., 'manage_options')
         'patch_test_list', // Menu slug
         'patch_test_listing', // Callback function to display content
-        'dashicons-welcome-widgets-menus'
+        'dashicons-feedback'
     );
 }
 
@@ -184,7 +186,7 @@ function service_list() {
     // Creating an instance
     $table = new ListConsent();
 
-    echo '<div class="wrap"><h2>Customer Visit Consents List</h2>';
+    echo '<div class="wrap"><h2>Customer Visits</h2>';
     // Prepare table
     $table->prepare_items();
     // Display table

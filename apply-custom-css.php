@@ -2,7 +2,7 @@
 add_action('admin_head', 'column_customer_no');
 function column_customer_no() {
     echo '<style type="text/css">';
-    echo '.column-customer_no { width: 15% !important; }'; // Adjust the width as needed
+    echo '.column-customer_no { width: 8% !important; }'; // Adjust the width as needed
     echo '</style>';
 }
 
@@ -23,7 +23,7 @@ function column_branch() {
 add_action('admin_head', 'column_customer_name');
 function column_customer_name() {
     echo '<style type="text/css">';
-    echo '.column-customer_name { width: 10% !important; }'; // Adjust the width as needed
+    echo '.column-customer_name { width: 15% !important; }'; // Adjust the width as needed
     echo '</style>';
 }
 
@@ -37,7 +37,7 @@ function column_contact_details() {
 add_action('admin_head', 'column_selected_services');
 function column_selected_services() {
     echo '<style type="text/css">';
-    echo '.column-site_list { width: 30% !important; }'; // Adjust the width as needed
+    echo '.column-site_list { width: 25% !important; }'; // Adjust the width as needed
     echo '</style>';
 }
 
