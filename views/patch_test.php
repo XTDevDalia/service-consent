@@ -30,66 +30,67 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Select2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-<div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:20px;margin-right:20px;"></div>
 <div class="section">
-<div class="section">
-    <div class="col-sm-12" style="margin-top:10px;background:black;border-top-right-radius: 10px;border-top-left-radius: 10px;">
-        <div class="col-sm-3">
-            <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
-        </div>
-        <div class="col-sm-4" style="color:white;">
-            <h3 style="text-align:center;">Patch Test</h3>
+    <div class="section">
+        <div class="col-sm-12" style="margin-top:10px;background:black;border-top-right-radius: 10px;border-top-left-radius: 10px;">
+            <div class="col-sm-3">
+                <img src="<?php echo esc_url( plugins_url( 'brow.png', dirname(__FILE__) ) ); ?>" height="50" width="100" style="margin-top:10px">
+            </div>
+            <div class="col-sm-4" style="color:white;">
+                <h3 style="text-align:center;">Patch Test</h3>
+            </div>
         </div>
     </div>
-    <form action="" method="post" onsubmit="return validatePatchTestForm();">
-        <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12" style="margin-top:20px;">
-                <div class="col-sm-3 col-md-3 col-lg-3 textalign">
-                    <label>Customer Name</label>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4">
-                    <select name="patch_test_customer" id="patch_test_customer" class="form-control dropdown-width">
-                        <option value="-1"><?= 'Select Customer' ?></option>
-                        <?php foreach ($customers as $record) { ?>
-                        <option value="<?= $record->customer_id ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>>
-                            <?= $record->customer_name ?> - <?= $record->customer_phone ?>
-                        </option>
-                        <?php } ?>
-                    </select>
+        <form action="" method="post" name="patch_test_forms" id="patch_test_forms" onsubmit="return validatePatchTestForm();">
+            <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
+            <div class="alert alert-danger" id="displaymsg" style="display:none;margin-top:60px !important;margin-right:20px;">
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-sm-12" style="margin-top:20px;">
+                    <div class="col-sm-3 col-md-3 col-lg-3 textalign">
+                        <label>Customer Name</label>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4">
+                        <select name="patch_test_customer" id="patch_test_customer" class="form-control dropdown-width">
+                            <option value="-1"><?= 'Select Customer' ?></option>
+                            <?php foreach ($customers as $record) { ?>
+                            <option value="<?= $record->customer_id ?>" <?= $record->customer_name == $customer_name ? 'selected' : '' ?>>
+                                <?= $record->customer_name ?> - <?= $record->customer_phone ?>
+                            </option>
+                            <?php } ?>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12">
-                <div class="col-sm-3 com-md-3 col-lg-3 textalign">
-                    <label>Patch Test Date Time</label><span style="color:red"> </span>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4">
-                    <input type="datetime-local" name="patch_test_datetime" id="patch_test_datetime" class="form-control" value="<?= date('Y-m-d\TH:i') ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-sm-12">
-                <div class="col-sm-3 col-md-3 col-lg-3 textalign">
-                    <label for="patch_test_notes">Patch Test Notes</label><span style="color:red"> *</span>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4">
-                    <textarea name="patch_test_notes" id="patch_test_notes" class="form-control" rows="4"><?= $patch_test_notes ?></textarea>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-sm-12">
+                    <div class="col-sm-3 com-md-3 col-lg-3 textalign">
+                        <label>Patch Test Date Time</label><span style="color:red"> </span>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4">
+                        <input type="datetime-local" name="patch_test_datetime" id="patch_test_datetime" class="form-control" value="<?= date('Y-m-d\TH:i') ?>">
+                    </div>
                 </div>
             </div>
-        </div>
-		<div class="row">
-        <div class="col-sm-12" style="margin-bottom: 10px;margin-top:10px;">
-            <div class="col-sm-7 col-lg-7 col-md-7"></div>
-            <div class="col-sm-2 col-md-2 col-lg-2">
-                <button type="submit" name="patch_test_btn_save" id="patch_test_btn_save" class="form-control btn-primary" value="submit"><?= $patch_test_id ? 'Update' : 'Save' ?></button>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-sm-12">
+                    <div class="col-sm-3 col-md-3 col-lg-3 textalign">
+                        <label for="patch_test_notes">Patch Test Notes</label><span style="color:red"> *</span>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4">
+                        <textarea name="patch_test_notes" id="patch_test_notes" class="form-control" rows="4"><?= $patch_test_notes ?></textarea>
+                    </div>
+                </div>
             </div>
-        </div>
-		</div>
-    </form>
-</div>
+            <div class="row">
+                <div class="col-sm-12" style="margin-bottom: 10px;margin-top:10px;">
+                    <div class="col-sm-7 col-lg-7 col-md-7"></div>
+                    <div class="col-sm-2 col-md-2 col-lg-2">
+                        <button type="submit" name="patch_test_btn_save" id="patch_test_btn_save" class="form-control btn-primary" value="submit"><?= $patch_test_id ? 'Update' : 'Save' ?></button>
+                    </div>
+                </div>
+            </div>
+        </form>
 </div>
 <script>
     $(document).ready(function() {

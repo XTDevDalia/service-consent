@@ -95,3 +95,12 @@ function fetchjsondata(custid, formid, filepath) {
         }
     });
 }
+function validatePatchTestForm(){
+    var customerSelect = document.getElementById('patch_test_customer');
+    if (customerSelect.value === "-1") {
+        $('#displaymsg').html("Please Select Customer Name.");
+        $('#displaymsg').show();
+        return false;
+    }
+    return true;
+}
