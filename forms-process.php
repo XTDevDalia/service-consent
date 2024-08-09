@@ -189,7 +189,6 @@ function render_service_forms() {
 }
 
 function render_thankyou() {
-    global $serviceconfig;
     include(SC_PLUGIN_DIR_PATH . "views/thankyou.php");
     exit;
 }
