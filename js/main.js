@@ -33,14 +33,6 @@ function validateMainForm() {
     }
     return true;
 }
-function data_protection_policy() {
-    var dataProtectionPolicyCheckbox = document.getElementById('chk_data_protection_policy');
-    if (!dataProtectionPolicyCheckbox.checked) {
-        alert('You must agree to the Data Protection Policy before submitting.');
-        return false;
-    }
-    return true;
-}
 var found = false;
 function searchJSON(obj, searchString, inpname, matchkey) {
     $.each(obj, function (key, value) {
