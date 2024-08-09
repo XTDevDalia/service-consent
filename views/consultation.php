@@ -126,7 +126,7 @@
                 </div>
             </div>
         </div>
-        <form action="" method="post" name="consent_forms" id="consent_forms" onsubmit="return data_protection_policy();">
+        <form method="post" name="consent_forms" id="consent_forms">
         <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">        
         <div class="" style="background-color:#f7f7f7 !important;">
             <div class="row">
@@ -415,10 +415,10 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="col-sm-6">
-                            <label class="form-check-label chk_height_width container-checkbox remove-bold" for="chk_data_protection_policy">
-                            Agree <a href="#" id="termsLink" data-toggle="modal" data-target="#termsModal">Data Protection Policy</a>
-                            <input type="checkbox" id="chk_data_protection_policy" class="" value="checked" name="chk_data_protection_policy">
-                            <span class="checkmark" style="border-radius:0% !important;margin-left:-35px;"></span>
+                        <label class="form-check-label chk_height_width container-checkbox remove-bold" for="chk_data_protection_policy">
+                                Agree <a href="#" id="termsLink" data-toggle="modal" data-target="#termsModal">Data Protection Policy</a>
+                                <input type="checkbox" id="chk_data_protection_policy" name="chk_data_protection_policy">
+                                <span class="checkmark" style="margin-left:-35px;border-radius:0% !important;"></span>
                             </label>
                         </div>
                     </div>
