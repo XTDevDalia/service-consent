@@ -133,7 +133,7 @@ $(function () {
         var dataUrl = customer_canvas.toDataURL();
         var xhr = new XMLHttpRequest();
         var sign_file_path = $('#hdn_plugin_url').val();
-        xhr.open("POST", sign_file_path + "save_signature.php", true);
+        xhr.open("POST", sign_file_path + "save_signature.php", false);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
