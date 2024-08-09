@@ -27,7 +27,7 @@ body {
   text-align: center;
 }
 h1 {
-  font-family: "Kaushan Script", cursive;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 4em;
   letter-spacing: 3px;
   color: #5892ff;
@@ -99,23 +99,22 @@ h1 {
     <div class="wrapper-2">
       <h1>Thank you !</h1>
       <p></p>
-      <p style="margin-top:35px;">Thanks for Submitting Data.</p>
-      <p id="redirect-message" style="margin-top:20px;"><a href="<?php echo $homepage_url; ?>">You will be redirected to the homepage in <span id="countdown">5</span> seconds...</a></p>
+      <p id="redirect-message" style="margin-top:30px;"><a href="<?php echo $homepage_url; ?>" style="text-decoration:none !important;">You will be redirected to the homepage in <span id="countdown">5</span> seconds...</a></p>
     </div>
   </div>
 </div>
 
 <script>
   var countdownElement = document.getElementById('countdown');
-  var secondsRemaining = 5;
+   var secondsRemaining = 5;
 
   var countdownInterval = setInterval(function() {
-    secondsRemaining--;
+     secondsRemaining--;
     countdownElement.textContent = secondsRemaining;
     
     if (secondsRemaining <= 0) {
       clearInterval(countdownInterval);
-      window.location.href = '<?php echo htmlspecialchars($homepage_url); ?>'; // Replace with your homepage URL
+       window.location.href = '<?php echo htmlspecialchars($homepage_url); ?>'; // Replace with your homepage URL
     }
   }, 1000);
 </script>

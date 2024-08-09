@@ -1,16 +1,16 @@
 <style>
-    	@media only screen and (min-width: 992px) and (max-width: 1350px) {
-			.btn_class{
-					margin-left:10px !important;
-                    margin-top:10px !important;
-				}
-        }
-		  @media only screen and (min-width: 768px) and (max-width: 991px) {
-			.btn_class{
-					margin-left:10px !important;
-                    margin-top:10px !important;
-				}
-        }
+    @media only screen and (min-width: 992px) and (max-width: 1350px) {
+    .btn_class{
+    margin-left:10px !important;
+    margin-top:10px !important;
+    }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .btn_class{
+    margin-left:10px !important;
+    margin-top:10px !important;
+    }
+    }
 </style>
 <?php
     global $serviceconfig;
@@ -134,19 +134,17 @@
                 </div>
             </div>
         </div>
-</div>
-
-<div class="row" style="margin-bottom: 10px;margin-top:10px;">
-            <div class="col-sm-12">
-               <div class="col-sm-9 col-md-9 col-lg-10">
-               </div>
-               <div class="col-sm-3 col-md-3 col-lg-2">
-                  <button type="submit" name="main_btn_save" id="main_btn_save" style="margin-top:10px;" class="form-control btn btn-primary btn_class" value="submit" >Save & Next</button>
-               </div>
+    </div>
+    <div class="row" style="margin-bottom: 10px;margin-top:10px;">
+        <div class="col-sm-12">
+            <div class="col-sm-9 col-md-9 col-lg-10">
             </div>
-         </div>
-    </form>
-
+            <div class="col-sm-3 col-md-3 col-lg-2">
+                <button type="submit" name="main_btn_save" id="main_btn_save" style="margin-top:10px;" class="form-control btn btn-primary btn_class" value="submit" >Save & Next</button>
+            </div>
+        </div>
+    </div>
+</form>
 <script>
     $(document).ready(function () {
         $('#txt_phone').on('change', function () {
