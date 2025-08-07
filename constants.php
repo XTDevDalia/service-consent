@@ -7,6 +7,7 @@ define("EYELASHES", 3);
 define("HAIRCOLOR", 4);
 define("CONSULTATION", 5);
 define("BROWLAMINATION", 6);
+define("HAIRREMOVAL", 7);
 $serviceconfig['slug'] = array(
     FACIAL => array("facial-consent","facial.php"),
     MANPED => array("manicure-pedicure-consent","manicure_pedicure.php"),
@@ -14,6 +15,7 @@ $serviceconfig['slug'] = array(
     HAIRCOLOR => array("haircolor-consent","haircolor.php"),
     CONSULTATION => array("consultation-consent","consultation.php"),
     BROWLAMINATION => array("brow-lamination","brow_lamination.php"),
+    HAIRREMOVAL => array("hair-removal","hair_removal.php"),
 );
 define("BRANCH_ONE", 1);
 define("BRANCH_TWO", 2);

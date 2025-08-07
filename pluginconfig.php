@@ -56,6 +56,7 @@ final class pluginconfig {
                 array('service_form_short_title' => 'Hair Color', 'service_form_display_title' => 'Hair Color Consent Form'),
                 array('service_form_short_title' => 'Consultation', 'service_form_display_title' => 'Consultation Card'),
                 array('service_form_short_title' => 'Brow Lamination', 'service_form_display_title' => 'Lash Lift / Brow Lamination'),
+                array('service_form_short_title' => 'Hair Removal', 'service_form_display_title' => 'Hair Removal Consent Form'),
             );
 
             // Insert data into service table
