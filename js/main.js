@@ -11,12 +11,8 @@ function validateMainForm() {
         $('#displaymsg').show();
         return false;
     }
-    // if ($('#txt_email').val() == "") {
-    //     $('#displaymsg').html("Enter Customer Email");
-    //     $('#displaymsg').show();
-    //     return false;
-    // }
-    if ($('#txt_email').val() != "" && !emailPattern.test($('#txt_email').val())) {
+    var email = $('#txt_email').val();
+    if (email !== "" && !emailPattern.test(email)) {
         $('#displaymsg').html("Enter a valid Email ID");
         $('#displaymsg').show();
         return false;

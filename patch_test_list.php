@@ -13,6 +13,28 @@ class PatchTestListConsent extends WP_List_Table {
         ));
     }
 
+    function single_row($item) {
+        echo '<tr>';
+        foreach ($this->get_columns() as $column_name => $column_display_name) {
+            $value = '';
+            if ($column_name === 'cb') {
+                $value = $this->column_cb($item);
+            } elseif (method_exists($this, 'column_' . $column_name)) {
+                $value = call_user_func(array($this, 'column_' . $column_name), $item);
+            } else {
+                $value = $this->column_default($item, $column_name);
+            }
+            // Remove <td> if already present
+            if (strpos($value, '<td') === false) {
+                echo sprintf('<td data-label="%s">%s</td>', esc_attr(strip_tags($column_display_name)), $value);
+            } else {
+                // If value already contains <td>, just output it
+                echo $value;
+            }
+        }
+        echo '</tr>';
+    }
+
     function column_default($item, $column_name) {
         switch ($column_name) {
             case 'patch_test_date_time':
@@ -154,4 +176,155 @@ add_action('admin_init', function() {
         }
     }
 });
-?>
+
+add_action('admin_head', function () {
+    ?>
+    <style>
+         /* Make only the table scroll horizontally */
+.wp-list-table-scroll {
+    width: 100%;
+    max-width: 100vw; /* Prevents overflow outside the viewport */
+    overflow-x: auto;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+/* Table minimum width for columns, adjust as needed */
+table.wp-list-table {
+    min-width: 900px;
+    width: 100%;
+    table-layout: auto;
+}
+
+    .table-controls-sticky {
+        position: sticky;
+        top: 32px; /* Height of WordPress admin bar */
+        z-index: 999;
+        background: #fff;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    @media screen and (max-width: 600px) {
+        .table-controls-sticky {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    /* Existing responsive styles */
+    @media screen and (max-width: 600px) {
+        table.wp-list-table thead {
+            display: none;
+        }
+        table.wp-list-table tbody tr {
+            display: block;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        table.wp-list-table tbody td {
+            display: block;
+            text-align: right;
+            position: relative;
+            padding-left: 50%;
+            border: none;
+            border-bottom: 1px solid #eee;
+        }
+        table.wp-list-table tbody td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+            text-align: left;
+        }
+        table.wp-list-table tbody td:last-child {
+            border-bottom: none;
+        }
+    }
+
+    table.wp-list-table {
+        width: 100%;
+        min-width: 900px;
+        table-layout: auto;
+    }
+    @media screen and (max-width: 600px) {
+        table.wp-list-table thead {
+            display: none;
+        }
+        table.wp-list-table tbody tr {
+            display: block;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        table.wp-list-table tbody td {
+            display: block;
+            text-align: right;
+            position: relative;
+            padding-left: 50%;
+            border: none;
+            border-bottom: 1px solid #eee;
+        }
+        table.wp-list-table tbody td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+            text-align: left;
+        }
+        table.wp-list-table tbody td:last-child {
+            border-bottom: none;
+        }
+    }
+    @media screen and (min-width: 601px) {
+        table.wp-list-table thead {
+            display: table-header-group !important;
+        }
+        table.wp-list-table th {
+            display: table-cell !important;
+        }
+        table.wp-list-table tbody td::before {
+            display: none;
+        }
+        /* Prevent wrapping for Patch Test column */
+        table.wp-list-table th:last-child,
+        table.wp-list-table td:last-child {
+            white-space: nowrap;
+        }
+        /* Prevent wrapping for Service Date column */
+        table.wp-list-table th:nth-child(3),
+        table.wp-list-table td:nth-child(3) {
+            white-space: nowrap;
+        }
+    }
+    @media screen and (min-width: 601px) and (max-width: 900px) {
+        /* Target Service Date/Date Time column (3rd column) */
+        table.wp-list-table th:nth-child(4),
+        table.wp-list-table td:nth-child(4) {
+            white-space: nowrap;
+            min-width: 200px; /* Increase as needed */
+        }
+         table.wp-list-table th:nth-child(2),
+        table.wp-list-table td:nth-child(2) {
+            white-space: nowrap;
+            min-width: 120px; /* Increase as needed */
+        }
+    }
+    .wp-list-table-scroll {
+        width: 100%;
+        overflow-x: auto;
+    }
+    table.wp-list-table {
+        width: 100%;
+        min-width: 900px; /* Adjust as needed for your columns */
+        table-layout: auto;
+    }
+    </style>
+    <?php
+});

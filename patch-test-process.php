@@ -49,7 +49,7 @@ function patch_test_listing(){
     
     $table = new PatchTestListConsent();
 
-    echo '<div class="wrap"><h2>Patch Test List</h2>';
+    echo '<div class="wrap wp-list-table-scroll"><h2>Patch Test List</h2>';
     // Prepare table
     $table->prepare_items();
     // Display table
