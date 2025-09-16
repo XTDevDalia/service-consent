@@ -170,13 +170,19 @@ class ListConsent extends WP_List_Table {
     }
     
     function column_action($item) {
-        if ($item['has_patch_test'] > 0) {
-            return sprintf(
-                '<span class="dashicons dashicons-yes"></span>');
-        } else {
-            return sprintf(
-                '<span class="dashicons dashicons-no-alt"></span>');
-        }
+        $patch_test_icon = $item['has_patch_test'] > 0
+            ? '<span class="dashicons dashicons-yes"></span>'
+            : '<span class="dashicons dashicons-no-alt"></span>';
+
+        // PDF download icon (SVG) with tooltip
+        $pdf_url = admin_url('admin.php?page=' . $_REQUEST['page'] . '&download_pdf=1&customer_id=' . $item['customer_id']);
+        $pdf_icon = '<a href="' . esc_url($pdf_url) . '" title="Download PDF" style="margin-left:8px;" target="_blank">
+            <svg width="22" height="22" viewBox="0 0 24 24" style="vertical-align:middle;">
+                <path d="M12 16v-12m0 12l-5-5m5 5l5-5M4 20h16" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>';
+
+        return $patch_test_icon . $pdf_icon;
     }
 }
 
@@ -471,4 +477,268 @@ UNION
 
     fclose($output);
     exit;
+}
+
+add_action('admin_init', function() {
+    if (
+        is_admin() &&
+        current_user_can('manage_options') &&
+        isset($_GET['download_pdf']) &&
+        isset($_GET['customer_id'])
+    ) {
+        global $wpdb;
+        require_once SC_PLUGIN_DIR_PATH . 'lib/fpdf.php';
+
+        $customer_id = intval($_GET['customer_id']);
+        $table_name_cust = $wpdb->prefix . 'customer_master';
+        $table_name_consent = $wpdb->prefix . 'service_consent';
+
+        // Fetch customer
+        $customer = $wpdb->get_row(
+            $wpdb->prepare("SELECT * FROM $table_name_cust WHERE customer_id = %d", $customer_id),
+            ARRAY_A
+        );
+        if (!$customer) wp_die('Customer not found.');
+
+        // Fetch all service consents for this customer
+        $consents = $wpdb->get_results(
+            $wpdb->prepare("SELECT * FROM $table_name_consent WHERE consent_customer_id = %d", $customer_id),
+            ARRAY_A
+        );
+
+        // Create PDF
+        $pdf = new FPDF();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial', 'B', 18);
+        $pdf->SetTextColor(40,40,40);
+
+        // Title
+        $pdf->Cell(0, 12, 'Customer Consent Details', 0, 1, 'C');
+        $pdf->SetDrawColor(180,180,180);
+        $pdf->Line(10, $pdf->GetY(), 200, $pdf->GetY());
+        $pdf->Ln(8);
+
+        // Customer Info Section
+        $pdf->SetFont('Arial', 'B', 14);
+        $pdf->Cell(0, 10, 'Customer Information', 0, 1);
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->Cell(25, 8, 'Name:', 0, 0);
+        $pdf->SetFont('Arial', 'B', 12);
+        $pdf->Cell(0, 8, $customer['customer_name'], 0, 1);
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->Cell(25, 8, 'Phone:', 0, 0);
+        $pdf->SetFont('Arial', 'B', 12);
+        $pdf->Cell(0, 8, $customer['customer_phone'], 0, 1);
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->Cell(25, 8, 'Email:', 0, 0);
+        $pdf->SetFont('Arial', 'B', 12);
+        $pdf->Cell(0, 8, $customer['customer_email'], 0, 1);
+
+        $pdf->Ln(8);
+        $pdf->SetDrawColor(180,180,180);
+        $pdf->Line(10, $pdf->GetY(), 200, $pdf->GetY());
+        $pdf->Ln(8);
+
+        // Service Forms Section
+        $pdf->SetFont('Arial', 'B', 14);
+
+        $pdf->SetFont('Arial', '', 12);
+
+        $first = true;
+        foreach ($consents as $consent) {
+            // Start new page for each service except the first
+            if (!$first) {
+                $pdf->AddPage();
+            }
+            $first = false;
+
+            // Fetch service name if not present
+            $service_name = isset($consent['service_name']) ? $consent['service_name'] : '';
+            if (!$service_name && !empty($consent['customer_form_id'])) {
+                $service_name = $wpdb->get_var(
+                    $wpdb->prepare(
+                        "SELECT service_form_display_title FROM {$wpdb->prefix}service_master WHERE service_form_id = %d",
+                        $consent['customer_form_id']
+                    )
+                );
+            }
+
+            // Service Name
+            $pdf->SetFont('Arial', 'B', 14);
+            $pdf->Cell(0, 10, 'Service: ' . $service_name, 0, 1, 'C');
+
+            // Service Date
+            $pdf->SetFont('Arial', 'B', 12);
+            $service_date = $consent['customer_service_date'];
+if ($service_date) {
+    // Remove time if present
+    $date_only = preg_replace('/\s.*$/', '', $service_date);
+
+    // Try to parse date in d-M-Y format
+    $dt = DateTime::createFromFormat('d-M-Y', $date_only);
+    if ($dt) {
+        $day = $dt->format('d');
+        $month = ucfirst(strtolower($dt->format('M')));
+        $year = $dt->format('Y');
+        $formatted_date = "{$day}-{$month}-{$year}";
+        $pdf->Cell(0, 8, 'Service Date: ' . $formatted_date, 0, 1);
+    } else {
+        // Fallback: try Y-m-d format
+        $dt = DateTime::createFromFormat('Y-m-d', $date_only);
+        if ($dt) {
+            $day = $dt->format('d');
+            $month = ucfirst(strtolower($dt->format('M')));
+            $year = $dt->format('Y');
+            $formatted_date = "{$day}-{$month}-{$year}";
+            $pdf->Cell(0, 8, 'Service Date: ' . $formatted_date, 0, 1);
+        } else {
+            $pdf->Cell(0, 8, 'Service Date: ' . $date_only, 0, 1);
+        }
+    }
+}
+            $pdf->SetFont('Arial', '', 12);
+
+            // Decode JSON fields
+            $fields = json_decode($consent['customer_form_value_json'], true);
+            if (is_array($fields)) {
+                $fields = removeTxtFromKeys($fields);
+
+                // Table header
+                $pdf->SetFillColor(230,230,230);
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Cell(80, 8, 'Consent Item', 1, 0, 'C', true);
+$pdf->Cell(110, 8, 'Customer Response', 1, 1, 'C', true);
+$pdf->SetFont('Arial', '', 12);
+
+                // Fields to exclude from PDF
+                $exclude_fields = [
+                    'hdn_plugin_url',
+                    'chk_data_protection_policy',
+                    'hdn_customer_signature',
+                    'customer_signature_date',
+                    'hdn_therapist_signature',
+                    'therapist_signature_date',
+                    'other_btn_save'
+                ];
+
+                foreach ($fields as $field_name => $field_value) {
+                    if (in_array($field_name, $exclude_fields)) {
+                        continue; // Skip excluded fields
+                    }
+                    // Format field name: remove 'Txt', replace underscores, camel case
+                    $clean_name = str_replace('Txt', '', $field_name);
+                    $formatted_name = ucwords(str_replace('_', ' ', strtolower($clean_name)));
+
+                    // Format value
+                    if (is_array($field_value)) {
+                        $value_str = '';
+                        foreach ($field_value as $val) {
+                            // Format date if detected
+                            if (
+                                preg_match('/^\d{4}-\d{2}-\d{2}$/', $val) || // Y-m-d
+                                preg_match('/^\d{2}-\w{3}-\d{4}$/', $val)    // d-M-Y
+                            ) {
+                                $dt = DateTime::createFromFormat('Y-m-d', $val) ?: DateTime::createFromFormat('d-M-Y', $val);
+                                if ($dt) {
+                                    $day = $dt->format('d');
+                                    $month = strtolower($dt->format('M'));
+                                    $year = $dt->format('Y');
+                                    $val = "{$day}-{$month}-{$year}";
+                                }
+                            }
+                            $value_str .= $val . ', ';
+                        }
+                        $value_str = rtrim($value_str, ', ');
+                    } else {
+                        // Format date if detected
+                        if (
+                            preg_match('/^\d{4}-\d{2}-\d{2}$/', $field_value) ||
+                            preg_match('/^\d{2}-\w{3}-\d{4}$/', $field_value)
+                        ) {
+                            $dt = DateTime::createFromFormat('Y-m-d', $field_value) ?: DateTime::createFromFormat('d-M-Y', $field_value);
+                            if ($dt) {
+                                $day = $dt->format('d');
+                                $month = strtolower($dt->format('M'));
+                                $year = $dt->format('Y');
+                                $field_value = "{$day}-{$month}-{$year}";
+                            }
+                        }
+                        $value_str = $field_value;
+                    }
+
+                    // Save current X and Y
+                    $x = $pdf->GetX();
+                    $y = $pdf->GetY();
+
+                    // Value cell: use MultiCell for wrapping
+                    $pdf->SetXY($x + 80, $y);
+                    $pdf->MultiCell(110, 8, $value_str, 1);
+                    $value_cell_height = $pdf->GetY() - $y;
+
+                    // Field name cell with matching height
+                    $pdf->SetXY($x, $y);
+                    $pdf->MultiCell(80, $value_cell_height, $formatted_name, 1);
+
+                    // Move to next row
+                    $pdf->SetY($y + $value_cell_height);
+                }
+                $pdf->Ln(4);
+            }
+
+            // --- Side by side signatures ---
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Cell(95, 10, 'Customer Signature', 0, 0, 'C');
+$pdf->Cell(95, 10, 'Therapist Signature', 0, 1, 'C');
+
+$customer_signature_path = !empty($consent['customer_signature']) ? SC_PLUGIN_DIR_PATH . 'upload/signature/' . $consent['customer_signature'] : '';
+$therapist_signature_path = !empty($consent['therapist_signature']) ? SC_PLUGIN_DIR_PATH . 'upload/signature/' . $consent['therapist_signature'] : '';
+
+$y = $pdf->GetY();
+$x1 = 15; // left margin for customer signature
+$x2 = 110; // left margin for therapist signature
+
+// Customer Signature Image
+if ($customer_signature_path && file_exists($customer_signature_path)) {
+    $pdf->Image($customer_signature_path, $x1, $y, 80, 20);
+} else {
+    $pdf->SetXY($x1, $y);
+    $pdf->SetFont('Arial', '', 10);
+    $pdf->Cell(80, 20, 'Not found', 0, 0, 'C');
+}
+
+// Therapist Signature Image
+if ($therapist_signature_path && file_exists($therapist_signature_path)) {
+    $pdf->Image($therapist_signature_path, $x2, $y, 80, 20);
+} else {
+    $pdf->SetXY($x2, $y);
+    $pdf->SetFont('Arial', '', 10);
+    $pdf->Cell(80, 20, 'Not found', 0, 0, 'C');
+}
+
+$pdf->Ln(24); // Move below the signatures
+        }
+
+        // Sanitize customer name for filename (replace spaces and special characters with underscores)
+$customer_filename = preg_replace('/[^A-Za-z0-9]/', '_', $customer['customer_name']) . '_Details.pdf';
+
+header('Content-Type: application/pdf');
+header('Content-Disposition: attachment; filename=' . $customer_filename);
+$pdf->Output('D', $customer_filename);
+exit;
+    }
+});
+
+function removeTxtFromKeys($array) {
+    $clean = [];
+    foreach ($array as $key => $value) {
+        // Remove 'Txt' (case-insensitive) from anywhere in the key
+        $new_key = preg_replace('/txt/i', '', $key);
+        $new_key = ltrim($new_key, '_'); // Remove leading underscore if present
+        if (is_array($value)) {
+            $clean[$new_key] = removeTxtFromKeys($value);
+        } else {
+            $clean[$new_key] = $value;
+        }
+    }
+    return $clean;
 }
