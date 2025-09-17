@@ -487,6 +487,7 @@ add_action('admin_init', function() {
         isset($_GET['customer_id'])
     ) {
         global $wpdb;
+        global $serviceconfig;
         require_once SC_PLUGIN_DIR_PATH . 'lib/fpdf.php';
 
         $customer_id = intval($_GET['customer_id']);
@@ -498,6 +499,9 @@ add_action('admin_init', function() {
             $wpdb->prepare("SELECT * FROM $table_name_cust WHERE customer_id = %d", $customer_id),
             ARRAY_A
         );
+//         echo '<pre>';
+// print_r($customer);
+// echo '</pre>';
         if (!$customer) wp_die('Customer not found.');
 
         // Fetch all service consents for this customer
@@ -505,7 +509,10 @@ add_action('admin_init', function() {
             $wpdb->prepare("SELECT * FROM $table_name_consent WHERE consent_customer_id = %d", $customer_id),
             ARRAY_A
         );
-
+//          echo '<pre>';
+// print_r($consents);
+// echo '</pre>';
+// exit;
         // Create PDF
         $pdf = new FPDF();
         $pdf->AddPage();
@@ -513,31 +520,97 @@ add_action('admin_init', function() {
         $pdf->SetTextColor(40,40,40);
 
         // Title
-        $pdf->Cell(0, 12, 'Customer Consent Details', 0, 1, 'C');
-        $pdf->SetDrawColor(180,180,180);
+        // Set colors
+        $pdf->SetFillColor(255, 255, 255);       // black background
+        $pdf->SetTextColor(0, 0, 0); // white text
+        $pdf->SetFont('Arial', 'B', 14);
+
+        // Black rectangle for header
+        // $pdf->Rect(10, 10, 190, 25, 'F'); // increased height to fit subtitle
+
+        // Logo
+        $logoMarginLeft = 15; 
+        $pdf->Image(__DIR__ . '/logo.png', $logoMarginLeft, 13, 20.45, 20.22);
+        // Set font for text
+        $pdf->SetFont('Arial', '', 12);
+
+        // Move cursor just below the logo
+        $pdf->SetXY($logoMarginLeft, 13 + 20.22 + 2); // +2 for padding
+
+        // Print text centered under the logo
+        $pdf->SetFont('Arial', 'B', 10);
+        $pdf->Cell(20.45, 6, 'BROW ART', 0, 1, 'C');
+
+        // Main title
+        $marginTop = 13 * 0.264583; // ≈ 2.65mm
+
+        // Set position with top margin applied
+        $pdf->SetXY(10, 10 + $marginTop);
+        $pdf->SetFont('Arial', 'B', 14);
+        $pdf->Cell(190, 12, 'Customer Consent Details', 0, 1, 'C');
+        //$pdf->Cell(190, 12, 'Customer Consent Details', 0, 1, 'C');
+
+        // Subtitle (Branch Name, directly under title)
+        $pdf->SetFont('Arial', '', 10); // smaller font
+        $marginTop = 7 * 0.264583;
+        $pdf->SetXY(10, 20+$marginTop); // Y position inside black bar, just below title
+        $branch_id = $customer['customer_branch_id'];
+        $branch_name = isset($serviceconfig['branch'][$branch_id]) ? $serviceconfig['branch'][$branch_id] : $branch_id;
+        $pdf->Cell(190, 8, $branch_name, 0, 1, 'C');
+
+        // Reset colors for rest of page
+        $pdf->SetTextColor(0, 0, 0);
+        $pdf->Ln(5);
+
+                $pdf->Ln($topMarginMm);
+        $pdf->SetDrawColor(180, 180, 180);
         $pdf->Line(10, $pdf->GetY(), 200, $pdf->GetY());
-        $pdf->Ln(8);
+        $pdf->Ln(4);
+
+        // Separator line under header
+        // $pdf->SetDrawColor(180, 180, 180);
+        // $pdf->Line(10, $pdf->GetY(), 200, $pdf->GetY());
+        // $pdf->Ln(8);
+
 
         // Customer Info Section
-        $pdf->SetFont('Arial', 'B', 14);
-        $pdf->Cell(0, 10, 'Customer Information', 0, 1);
+        // First row: Name + Visit No
+        $consent = $consents[0];
+        $topMarginPx = 0; // 10px top margin
+        $topMarginMm = $topMarginPx * 0.264583; // convert px to mm
+
+        $pdf->Ln($topMarginMm);
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(25, 8, 'Name:', 0, 0);
         $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(0, 8, $customer['customer_name'], 0, 1);
+        $pdf->Cell(60, 8, $customer['customer_name'], 0, 0); // fixed width
+
         $pdf->SetFont('Arial', '', 12);
-        $pdf->Cell(25, 8, 'Phone:', 0, 0);
+        $pdf->Cell(30, 8, 'Visit No:', 0, 0);
         $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(0, 8, $customer['customer_phone'], 0, 1);
+        $pdf->Cell(0, 8, $consent['customer_visitor_no'], 0, 1); // rest of line
+
+        // Second row: Email + Phone
         $pdf->SetFont('Arial', '', 12);
         $pdf->Cell(25, 8, 'Email:', 0, 0);
         $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(0, 8, $customer['customer_email'], 0, 1);
+        $pdf->Cell(60, 8, $customer['customer_email'], 0, 0);
 
-        $pdf->Ln(8);
-        $pdf->SetDrawColor(180,180,180);
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->Cell(30, 8, 'Phone:', 0, 0);
+        $pdf->SetFont('Arial', 'B', 12);
+        $pdf->Cell(0, 8, $customer['customer_phone'], 0, 1);
+
+        // Separator line after details
+        $topMarginPx = 10;
+        $topMarginMm = $topMarginPx * 0.264583;
+
+        // Add top margin
+        $pdf->Ln($topMarginMm);
+        $pdf->SetDrawColor(180, 180, 180);
         $pdf->Line(10, $pdf->GetY(), 200, $pdf->GetY());
-        $pdf->Ln(8);
+        $pdf->Ln(4);
+
 
         // Service Forms Section
         $pdf->SetFont('Arial', 'B', 14);
@@ -564,51 +637,42 @@ add_action('admin_init', function() {
             }
 
             // Service Name
-            $pdf->SetFont('Arial', 'B', 14);
-            $pdf->Cell(0, 10, 'Service: ' . $service_name, 0, 1, 'C');
+            $pdf->SetFont('Arial', 'B', 16);
+            $pdf->Cell(95, 10, $service_name, 0, 0, 'L'); // Service name on the left (no line break)
 
             // Service Date
-            $pdf->SetFont('Arial', 'B', 12);
-            $service_date = $consent['customer_service_date'];
-if ($service_date) {
-    // Remove time if present
-    $date_only = preg_replace('/\s.*$/', '', $service_date);
+            $pdf->SetFont('Arial', '', 12);
 
-    // Try to parse date in d-M-Y format
-    $dt = DateTime::createFromFormat('d-M-Y', $date_only);
-    if ($dt) {
-        $day = $dt->format('d');
-        $month = ucfirst(strtolower($dt->format('M')));
-        $year = $dt->format('Y');
-        $formatted_date = "{$day}-{$month}-{$year}";
-        $pdf->Cell(0, 8, 'Service Date: ' . $formatted_date, 0, 1);
-    } else {
-        // Fallback: try Y-m-d format
-        $dt = DateTime::createFromFormat('Y-m-d', $date_only);
-        if ($dt) {
-            $day = $dt->format('d');
-            $month = ucfirst(strtolower($dt->format('M')));
-            $year = $dt->format('Y');
-            $formatted_date = "{$day}-{$month}-{$year}";
-            $pdf->Cell(0, 8, 'Service Date: ' . $formatted_date, 0, 1);
-        } else {
-            $pdf->Cell(0, 8, 'Service Date: ' . $date_only, 0, 1);
-        }
-    }
-}
+            $service_date = $consent['customer_service_date'];
+            $formatted_date = '';
+
+            if ($service_date) {
+                $date_only = preg_replace('/\s.*$/', '', $service_date);
+
+                $dt = DateTime::createFromFormat('d-M-Y', $date_only) ?: DateTime::createFromFormat('Y-m-d', $date_only);
+                if ($dt) {
+                    $day = $dt->format('d');
+                    $month = ucfirst(strtolower($dt->format('M')));
+                    $year = $dt->format('Y');
+                    $formatted_date = "{$day}-{$month}-{$year}";
+                } else {
+                    $formatted_date = $date_only;
+                }
+            }
+            // Print Service Date on the same line, aligned left
+            //$pdf->Cell(95, 10, $formatted_date, 0, 1, 'L'); 
+            //$pdf->SetX(95); // move cursor 20 mm from the left margin
+            $pdf->Cell(95, 10, $formatted_date, 0, 1, 'R');
+
+             $marginTopBottom = 10 * 0.264583;
+            $pdf->Ln($marginTopBottom);
+
             $pdf->SetFont('Arial', '', 12);
 
             // Decode JSON fields
             $fields = json_decode($consent['customer_form_value_json'], true);
             if (is_array($fields)) {
                 $fields = removeTxtFromKeys($fields);
-
-                // Table header
-                $pdf->SetFillColor(230,230,230);
-$pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(80, 8, 'Consent Item', 1, 0, 'C', true);
-$pdf->Cell(110, 8, 'Customer Response', 1, 1, 'C', true);
-$pdf->SetFont('Arial', '', 12);
 
                 // Fields to exclude from PDF
                 $exclude_fields = [
@@ -621,68 +685,101 @@ $pdf->SetFont('Arial', '', 12);
                     'other_btn_save'
                 ];
 
-                foreach ($fields as $field_name => $field_value) {
-                    if (in_array($field_name, $exclude_fields)) {
-                        continue; // Skip excluded fields
-                    }
-                    // Format field name: remove 'Txt', replace underscores, camel case
-                    $clean_name = str_replace('Txt', '', $field_name);
-                    $formatted_name = ucwords(str_replace('_', ' ', strtolower($clean_name)));
+                // Filter out excluded fields
+                $display_fields = array_filter(
+                    $fields,
+                    function($key) use ($exclude_fields) {
+                        return !in_array($key, $exclude_fields);
+                    },
+                    ARRAY_FILTER_USE_KEY
+                );
 
-                    // Format value
-                    if (is_array($field_value)) {
-                        $value_str = '';
-                        foreach ($field_value as $val) {
-                            // Format date if detected
-                            if (
-                                preg_match('/^\d{4}-\d{2}-\d{2}$/', $val) || // Y-m-d
-                                preg_match('/^\d{2}-\w{3}-\d{4}$/', $val)    // d-M-Y
-                            ) {
-                                $dt = DateTime::createFromFormat('Y-m-d', $val) ?: DateTime::createFromFormat('d-M-Y', $val);
-                                if ($dt) {
-                                    $day = $dt->format('d');
-                                    $month = strtolower($dt->format('M'));
-                                    $year = $dt->format('Y');
-                                    $val = "{$day}-{$month}-{$year}";
+                // Only display table if there are fields to show
+                if (count($display_fields) > 0) {
+                    // Remove fields with empty values
+                    $display_fields = array_filter($display_fields, function($value) {
+                        if (is_array($value)) {
+                            return !empty(array_filter($value, function($v) { return trim($v) !== ''; }));
+                        }
+                        return trim($value) !== '';
+                    });
+
+                    // Only show table if there are non-empty fields
+                    if (count($display_fields) > 0) {
+                        $pdf->SetDrawColor(224, 224, 224); // <-- Add this line
+
+                        // Table header
+                        $pdf->SetFillColor(230,230,230);
+                        $pdf->SetFont('Arial', 'B', 12);
+                        $pdf->Cell(50, 8, 'Consent Item', 1, 0, 'C', true);
+                        $pdf->Cell(140, 8, 'Customer Response', 1, 1, 'C', true);
+                        $pdf->SetFont('Arial', '', 12);
+
+                        foreach ($display_fields as $field_name => $field_value) {
+                            $clean_name = str_replace('Txt', '', $field_name);
+                            $formatted_name = ucwords(str_replace('_', ' ', strtolower($clean_name)));
+
+                            // Format value
+                            if (is_array($field_value)) {
+                                $value_str = '';
+                                foreach ($field_value as $val) {
+                                    // Format date if detected
+                                    if (
+                                        preg_match('/^\d{4}-\d{2}-\d{2}$/', $val) || // Y-m-d
+                                        preg_match('/^\d{2}-\w{3}-\d{4}$/', $val)    // d-M-Y
+                                    ) {
+                                        $dt = DateTime::createFromFormat('Y-m-d', $val) ?: DateTime::createFromFormat('d-M-Y', $val);
+                                        if ($dt) {
+                                            $day = $dt->format('d');
+                                            $month = strtolower($dt->format('M'));
+                                            $year = $dt->format('Y');
+                                            $val = "{$day}-{$month}-{$year}";
+                                        }
+                                    }
+                                    $value_str .= $val . ', ';
                                 }
+                                $value_str = rtrim($value_str, ', ');
+                            } else {
+                                // Format date if detected
+                                if (
+                                    preg_match('/^\d{4}-\d{2}-\d{2}$/', $field_value) ||
+                                    preg_match('/^\d{2}-\w{3}-\d{4}$/', $field_value)
+                                ) {
+                                    $dt = DateTime::createFromFormat('Y-m-d', $field_value) ?: DateTime::createFromFormat('d-M-Y', $field_value);
+                                    if ($dt) {
+                                        $day = $dt->format('d');
+                                        $month = strtolower($dt->format('M'));
+                                        $year = $dt->format('Y');
+                                        $field_value = "{$day}-{$month}-{$year}";
+                                    }
+                                }
+                                $value_str = $field_value;
                             }
-                            $value_str .= $val . ', ';
+
+                            // Add margin (indent) to field name and value text if value is not empty
+                            $indent = (trim($value_str) !== '') ? '   ' : ''; // 5 spaces, adjust as needed
+                            $formatted_name = $indent . $formatted_name;
+                            $value_str = $indent . $value_str;
+
+                            // Save current X and Y
+                            $x = $pdf->GetX();
+                            $y = $pdf->GetY();
+
+                            // Value cell: use MultiCell for wrapping
+                            $pdf->SetXY($x + 50, $y);
+                            $pdf->MultiCell(140, 8, $value_str, 1);
+                            $value_cell_height = $pdf->GetY() - $y;
+
+                            // Field name cell with matching height
+                            $pdf->SetXY($x, $y);
+                            $pdf->MultiCell(50, $value_cell_height, $formatted_name, 1);
+
+                            // Move to next row
+                            $pdf->SetY($y + $value_cell_height);
                         }
-                        $value_str = rtrim($value_str, ', ');
-                    } else {
-                        // Format date if detected
-                        if (
-                            preg_match('/^\d{4}-\d{2}-\d{2}$/', $field_value) ||
-                            preg_match('/^\d{2}-\w{3}-\d{4}$/', $field_value)
-                        ) {
-                            $dt = DateTime::createFromFormat('Y-m-d', $field_value) ?: DateTime::createFromFormat('d-M-Y', $field_value);
-                            if ($dt) {
-                                $day = $dt->format('d');
-                                $month = strtolower($dt->format('M'));
-                                $year = $dt->format('Y');
-                                $field_value = "{$day}-{$month}-{$year}";
-                            }
-                        }
-                        $value_str = $field_value;
+                        $pdf->Ln(4);
                     }
-
-                    // Save current X and Y
-                    $x = $pdf->GetX();
-                    $y = $pdf->GetY();
-
-                    // Value cell: use MultiCell for wrapping
-                    $pdf->SetXY($x + 80, $y);
-                    $pdf->MultiCell(110, 8, $value_str, 1);
-                    $value_cell_height = $pdf->GetY() - $y;
-
-                    // Field name cell with matching height
-                    $pdf->SetXY($x, $y);
-                    $pdf->MultiCell(80, $value_cell_height, $formatted_name, 1);
-
-                    // Move to next row
-                    $pdf->SetY($y + $value_cell_height);
                 }
-                $pdf->Ln(4);
             }
 
             // --- Side by side signatures ---
@@ -703,7 +800,7 @@ if ($customer_signature_path && file_exists($customer_signature_path)) {
 } else {
     $pdf->SetXY($x1, $y);
     $pdf->SetFont('Arial', '', 10);
-    $pdf->Cell(80, 20, 'Not found', 0, 0, 'C');
+    $pdf->Cell(80, 20, 'Not signed', 0, 0, 'C');
 }
 
 // Therapist Signature Image
@@ -712,7 +809,7 @@ if ($therapist_signature_path && file_exists($therapist_signature_path)) {
 } else {
     $pdf->SetXY($x2, $y);
     $pdf->SetFont('Arial', '', 10);
-    $pdf->Cell(80, 20, 'Not found', 0, 0, 'C');
+    $pdf->Cell(80, 20, 'Not signed', 0, 0, 'C');
 }
 
 $pdf->Ln(24); // Move below the signatures
