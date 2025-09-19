@@ -26,12 +26,14 @@
                 border-radius: 15px;
                 cursor: crosshair;
                 background:white;
+                touch-action: none !important;
             }
             #therapist_signature{
                 border: 2px dotted #CCCCCC;
                 border-radius: 15px;
                 cursor: crosshair;
                 background:white;
+                touch-action: none !important;
             }
             input[type=radio]:checked::before {
                 content: "";

@@ -74,7 +74,7 @@ class ListConsent extends WP_List_Table {
             'customer_name' => __('Name', 'cltd_example'),
             'contact_details' => __('Contact Details', 'cltd_example'),
             'site_list' => __('Selected Service', 'cltd_example'),
-            'action' => __('Patch Test', 'cltd_example'),
+            'action' => __('Download PDF', 'cltd_example'),
         );
         return $columns;
     }
@@ -124,12 +124,11 @@ class ListConsent extends WP_List_Table {
         $table_name_patch_test = $wpdb->prefix . 'patch_test';
     
         $query = "
-            SELECT c.customer_id,pt.patch_test_id,
+            SELECT c.customer_id,
                    DATE_FORMAT(s.customer_service_date, '%d-%b-%Y') AS customer_service_date,
                    c.customer_branch_id, c.customer_name,
                    CONCAT(c.customer_phone, '<br>', c.customer_email) AS contact_details,
-                   GROUP_CONCAT(sm.service_form_display_title) AS site_list,
-                   (SELECT COUNT(*) FROM $table_name_patch_test WHERE customer_id = c.customer_id) AS has_patch_test
+                   GROUP_CONCAT(sm.service_form_display_title) AS site_list
             FROM $table_name_ser AS s
             LEFT JOIN $table_name_cust AS c ON s.consent_customer_id = c.customer_id
             LEFT JOIN $table_name_service_master AS sm ON s.customer_form_id = sm.service_form_id
@@ -141,8 +140,8 @@ class ListConsent extends WP_List_Table {
     
         $query .= " GROUP BY DATE(s.customer_service_date), c.customer_id";
     
-        $orderby = !empty($_GET['orderby']) ? esc_sql($_GET['orderby']) : 'customer_id';
-        $order = !empty($_GET['order']) ? esc_sql($_GET['order']) : 'asc';
+        $orderby = !empty($_GET['orderby']) ? esc_sql($_GET['orderby']) : 's.customer_service_date';
+        $order = !empty($_GET['order']) ? esc_sql($_GET['order']) : 'desc';
         $query .= " ORDER BY $orderby $order";
     
         $total_items = $wpdb->get_var("SELECT COUNT(DISTINCT DATE(s.customer_service_date), c.customer_id) FROM $table_name_ser AS s LEFT JOIN $table_name_cust AS c ON s.consent_customer_id = c.customer_id WHERE 1=1" . (!empty($search_term) ? $wpdb->prepare(" AND (c.customer_name LIKE %s OR c.customer_phone LIKE %s OR c.customer_email LIKE %s)", '%' . $search_term . '%', '%' . $search_term . '%', '%' . $search_term . '%') : ""));
@@ -170,17 +169,20 @@ class ListConsent extends WP_List_Table {
     }
     
     function column_action($item) {
-        $patch_test_icon = $item['has_patch_test'] > 0
-            ? '<span class="dashicons dashicons-yes"></span>'
-            : '<span class="dashicons dashicons-no-alt"></span>';
+        // $patch_test_icon = $item['has_patch_test'] > 0
+        //     ? '<span class="dashicons dashicons-yes"></span>'
+        //     : '<span class="dashicons dashicons-no-alt"></span>';
 
         // PDF download icon (SVG) with tooltip
         $pdf_url = admin_url('admin.php?page=' . $_REQUEST['page'] . '&download_pdf=1&customer_id=' . $item['customer_id']);
-        $pdf_icon = '<a href="' . esc_url($pdf_url) . '" title="Download PDF" style="margin-left:8px;" target="_blank">
-            <svg width="22" height="22" viewBox="0 0 24 24" style="vertical-align:middle;">
-                <path d="M12 16v-12m0 12l-5-5m5 5l5-5M4 20h16" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </a>';
+        $pdf_icon = '<div style="text-align:center;">
+                        <a href="' . esc_url($pdf_url) . '" title="Download PDF" target="_blank">
+                            <svg width="22" height="22" viewBox="0 0 24 24" style="vertical-align:middle;">
+                                <path d="M12 16v-12m0 12l-5-5m5 5l5-5M4 20h16" stroke="#222" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>';
+
 
         return $patch_test_icon . $pdf_icon;
     }
@@ -478,7 +480,7 @@ UNION
     fclose($output);
     exit;
 }
-
+//PDF Code
 add_action('admin_init', function() {
     if (
         is_admin() &&
@@ -585,10 +587,18 @@ add_action('admin_init', function() {
         $pdf->SetFont('Arial', 'B', 12);
         $pdf->Cell(60, 8, $customer['customer_name'], 0, 0); // fixed width
 
+        // $pdf->SetFont('Arial', '', 12);
+        // $pdf->Cell(30, 8, 'Visit No:', 0, 0);
+        // $pdf->SetFont('Arial', 'B', 12);
+        // $pdf->Cell(0, 8, $consent['customer_visitor_no'], 0, 1); // rest of line
+
         $pdf->SetFont('Arial', '', 12);
+        $pdf->SetX(120); // Set X position (20 mm from left margin)
         $pdf->Cell(30, 8, 'Visit No:', 0, 0);
+
         $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(0, 8, $consent['customer_visitor_no'], 0, 1); // rest of line
+        $pdf->Cell(0, 8, $consent['customer_visitor_no'], 0, 1);
+
 
         // Second row: Email + Phone
         $pdf->SetFont('Arial', '', 12);
@@ -597,6 +607,7 @@ add_action('admin_init', function() {
         $pdf->Cell(60, 8, $customer['customer_email'], 0, 0);
 
         $pdf->SetFont('Arial', '', 12);
+        $pdf->SetX(120);
         $pdf->Cell(30, 8, 'Phone:', 0, 0);
         $pdf->SetFont('Arial', 'B', 12);
         $pdf->Cell(0, 8, $customer['customer_phone'], 0, 1);
@@ -676,6 +687,7 @@ add_action('admin_init', function() {
 
                 // Fields to exclude from PDF
                 $exclude_fields = [
+                    'wpdbbkp_disable_from',
                     'hdn_plugin_url',
                     'chk_data_protection_policy',
                     'hdn_customer_signature',

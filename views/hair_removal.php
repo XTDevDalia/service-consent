@@ -108,6 +108,19 @@
         <form method="post" name="consent_forms" id="consent_forms">
             <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">
             <div class="section form-group" style="margin-top:0px !important;border-top-left-radius: 0px !important;border-top-right-radius: 0px !important;">
+                <div class="row last-div-padding bgcolor">
+                    <div class="col-sm-12" style="display:flex;padding-left:30px;margin-top:10px;">
+                        <p>I accept a patch test :</p>
+                        <label class="container-radio center-align" style="margin-left:15px;">Yes
+                            <input type="radio" id="patch_yes" name="patch_test" value="Yes">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container-radio center-align" style="margin-left:15px;">No
+                            <input type="radio" id="patch_no" name="patch_test" value="No">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
                 <div class="row section-title">
                     <div class="col-sm-12">
                         <div class="col-sm-3" style="margin-top:20px !important">

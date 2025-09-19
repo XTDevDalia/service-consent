@@ -6,6 +6,7 @@
             border-radius: 15px;
             cursor: crosshair;
             background:white;
+            touch-action: none !important;
             }
             input[type=radio]:checked::before {
             content: "";
@@ -130,6 +131,7 @@
         <input type="hidden" id="hdn_plugin_url" class="form-control" name="hdn_plugin_url" value="<?= SC_PLUGIN_DIR_URL ?>">        
         <div class="" style="background-color:#f7f7f7 !important;">
             <div class="row">
+                
                 <div class="col-sm-12">
                     <div class="col-sm-6 col-md-6 col-lg-6">
                         <h3 style="font-weight:700 !important;"><?php echo (isset($_SESSION['customer_name'])) ? $_SESSION['customer_name'] : ''; ?></h3>
@@ -143,6 +145,19 @@
                     </div>
                 </div>
             </div>
+                     <div class="row last-div-padding bgcolor">
+                    <div class="col-sm-12" style="display:flex;padding-left:30px;margin-top:10px;">
+                        <p>I accept a patch test :</p>
+                        <label class="container-radio center-align" style="margin-left:15px;">Yes
+                            <input type="radio" id="patch_yes" name="patch_test" value="Yes">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container-radio center-align" style="margin-left:15px;">No
+                            <input type="radio" id="patch_no" name="patch_test" value="No">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
         </div>
         <div class="section" style="padding:10px 10px;margin-top:0px !important;">
             <div class="row last-div-padding bgcolor">
