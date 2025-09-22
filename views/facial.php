@@ -106,12 +106,12 @@
                 <div class="row last-div-padding bgcolor">
                     <div class="col-sm-12" style="display:flex;padding-left:30px;margin-top:10px;">
                         <p>I accept a patch test :</p>
-                        <label class="container-radio center-align" style="margin-left:15px;">Yes
-                            <input type="radio" id="patch_yes" name="patch_test" value="Yes">
+                        <label class="container-radio center-align" for="patch_yes" style="margin-left:15px;">Yes
+                            <input type="radio" id="patch_yes" name="patch_test[]" value="Yes">
                             <span class="checkmark"></span>
                         </label>
-                        <label class="container-radio center-align" style="margin-left:15px;">No
-                            <input type="radio" id="patch_no" name="patch_test" value="No">
+                        <label class="container-radio center-align" for="patch_no" style="margin-left:15px;">No
+                            <input type="radio" id="patch_no" name="patch_test[]" value="No">
                             <span class="checkmark"></span>
                         </label>
                     </div>
